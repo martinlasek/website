@@ -1,0 +1,35 @@
+.index-view .mobile .profile img {
+  width: 100%;
+}
+
+.index-view .mobile .profile {
+  width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #1b2938;
+}
+
+.non-mobile .profile {
+  display: flex;
+  align-items: flex-end;
+}
+
+.index-view .non-mobile .profile img {
+  width: auto;
+  height: 500px;
+}
+
+.index-view .contact {
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+  padding: 10px 15px;
+  margin: 2rem auto 0;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+  border: none;
+}
+
+.index-view .contact:hover,
+.index-view .contact:active {
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat !important;
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.14);
+  transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+}

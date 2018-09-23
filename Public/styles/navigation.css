@@ -1,0 +1,19 @@
+body {
+  overflow-x: hidden;
+}
+
+.navbar a {
+  color: #eeeeee;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+  text-decoration: none;
+}
+
+.navbar a.navbar-brand:hover {
+  background: none;
+  color: #eeeeee;
+}

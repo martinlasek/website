@@ -1,0 +1,96 @@
+.bg-gradient-blue {
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+}
+
+.bg-gradient-blue * {
+  color: #ffffff;
+}
+
+/* TEXT */
+/********/
+
+.text-gradient-blue {
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* MARGIN */
+/**********/
+
+.m-t-15 {
+  margin-top: 15px;
+}
+
+.m-t-30 {
+  margin-top: 30px;
+}
+
+.m-t-60 {
+  margin-top: 60px;
+}
+
+.m-b-30 {
+  margin-bottom: 30px;
+}
+
+.m-b-60 {
+  margin-bottom: 60px;
+}
+
+/* MARGIN */
+/**********/
+
+.p-top-60 {
+  padding-top: 60px;
+}
+
+.p-bottom-60 {
+  padding-bottom: 60px;
+}
+
+/* BORDER */
+/**********/
+
+.b-radius-5 {
+  border-radius: 5px;
+}
+
+.b-radius-8 {
+  border-radius: 8px;
+}
+
+.b-radius-10 {
+  border-radius: 10px;
+}
+
+.b-color-w {
+  border: 1px solid #ffffff;
+}
+
+/* FONT */
+/**********/
+
+.f-w-300 {
+  font-weight: 300;
+}
+
+.f-style-italic {
+  font-style: italic;
+}
+
+/* HEIGHT */
+/**********/
+.height-100-p {
+  height: 100%;
+}
+
+.height-550 {
+  height: 550px;
+}
+
+/* HEIGHT */
+/**********/
+.w-200 {
+  width: 200px;
+}

@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand bg-none" href="/">
+            <!--
+                <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            -->
+            Martin J. Lasek
+        </a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/">Projects</a>
+        </div>
+    </div>
+</nav>

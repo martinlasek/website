@@ -3,17 +3,14 @@ body, html {
 }
 
 body {
-	font-family: sans-serif;
+	font-family: Lato !important;
+	background: #1b2938;
+	color: #ffffff;
 }
 
-div.welcome {
-	height: 100%;
-	text-align: center;
-}
-
-div.welcome img {
-	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
-	width: 300px;
+div.quote {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 24px;
+  margin: 15px 0;
 }

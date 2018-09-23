@@ -1,0 +1,73 @@
+#set("title") { Martin J. Lasek }
+
+#set("content") {
+    <div class="index-view">
+
+        <div class="hero bg-white">
+            <div class="container">
+
+                <div class="row non-mobile justify-content-center d-none d-md-flex height-550">
+                    <div class="col-12 col-md-6 d-flex justify-content-center mb-3 mb-md-0">
+                        <div class="profile"><img src="/images/me-desktop.png" alt=""></div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex justify-content-center flex-column text-dark">
+                        <h3 class="text-center f-w-300 f-style-italic">"Work 80 hours a week and achieve in 6 month others need a whole year for"</h3>
+                        <h1 class="text-center m-t-15 f-w-300">Martin J. Lasek</h1>
+
+                        <div class="text-center f-w-300">
+                            Fullstack iOS/Web Developer
+                        </div>
+
+                        <a href="mailto:kontakt@martinlasek.de" class="btn bg-gradient-blue text-white b-radius-8 w-200 m-t-15 contact">contact</a>
+                    </div>
+                </div>
+
+                <!-- MOBILE -->
+                <div class="mobile row d-flex justify-content-center d-md-none p-top-60 p-bottom-60">
+                    <div class="col-12 col-md-6 d-flex justify-content-center mb-3 mb-md-0">
+                        <div class="profile"><img src="/images/me.JPG" alt=""></div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex justify-content-center flex-column text-dark">
+                        <h3 class="text-center f-w-300 f-style-italic">"Work 80 hours a week and achieve in 6 month others need a whole year for"</h3>
+                        <h1 class="text-center m-t-15 f-w-300">Martin J. Lasek</h1>
+
+                        <div class="text-center f-w-300">
+                            Fullstack iOS/Web Developer
+                        </div>
+                    </div>
+                </div>
+                <!-- MOBILE -->
+            </div>
+        </div>
+
+
+        <div class="p-top-60 p-bottom-60">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h4 class="col-12 text-center m-b-60">
+                        <strong>EXPLORE PROJECTS</strong>
+                    </h4>
+
+                    <div class="col-12 col-sm-4 d-flex justify-content-center">
+                        <div class="card w-100 p-3 b-radius-10 text-dark text-center                                                                                       q                                                                                                   1q1q                                    ">
+                            ONE
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 d-flex justify-content-center">
+                        <div class="card w-100 p-3 b-radius-10 text-dark text-center">
+                            TWO
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 d-flex justify-content-center">
+                        <div class="card w-100 p-3 b-radius-10 text-dark text-center">
+                            THREE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+#embed("Layout/base")
