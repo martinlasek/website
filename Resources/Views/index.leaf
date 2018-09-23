@@ -34,34 +34,65 @@
                         <div class="text-center f-w-300">
                             Fullstack iOS/Web Developer
                         </div>
+
+                        <a href="mailto:kontakt@martinlasek.de" class="btn bg-gradient-blue text-white b-radius-8 w-200 m-t-15 contact">contact</a>
                     </div>
                 </div>
                 <!-- MOBILE -->
             </div>
         </div>
 
-
         <div class="p-top-60 p-bottom-60">
             <div class="container">
                 <div class="row justify-content-center">
-                    <h4 class="col-12 text-center m-b-60">
-                        <strong>EXPLORE PROJECTS</strong>
-                    </h4>
+                    <h2 class="col-12 text-center m-t-30 m-b-60">
+                        <strong>HERE IS WHAT I DO</strong>
+                    </h2>
 
-                    <div class="col-12 col-sm-4 d-flex justify-content-center">
-                        <div class="card w-100 p-3 b-radius-10 text-dark text-center                                                                                       q                                                                                                   1q1q                                    ">
-                            ONE
-                        </div>
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="B" class="icon"></div>
+                        Idea evaluation &amp; Roadmap
                     </div>
-                    <div class="col-12 col-sm-4 d-flex justify-content-center">
-                        <div class="card w-100 p-3 b-radius-10 text-dark text-center">
-                            TWO
-                        </div>
+
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="@" class="icon"></div>
+                        Design &amp; User Experience
                     </div>
-                    <div class="col-12 col-sm-4 d-flex justify-content-center">
-                        <div class="card w-100 p-3 b-radius-10 text-dark text-center">
-                            THREE
-                        </div>
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="4" class="icon"></div>
+                        Development &amp; Quality Assurance
+                    </div>
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="&#xe00c;" class="icon"></div>
+                        Agile Project Management
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-top-60 p-bottom-60 bg-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h2 class="col-12 text-center m-t-30 m-b-60">
+                        <strong>HERE IS WHAT I DO</strong>
+                    </h2>
+
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="B" class="icon"></div>
+                        Idea evaluation &amp; Roadmap
+                    </div>
+
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="@" class="icon"></div>
+                        Design &amp; User Experience
+                    </div>
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="4" class="icon"></div>
+                        Development &amp; Quality Assurance
+                    </div>
+                    <div class="col-12 col-sm-3 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                        <div data-icon="&#xe00c;" class="icon"></div>
+                        Agile Project Management
                     </div>
                 </div>
             </div>

@@ -14,3 +14,11 @@ div.quote {
   font-size: 24px;
   margin: 15px 0;
 }
+
+.icon {
+  font-size: 72px;
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
