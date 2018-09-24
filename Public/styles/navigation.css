@@ -5,15 +5,33 @@ body {
 .navbar a {
   color: #eeeeee;
   padding: 10px 15px;
-  border-radius: 5px;
 }
 
-.navbar a:hover {
-  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+.navbar a:hover,
+.navbar a.active {
   text-decoration: none;
 }
 
 .navbar a.navbar-brand:hover {
   background: none;
   color: #eeeeee;
+}
+
+.navbar a.contact {
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.navbar a.contact:hover {
+  color: #000;
+  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  border-bottom: 2px solid #0184ea;
 }

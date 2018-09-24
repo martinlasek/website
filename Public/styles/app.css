@@ -22,3 +22,9 @@ div.quote {
   -webkit-text-fill-color: transparent;
   margin-bottom: 30px;
 }
+
+.icon.icon-white {
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

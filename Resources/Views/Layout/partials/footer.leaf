@@ -1,0 +1,28 @@
+<footer class="navbar footer bg-white">
+    <div class="container d-flex">
+        <a href="/imprint" class="text-dark">Imprint</a>
+        <div class="social-media d-flex">
+            <a href="https://github.com/MartinLasek" target="_blank">
+                <span class="icon">
+                    <svg class="feather text-dark">
+                        <use xlink:href="/icons/feather-sprite.svg#github"/>
+                    </svg>
+                </span>
+            </a>
+            <a href="https://twitter.com/martinlasek" target="_blank">
+                <span class="icon">
+                    <svg class="feather text-dark">
+                        <use xlink:href="/icons/feather-sprite.svg#twitter"/>
+                    </svg>
+                </span>
+            </a>
+            <a href="https://www.instagram.com/martin_lasek/" target="_blank">
+                <span class="icon">
+                    <svg class="feather text-dark">
+                        <use xlink:href="/icons/feather-sprite.svg#instagram"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</footer>

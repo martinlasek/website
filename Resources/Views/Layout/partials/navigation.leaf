@@ -7,8 +7,11 @@
             Martin J. Lasek
         </a>
         <div>
-            <a href="/">Home</a>
-            <a href="/">Projects</a>
+<!-- temporary disabled until sub-page "projects" is finished
+            <a href="/" class="#if(index) {active}">Home</a>
+            <a href="/projects" class="#if(projects) {active}">Projects</a>
+-->
+            <a href="mailto:kontakt@martinlasek.de" class="contact">Contact</a>
         </div>
     </div>
 </nav>

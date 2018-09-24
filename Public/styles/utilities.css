@@ -51,10 +51,15 @@
 
 .bg-gradient-blue {
   background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
+  color: #ffffff;
 }
 
 .bg-gradient-blue * {
   color: #ffffff;
+}
+
+.bg-dark {
+  background-color: #1b2938 !important;
 }
 
 /* TEXT */
@@ -64,6 +69,10 @@
   background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-dark {
+  color: #1b2938 !important;
 }
 
 /* MARGIN */
@@ -137,6 +146,10 @@
 
 .b-color-w {
   border: 1px solid #ffffff;
+}
+
+.b-none {
+  border: none;
 }
 
 /* FONT */

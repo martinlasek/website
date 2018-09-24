@@ -34,3 +34,13 @@
   box-shadow: 0 4px 10px 1px rgba(0,0,0,.14);
   transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
 }
+
+.index-view a.card {
+  text-decoration: none;
+}
+
+.index-view a.card:hover {
+  box-shadow: 0 4px 10px 1px rgba(0,0,0,.14);
+  transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+  color: #ffffff;
+}
