@@ -1,0 +1,32 @@
+#set("title") { Martin J. Lasek }
+
+#set("content") {
+<div class="imprint-view">
+
+    <div class="p-top-60 p-bottom-60">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h2 class="col-12 text-center m-t-30 m-b-60">
+                    <strong>IMPRINT</strong>
+                </h2>
+
+                <div class="col-12 col-sm-5 col-lg-4 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+                    <div class="card b-radius-8 bg-white p-4 b-none">
+                        <div data-icon="Z" class="icon"></div>
+                        <div class="text-gradient-blue">
+                            Martin J. Lasek <br />
+                            Am Falkenberg 104 <br />
+                            12524 Berlin <br />
+                            +49 171 47 23230 <br />
+                            <a href="mailto:kontakt@martinlasek.com" class="email">kontakt@martinlasek.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+}
+
+#embed("Layout/base")

@@ -1,6 +1,6 @@
 <footer class="navbar footer bg-white">
     <div class="container d-flex">
-        <a href="/imprint" class="text-dark">Imprint</a>
+        <a href="/imprint" class="text-dark #if(imprint){active}">Imprint</a>
         <div class="social-media d-flex">
             <a href="https://github.com/MartinLasek" target="_blank">
                 <span class="icon">

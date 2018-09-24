@@ -7,7 +7,8 @@
             Martin J. Lasek
         </a>
         <div>
-<!-- temporary disabled until sub-page "projects" is finished
+<!-- temporarily disabled until sub-page "projects" is finished
+
             <a href="/" class="#if(index) {active}">Home</a>
             <a href="/projects" class="#if(projects) {active}">Projects</a>
 -->

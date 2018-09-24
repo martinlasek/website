@@ -15,6 +15,7 @@ body {
 .navbar a.navbar-brand:hover {
   background: none;
   color: #eeeeee;
+  border: none;
 }
 
 .navbar a.contact {

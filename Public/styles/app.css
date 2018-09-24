@@ -1,5 +1,11 @@
-body, html {
-	height: 100%;
+/* For Footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+html body {
+  position: relative;
+  padding-bottom: 60px;
 }
 
 body {

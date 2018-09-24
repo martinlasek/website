@@ -1,3 +1,13 @@
+footer.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer.footer a {
+  border-bottom: 2px solid transparent;
+}
+
 footer.footer a:hover {
   background: none;
 }
