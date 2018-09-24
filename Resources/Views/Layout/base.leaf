@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
-    #embed("Layout/Partials/navigation")
-    #embed("Layout/Partials/content")
-    #embed("Layout/Partials/footer")
+    #embed("Layout/partials/navigation")
+    #embed("Layout/partials/content")
+    #embed("Layout/partials/footer")
 </body>
 </html>
