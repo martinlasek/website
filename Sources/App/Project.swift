@@ -39,7 +39,7 @@ fileprivate let list = [
     description: "Vote for topics for the next vapor.berlin meetup.",
     kind: .web,
     linkUrl: "http://vapor.berlin"
-  ),
+  )
 ]
 
 func completeProjectList() -> [Project] {

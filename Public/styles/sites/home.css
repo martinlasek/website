@@ -126,7 +126,7 @@
     }
 
     .project-list .project-wrapper .project {
-        margin: 0 20px;
+        margin: 0 20px 45px 20px;
     }
 
     .project-list .project-wrapper .project:hover {
@@ -135,13 +135,13 @@
 
     .project-list .project-wrapper {
         display: flex;
-        flex-flow: row;
+        flex-flow: row wrap;
         justify-content: center;
     }
 }
 
 @media screen and (min-width: 992px) {
     .project-list .project-wrapper .project {
-        margin: 0 45px;
+        margin: 0 45px 45px 45px;
     }
 }
