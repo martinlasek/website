@@ -1,0 +1,16 @@
+<div class="project">
+        
+    <a class="project-link" href="#(project.linkUrl)" target="_blank"></a>
+
+    <div class="project-image">
+        <img src="#(project.imageUrl)" />
+    </div>
+    
+    <div class="project-kind #(project.kind)">#(project.kind)</div>
+
+    <div class="project-text">
+        <h3>#(project.title)</h3>
+        <h4>#(project.description)</h4>
+    </div>
+
+</div>

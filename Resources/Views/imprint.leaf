@@ -1,7 +1,7 @@
-#set("title") { Martin J. Lasek }
+#set("title") { Martin Lasek }
 
 #set("content") {
-<div class="imprint-view">
+<div class="imprint-site">
 
     <div class="p-top-60 p-bottom-60">
         <div class="container">
@@ -11,8 +11,7 @@
                 </h2>
 
                 <div class="col-12 col-sm-5 col-lg-4 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
-                    <div class="card b-radius-8 bg-white p-4 b-none">
-                        <div data-icon="Z" class="icon"></div>
+                    <div class="card b-radius-8 p-4 b-none">
                         <div class="text-gradient-blue">
                             Martin J. Lasek <br />
                             Am Falkenberg 104 <br />

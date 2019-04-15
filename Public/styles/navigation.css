@@ -2,6 +2,15 @@ body {
   overflow-x: hidden;
 }
 
+nav.navbar {
+  background-color: #1b2938;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: center;
+}
+
 .navbar a {
   color: #eeeeee;
   padding: 10px 15px;
@@ -18,21 +27,14 @@ body {
   border: none;
 }
 
-.navbar a.contact {
-  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
-
-.navbar a.contact:hover {
-  color: #000;
-  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .navbar a:hover,
 .navbar a.active {
   border-bottom: 2px solid #0184ea;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+  }
 }

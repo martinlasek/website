@@ -1,0 +1,147 @@
+/* HERO */
+.hero {
+    background: linear-gradient(to bottom right, #FAAF6E, #F85F5B);
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .swift-birds {
+    background-image: url("/images/swift.svg");
+    background-size: 300px 300px;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    height: calc(100% + 50px);
+    width: 100%;
+    opacity: 0.066;
+}
+
+.hero .hero-title {
+    font-size: 32px;
+    font-weight: 600;
+    z-index: 100;
+}
+
+.hero .hero-title .cursive {
+    font-family: cursive;
+    font-weight: 100;
+}
+
+/* PROJECTS */
+.project-list {
+    min-height: 500px;
+    background-color: #ffffff;
+    padding: 30px 0 45px;
+}
+
+.project-list h2 {
+    padding-bottom: 30px;
+}
+
+.project-list .project {
+    width: 250px;
+    height: 250px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px;
+    box-shadow: rgb(0, 0, 0, 0.1) 0px 5px 10px 5px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 45px;
+    transition: box-shadow .2s ease-in-out;
+}
+
+.project-list .project:last-child {
+    margin-bottom: 0;
+}
+
+.project-list .project .project-link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.project-list .project .project-image,
+.project-list .project .project-text {
+    height: 125px;
+}
+
+.project-list .project .project-text {
+    padding: 15px;
+}
+
+.project-list .project .project-kind {
+    height: 30px;
+    width: 60px;
+    border: 3px solid #ffffff;
+    border-radius: 30px;
+    margin-top: -12px;
+    font-weight: 900;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 3px;
+}
+
+.project-list .project .project-kind.ios {
+    background: linear-gradient(to bottom right, #FAAF6E, #F85F5B);
+}
+
+.project-list .project .project-kind.web {
+    background: linear-gradient(to bottom right, #43C4FC, #DF43F6);
+}
+
+.project-list .project .project-text h3 {
+    font-size: 24px;
+    color: #404040;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
+
+.project-list .project .project-text h4 {
+    font-size: 18px;
+    color: #A0A0A0;
+}
+
+/* 
+** SCREEN SIZES
+*/
+@media screen and (min-width: 768px) {
+    /* HERO */
+    .hero .hero-title {
+        font-size: 48px;
+    }
+
+    /* PROJECTS */
+    .project-list {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .project-list .project-wrapper .project {
+        margin: 0 20px;
+    }
+
+    .project-list .project-wrapper .project:hover {
+        box-shadow: rgb(0, 0, 0, 0.1) 0px 10px 15px 8px;
+    }
+
+    .project-list .project-wrapper {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .project-list .project-wrapper .project {
+        margin: 0 45px;
+    }
+}

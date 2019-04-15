@@ -1,0 +1,10 @@
+#set("title") { Martin Lasek }
+
+#set("content") {
+    <div class="home-site">
+      #embed("Home/hero")
+      #embed("Home/projects")
+    </div>
+}
+
+#embed("Layout/base")

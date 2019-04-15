@@ -1,15 +1,20 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> #get(title) </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300, 300i,700">
     <link rel="stylesheet" href="/styles/app.css">
     <link rel="stylesheet" href="/styles/utilities.css">
     <link rel="stylesheet" href="/styles/footer.css">
     <link rel="stylesheet" href="/styles/navigation.css">
-    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/sites/home.css">
+    <link rel="stylesheet" href="/styles/sites/shop.css">
+    <link rel="stylesheet" href="/styles/sites/projects.css">
+    <link rel="stylesheet" href="/styles/sites/imprint.css">
 </head>
 <body>
     #embed("Layout/partials/navigation")

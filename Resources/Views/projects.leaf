@@ -1,0 +1,16 @@
+#set("title") { Martin Lasek }
+
+#set("content") {
+    <div class="projects-site">
+        <h1 class="text-center pt-5 pb-3"> All Projects </h1>
+        <div class="project-list">
+            <div class="project-wrapper">
+                #for(project in projectList) {
+                    #embed("partials/project")
+                }
+            </div>
+        </div>
+    </div>
+}
+
+#embed("Layout/base")

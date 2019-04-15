@@ -1,9 +1,6 @@
 <nav class="navbar">
     <div class="container">
-        <a class="navbar-brand bg-none" href="/">
-            <!--
-                <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            -->
+        <a class="navbar-brand bg-none" href="/">            
             Martin J. Lasek
         </a>
         <div>
@@ -12,7 +9,9 @@
             <a href="/" class="#if(index) {active}">Home</a>
             <a href="/projects" class="#if(projects) {active}">Projects</a>
 -->
-            <a href="mailto:kontakt@martinlasek.de" class="contact">Contact</a>
+            <a href="/shop" class="shop #if(currentSite.name == "shop") {active}">Shop</a>
+            <a href="/projects" class="#if(currentSite.name == "projects") {active}">Projects</a>
+            <a href="https://www.youtube.com/c/martinlasek" target="_blank" class="video">Video</a>
         </div>
     </div>
 </nav>

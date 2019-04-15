@@ -4,13 +4,11 @@ html {
   min-height: 100%;
 }
 html body {
-  position: relative;
   padding-bottom: 60px;
 }
 
 body {
 	font-family: Lato !important;
-	background: #1b2938;
 	color: #ffffff;
 }
 
@@ -19,14 +17,6 @@ div.quote {
   font-style: italic;
   font-size: 24px;
   margin: 15px 0;
-}
-
-.icon {
-  font-size: 72px;
-  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 30px;
 }
 
 .icon.icon-white {
