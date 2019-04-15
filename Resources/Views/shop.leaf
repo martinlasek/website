@@ -9,7 +9,7 @@
   <script>
   var spread_shop_config = {
     shopName: 'martinlasek',
-    locale: 'de_DE',
+    locale: 'en_EU',
     prefix: 'https://shop.spreadshirt.de',
     baseId: 'myShop'
   \};
