@@ -1,5 +1,5 @@
 <div class="project-list">
-    <h2 class="text-center text-dark"> PROJECTS </h2>
+    <h2 class="text-center text-dark"> LATEST PROJECTS </h2>
 
     <div class="project-wrapper">
         #for(project in projectList) {

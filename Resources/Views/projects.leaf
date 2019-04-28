@@ -2,7 +2,7 @@
 
 #set("content") {
     <div class="projects-site">
-        <h1 class="text-center pt-5 pb-3"> All Projects </h1>
+        <h1 class="text-center pt-5 pb-3"> ALL PROJECTS </h1>
         <div class="project-list">
             <div class="project-wrapper">
                 #for(project in projectList) {

@@ -24,7 +24,7 @@ fileprivate let list = [
     title: "socialdown",
     description: "A personal assistant for every Instagram user.",
     kind: .ios,
-    linkUrl: "/"
+    linkUrl: "https://itunes.apple.com/us/app/socialdown/id1453720895"
   ),
   Project(
     imageUrl: "/images/projects/serversideswiftracing.png",
@@ -36,7 +36,7 @@ fileprivate let list = [
   Project(
     imageUrl: "/images/projects/vaporberlin.png",
     title: "vapor.berlin",
-    description: "Vote for topics for the next vapor.berlin meetup.",
+    description: "Vote for topics for the next VaporBerlin meetup.",
     kind: .web,
     linkUrl: "http://vapor.berlin"
   )
