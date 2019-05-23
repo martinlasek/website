@@ -2,13 +2,17 @@
 
 #set("content") {
     <div class="projects-site">
-        <h1 class="text-center pt-5 pb-3"> ALL PROJECTS </h1>
-        <div class="project-list">
+        <div class="container">
+          <h1 class="text-center pt-5 pb-3">
+            <strong> ALL PROJECTS </strong>
+          </h1>
+          <div class="project-list">
             <div class="project-wrapper">
-                #for(project in projectList) {
-                    #embed("partials/project")
-                }
+              #for(project in projectList) {
+                #embed("partials/project")
+              }
             </div>
+          </div>
         </div>
     </div>
 }

@@ -3,27 +3,25 @@
 #set("content") {
 <div class="imprint-site">
 
-    <div class="p-top-60 p-bottom-60">
-        <div class="container">
-            <div class="row justify-content-center">
-                <h2 class="col-12 text-center m-t-30 m-b-60">
-                    <strong>IMPRINT</strong>
-                </h2>
-
-                <div class="col-12 col-sm-5 col-lg-4 d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
-                    <div class="card b-radius-8 p-4 b-none">
-                        <div class="text-gradient-blue">
-                            Martin J. Lasek <br />
-                            Schönhauser Allee 101 <br />
-                            10439 Berlin <br />
-                            +49 171 47 23230 <br />
-                            <a href="mailto:martinlasek-software@outlook.com" class="email">martinlasek-software@outlook.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="col-12 text-center pt-5 pb-3">
+        <strong>IMPRINT</strong>
+      </h1>
+      
+      <div class="d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
+        <div class="card b-radius-8 p-4 b-none">
+          <div class="text-gradient-blue">
+            Martin J. Lasek <br />
+            Schönhauser Allee 101 <br />
+            10439 Berlin <br />
+            +49 171 47 23230 <br />
+            <a href="mailto:martinlasek-software@outlook.com" class="email">martinlasek-software@outlook.com</a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
 </div>
 }

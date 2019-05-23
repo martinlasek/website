@@ -1,10 +1,14 @@
 <div class="project-list">
-    <h2 class="text-center text-dark"> LATEST PROJECTS </h2>
+    <h2 class="text-center text-dark"> PROJECTS </h2>
 
     <div class="project-wrapper">
         #for(project in projectList) {
             #embed("partials/project")
         }
     </div>
+    
+    <a href="/projects" class="d-block text-center">
+      <strong> see more </strong>
+    </a>
     
 </div>

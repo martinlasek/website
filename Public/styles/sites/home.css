@@ -56,10 +56,6 @@
     transition: box-shadow .2s ease-in-out;
 }
 
-.project-list .project:last-child {
-    margin-bottom: 0;
-}
-
 .project-list .project .project-link {
     width: 100%;
     height: 100%;

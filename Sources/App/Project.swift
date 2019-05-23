@@ -6,6 +6,7 @@
 //
 
 struct Project: Encodable {
+  let slug: String
   let imageUrl: String
   let title: String
   let description: String
@@ -20,6 +21,7 @@ struct Project: Encodable {
 
 fileprivate let list = [
   Project(
+    slug: "socialdown",
     imageUrl: "/images/projects/socialdown.png",
     title: "socialdown",
     description: "A personal assistant for every Instagram user.",
@@ -27,19 +29,29 @@ fileprivate let list = [
     linkUrl: "https://itunes.apple.com/us/app/socialdown/id1453720895"
   ),
   Project(
+    slug: "serversideswift-conference",
+    imageUrl: "/images/projects/serversideswift.png",
+    title: "ServerSide.swift",
+    description: "Website for the server-side swift conference.",
+    kind: .web,
+    linkUrl: "https://www.serversideswift.info"
+  ),
+  Project(
+    slug: "vapor-berlin",
+    imageUrl: "/images/projects/vaporberlin.png",
+    title: "vapor.berlin",
+    description: "Vote for topics for the next VaporBerlin meetup.",
+    kind: .web,
+    linkUrl: "http://vapor.berlin"
+  ),
+  Project(
+    slug: "serversideswift-racing",
     imageUrl: "/images/projects/serversideswiftracing.png",
     title: "serversideswift.racing",
     description: "Statistics on the four major server-side swift frameworks.",
     kind: .web,
     linkUrl: "http://serversideswift.racing"
   ),
-  Project(
-    imageUrl: "/images/projects/vaporberlin.png",
-    title: "vapor.berlin",
-    description: "Vote for topics for the next VaporBerlin meetup.",
-    kind: .web,
-    linkUrl: "http://vapor.berlin"
-  )
 ]
 
 func completeProjectList() -> [Project] {
@@ -47,16 +59,14 @@ func completeProjectList() -> [Project] {
 }
 
 func projectListForHome() -> [Project] {
-  var lastThreeProjects = [Project]()
+  let teaseList = [
+    "socialdown",
+    "vapor-berlin",
+    "serversideswift-conference"
+  ]
+  
   var list = completeProjectList()
-  list.reverse()
-  
-  for index in 0...2 {
-    if index < list.count {
-      lastThreeProjects.append(list[index])
-    }
-  }
-  
-  lastThreeProjects.reverse()
-  return lastThreeProjects
+  list = list.filter({ project in teaseList.contains(where: { slug in slug == project.slug }) })
+
+  return list
 }
