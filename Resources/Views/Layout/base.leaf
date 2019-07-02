@@ -20,5 +20,7 @@
     #embed("Layout/partials/navigation")
     #embed("Layout/partials/content")
     #embed("Layout/partials/footer")
+
+    #embed("Layout/javascript")
 </body>
 </html>
