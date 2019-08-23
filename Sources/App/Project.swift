@@ -29,6 +29,14 @@ fileprivate let list = [
     linkUrl: "https://itunes.apple.com/us/app/socialdown/id1453720895"
   ),
   Project(
+    slug: "momoko",
+    imageUrl: "/images/projects/momoko.png",
+    title: "Momoko",
+    description: "It's a hardcore highscore game perfect when waiting for the bus!",
+    kind: .ios,
+    linkUrl: "https://apps.apple.com/de/app/momoko-io/id1371665660"
+  ),
+  Project(
     slug: "serversideswift-conference",
     imageUrl: "/images/projects/serversideswift.png",
     title: "ServerSide.swift",
@@ -61,7 +69,7 @@ func completeProjectList() -> [Project] {
 func projectListForHome() -> [Project] {
   let teaseList = [
     "socialdown",
-    "vapor-berlin",
+    "momoko",
     "serversideswift-conference"
   ]
   
