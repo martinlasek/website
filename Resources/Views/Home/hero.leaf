@@ -3,7 +3,7 @@
     
     <div class="content">
         <div class="profile-picture">
-            <img src="/images/martinlasek.JPG" alt="Martin Lasek" width="100">
+            <img src="/images/martinlasek.jpg" alt="Martin Lasek" width="100">
             <a class="instagram-count" href="https://www.instagram.com/martin_lasek/" target="_blank">
                 <div class="loader"></div>
             </a>
