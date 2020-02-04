@@ -1,3 +1,4 @@
+/*
 function formatNumber(num) {
 	return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
 }
@@ -10,3 +11,4 @@ fetch(profileURL)
 		document.querySelector(".instagram-count").innerHTML = formatNumber(json.graphql.user.edge_followed_by.count);
 	})
 ;
+*/

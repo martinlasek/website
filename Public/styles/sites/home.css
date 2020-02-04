@@ -1,7 +1,16 @@
+.content {
+    display: flex;
+    align-items: center;
+    height: 500px;
+}
+
+.btn-shadow {
+    box-shadow: 0px 3px 5px #00000045;
+}
+
 /* HERO */
 .hero {
-    background: linear-gradient(to bottom right, #FAAF6E, #F85F5B);
-    height: 500px;
+    background: linear-gradient(to bottom right, #2E93FB, #74029F);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,125 +18,40 @@
     overflow: hidden;
 }
 
-.hero .swift-birds {
-    background-image: url("/images/swift.svg");
-    background-size: 300px 300px;
+.hero h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.hero img {
+    width: 40% !important;
+    max-width: 550px;
+    min-width: 220px;
     position: absolute;
-    top: -50px;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* APP DEVELOPMENT */
+.app-development {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-development h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.app-development img {
+    width: 50% !important;
+    max-width: 600px;
+    min-width: 220px;
+    position: absolute;
+    bottom: 0;
     left: 0;
-    height: calc(100% + 50px);
-    width: 100%;
-    opacity: 0.066;
-}
-
-.hero .content {
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-}
-
-.hero .content .profile-picture {
-    position: relative;
-}
-
-.hero .content .profile-picture .instagram-count {
-    position: absolute;
-    top: 30px;
-    left: 115px;
-    background: white;
-    color: black;
-    padding: 5px;
-    border-radius: 8px;
-    border: 1px solid #000000;
-    min-height: 35px;
-    min-width: 35px;
-    display: flex;
-    align-items: center;
-}
-
-.hero .content .profile-picture .triangle {
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-right: 10px solid #000000;
-    border-bottom: 8px solid transparent;
-    position: absolute;
-    top: 40px;
-    left: 106px;
-}
-
-.hero .content .profile-picture .triangle-two {
-    border-top: 7px solid transparent;
-    border-right: 9px solid #ffffff;
-    border-bottom: 7px solid transparent;
-    z-index: 1;
-    top: 41px;
-    left: 107px;
-    width: 0;
-    height: 0;
-    position: absolute;
-}
-
-.hero .content .profile-picture .loader,
-.hero .content .profile-picture .loader:after {
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-}
-
-.hero .content .profile-picture .loader {
-    margin: 0 auto;
-    font-size: 0;
-    position: relative;
-    border-top: 2px solid transparent;
-    border-right: 2px solid transparent;
-    border-bottom: 2px solid transparent;
-    border-left: 2px solid #f76755;
-    transform: translateZ(0);
-    animation: load8 1.1s infinite linear;
-    text-indent: -9999em;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -webkit-animation: load8 1.1s infinite linear;
-}
-
-@-webkit-keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-.hero .content .profile-picture img {
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid white;
-    margin-bottom: 20px;
-}
-
-.hero .hero-title {
-    font-size: 32px;
-    font-weight: 600;
-    z-index: 100;
-}
-
-.hero .hero-title .cursive {
-    font-family: cursive;
-    font-weight: 100;
 }
 
 /* PROJECTS */

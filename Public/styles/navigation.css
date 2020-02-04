@@ -3,7 +3,10 @@ body {
 }
 
 nav.navbar {
-  background-color: #1b2938;
+  padding: 0 1rem;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 .navbar .container {
@@ -13,7 +16,12 @@ nav.navbar {
 
 .navbar a {
   color: #eeeeee;
-  padding: 10px 15px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.navbar .menu {
+  font-weight: 300;
 }
 
 .navbar a:hover,
@@ -29,7 +37,7 @@ nav.navbar {
 
 .navbar a:hover,
 .navbar a.active {
-  border-bottom: 2px solid #0184ea;
+  border-bottom: 1px solid #ffffff;
 }
 
 @media screen and (min-width: 768px) {

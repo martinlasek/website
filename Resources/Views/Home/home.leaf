@@ -3,7 +3,7 @@
 #set("content") {
     <div class="home-site">
       #embed("Home/hero")
-      #embed("Home/projects")
+      #embed("Home/app-development")
     </div>
 }
 

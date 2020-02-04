@@ -3,10 +3,10 @@
         <a class="navbar-brand bg-none" href="/">            
             Martin Lasek
         </a>
-        <div>
-            <a href="/shop" class="shop #if(currentSite.name == "shop") {active}">Shop</a>
-            <a href="/projects" class="#if(currentSite.name == "projects") {active}">Projects</a>
-            <a href="https://www.youtube.com/c/martinlasek" target="_blank" class="video">Videos</a>
+        <div class="menu">
+            <a href="/projects" class="#if(currentSite.name == "projects") {active}">projects</a>
+            <a href="https://www.youtube.com/c/martinlasek" target="_blank" class="video">videos</a>
+            <a href="/shop" class="shop #if(currentSite.name == "shop") {active}">shop</a>
         </div>
     </div>
 </nav>
