@@ -48,11 +48,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.bg-gradient-blue {
-  background: linear-gradient(335deg, #0184ea, #00e5d3) no-repeat;
-  color: #ffffff;
-}
-
 .bg-gradient-blue * {
   color: #ffffff;
 }

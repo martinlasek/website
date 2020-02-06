@@ -1,7 +1,7 @@
 .content {
     display: flex;
     align-items: center;
-    height: 500px;
+    min-height: 500px;
 }
 
 .btn-shadow {
@@ -32,12 +32,16 @@
     right: 0;
 }
 
-
 /* APP DEVELOPMENT */
 .app-development {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.app-development .container {
+    padding-bottom: 100px;
 }
 
 .app-development h3 {
@@ -47,121 +51,73 @@
 
 .app-development img {
     width: 50% !important;
-    max-width: 600px;
+    max-width: 550px;
     min-width: 220px;
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
-/* PROJECTS */
-
-.project-list {
-    min-height: 500px;
-    background-color: #ffffff;
-    padding: 30px 0 45px;
-}
-
-.project-list h2 {
-    padding-bottom: 30px;
-}
-
-.project-list .project {
-    width: 250px;
-    height: 250px;
-    background-color: #ffffff;
-    color: black;
-    border-radius: 20px;
-    box-shadow: rgb(0, 0, 0, 0.1) 0px 5px 10px 5px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 45px;
-    transition: box-shadow .2s ease-in-out;
-}
-
-.project-list .project .project-link {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.project-list .project .project-image,
-.project-list .project .project-text {
-    height: 125px;
-}
-
-.project-list .project .project-text {
-    padding: 15px;
-}
-
-.project-list .project .project-kind {
-    height: 30px;
-    width: 60px;
-    border: 3px solid #ffffff;
-    border-radius: 30px;
-    margin-top: -12px;
-    font-weight: 900;
-    color: #ffffff;
+/* WEBSITE DEVELOPMENT */
+.website-development {
+    background: linear-gradient(to bottom right, #2E93FB, #74029F);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.website-development h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.website-development img {
+    width: 50% !important;
+    max-width: 550px;
+    min-width: 220px;
     position: absolute;
-    right: 3px;
+    bottom: 0;
+    right: 0;
 }
 
-.project-list .project .project-kind.ios {
-    background: linear-gradient(to bottom right, #FAAF6E, #F85F5B);
+/* SOCIAL PROOF */
+.social-proof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.project-list .project .project-kind.web {
-    background: linear-gradient(to bottom right, #43C4FC, #DF43F6);
+.social-proof img {
+    width: 100%;
+    height: auto;
+    max-width: 160px;
 }
 
-.project-list .project .project-text h3 {
-    font-size: 24px;
-    color: #404040;
-    text-overflow: ellipsis;
-    overflow: hidden; 
+.social-proof .count {
+    font-size: 32px;
 }
 
-.project-list .project .project-text h4 {
-    font-size: 18px;
-    color: #A0A0A0;
+/* CONTACT SECTION */
+.contact-section {
+    background: linear-gradient(to bottom right, #2E93FB, #74029F);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.contact-section h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
 /* 
 ** SCREEN SIZES
 */
 @media screen and (min-width: 768px) {
-    /* HERO */
-    .hero .hero-title {
-        font-size: 48px;
-    }
-
-    /* PROJECTS */
-    .project-list {
-        display: flex;
-        flex-flow: column;
-    }
-
-    .project-list .project-wrapper .project {
-        margin: 0 20px 45px 20px;
-    }
-
-    .project-list .project-wrapper .project:hover {
-        box-shadow: rgb(0, 0, 0, 0.1) 0px 10px 15px 8px;
-    }
-
-    .project-list .project-wrapper {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
+    .app-development .container {
+        padding-bottom: 0;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .project-list .project-wrapper .project {
-        margin: 0 45px 45px 45px;
-    }
 }

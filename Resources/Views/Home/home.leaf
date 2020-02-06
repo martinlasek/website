@@ -4,6 +4,9 @@
     <div class="home-site">
       #embed("Home/hero")
       #embed("Home/app-development")
+      #embed("Home/website-development")
+      #embed("Home/social-proof")
+      #embed("Home/contact-section")
     </div>
 }
 

@@ -6,20 +6,43 @@
 //
 
 struct Project: Encodable {
-  let slug: String
-  let imageUrl: String
-  let title: String
-  let description: String
   let kind: Kind
+  
+  let name: String
+  let description: String
   let linkUrl: String
   
+  let imageUrl: String
+  
   enum Kind: String, Encodable {
-    case ios
+    case iosLandscape
+    case iosPortrait
     case web
+  }
+  
+  static func all() -> [Project] {
+    return [
+      Project(
+        kind: .iosLandscape,
+        name: "Momoko IO",
+        description: "It is a fast pace hardcore highscore game purely written in Swift using the native SceneKit Library.",
+        linkUrl: "https://apps.apple.com/de/app/momoko-io/id1371665660",
+        imageUrl: "/images/projects/momoko.png"
+      )
+    ]
   }
 }
 
 fileprivate let list = [
+  Project(
+    kind: .iosLandscape,
+    name: "Momoko IO",
+    description: "It is a fast pace hardcore highscore game purely written in Swift using the native SceneKit Library.",
+    linkUrl: "https://apps.apple.com/de/app/momoko-io/id1371665660",
+    imageUrl: "/images/projects/momoko.png"
+  ),
+  
+  /*
   Project(
     slug: "socialdown",
     imageUrl: "/images/projects/socialdown.png",
@@ -60,21 +83,5 @@ fileprivate let list = [
     kind: .web,
     linkUrl: "http://serversideswift.racing"
   ),
+ */
 ]
-
-func completeProjectList() -> [Project] {
-  return list
-}
-
-func projectListForHome() -> [Project] {
-  let teaseList = [
-    "socialdown",
-    "momoko",
-    "serversideswift-conference"
-  ]
-  
-  var list = completeProjectList()
-  list = list.filter({ project in teaseList.contains(where: { slug in slug == project.slug }) })
-
-  return list
-}
