@@ -3,9 +3,12 @@ function formatNumber(num) {
 }
 
 const profileURL = "https://www.instagram.com/martin_lasek?__a=1";
-
-fetch(profileURL)
-	.then(response => response.json())
-	.then(json => {
-		document.querySelector(`.instagram-count`).innerHTML = formatNumber(json.graphql.user.edge_followed_by.count);
-	})
+let element = document.querySelector(`.instagram-count`);
+if (element) {
+	fetch(profileURL)
+		.then(response => response.json())
+		.then(json => {
+			let element = document.querySelector(`.instagram-count`);
+			element.innerHTML = formatNumber(json.graphql.user.edge_followed_by.count);
+		})
+}

@@ -1,6 +1,6 @@
-<nav class="navbar">
+<nav class="navbar bg-dark">
     <div class="container">
-        <a class="navbar-brand bg-none" href="/">            
+        <a class="navbar-brand bg-none pl-0" href="/">            
             Martin Lasek
         </a>
         <div class="menu">

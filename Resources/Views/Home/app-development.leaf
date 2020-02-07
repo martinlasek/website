@@ -1,5 +1,5 @@
 <div class="app-development">
-<img srcset="/images/app-development.png 1x, /images/app-development@2x.png 2x" src="/images/app-development.png" />
+<img srcset="/images/home/app-development.png 1x, /images/home/app-development@2x.png 2x" src="/images/home/app-development.png" />
     <div class="container content row">
         <div class="col-12 col-sm-6 offset-sm-6">
             <h2 class="text-dark"> App Development </h2>

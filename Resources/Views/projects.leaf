@@ -2,18 +2,9 @@
 
 #set("content") {
     <div class="projects-site">
-        <div class="container">
-          <h1 class="text-center pt-5 pb-3">
-            <strong> ALL PROJECTS </strong>
-          </h1>
-          <div class="project-list">
-            <div class="project-wrapper">
-              #for(project in projectList) {
-                #embed("partials/project")
-              }
-            </div>
-          </div>
-        </div>
+        #for(project in projectList) {
+          #embed("partials/project")
+        }
     </div>
 }
 

@@ -1,0 +1,27 @@
+.project {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.project.red {
+    background: linear-gradient(to bottom right, #FB3B6A, #FF4045);
+}
+
+.project.graphit {
+    background: linear-gradient(to bottom right, #004E65, #002635);
+}
+
+.project.orange {
+    background: linear-gradient(to bottom right, #FF994C, #FC5958);
+}
+
+.project.peach {
+    background: linear-gradient(to bottom right, #F46978, #F9B98E);
+}

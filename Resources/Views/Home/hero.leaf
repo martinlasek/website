@@ -1,5 +1,5 @@
 <div class="hero">
-    <img srcset="/images/hero.png 1x, /images/hero@2x.png 2x" src="/images/hero.png" />
+    <img srcset="/images/home/hero.png 1x, /images/home/hero@2x.png 2x" src="/images/home/hero.png" />
     <div class="container content row">
         <div class="col-12 col-sm-8">
             <h1>iOS, Website and API development.</h1>

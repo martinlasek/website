@@ -1,5 +1,5 @@
 <div class="website-development">
-    <img srcset="/images/website-development.png 1x, /images/app-development@2x.png 2x" src="/images/website-development.png" />
+    <img srcset="/images/home/website-development.png 1x, /images/home/app-development@2x.png 2x" src="/images/home/website-development.png" />
     <div class="container content row">
         <div class="col-12 col-sm-6">
             <h2> Website and API Development </h2>
