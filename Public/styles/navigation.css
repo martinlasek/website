@@ -1,12 +1,14 @@
 body {
   overflow-x: hidden;
+  padding-top: 95px;
 }
 
 nav.navbar {
-  padding: 0 1rem;
+  padding: 0 1rem 5px 1rem;
   position: absolute;
   width: 100%;
   z-index: 1;
+  top: 0;
 }
 
 .navbar .container {
@@ -18,6 +20,8 @@ nav.navbar {
   color: #eeeeee;
   padding: 10px;
   font-size: 1rem;
+  display: inline-block;
+  border-bottom: 1px solid #ffffff00;
 }
 
 .navbar .menu {
@@ -32,12 +36,18 @@ nav.navbar {
 .navbar a.navbar-brand:hover {
   background: none;
   color: #eeeeee;
-  border: none;
+  border-bottom: 1px solid #ffffff00;
 }
 
 .navbar a:hover,
 .navbar a.active {
   border-bottom: 1px solid #ffffff;
+}
+
+@media screen and (min-width: 376px) {
+  body {
+    padding-top: 50px;
+  }
 }
 
 @media screen and (min-width: 768px) {

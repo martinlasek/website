@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .project h3 {
@@ -24,4 +25,113 @@
 
 .project.peach {
     background: linear-gradient(to bottom right, #F46978, #F9B98E);
+}
+
+/** Image Frame **/
+
+/** DELETE ME LATER **/
+.image {
+    width: 100px;
+}
+
+.image-frame {
+    width: 100px;
+}
+/** DELETE ME LATER **/
+
+.iosLandscape { 
+    padding-top: 50px;
+}
+
+.iosLandscape .image-container { 
+    position: relative;
+}
+
+.iosLandscape .image-frame {
+    width: 290px;
+    height: auto;
+    position: relative;
+    z-index: 20;
+}
+
+.iosLandscape .image-clipper {
+    position: absolute;
+    margin: auto;
+    top: -15px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 125px;
+}
+
+.iosLandscape .image-clipper .image {
+    width: 260px;
+    margin-top: 5px;
+}
+
+@media screen and (min-width: 576px) {
+    .project {
+        text-align: left;
+    }
+    
+    .project .left {
+        justify-content: center;
+        display: flex;
+        flex-flow: column;
+    }
+    
+    .project .left a {
+        align-self: baseline;
+    }
+
+    .iosLandscape .image-frame {
+        width: 100%;
+    }
+
+    .iosLandscape .image-clipper {
+        width: calc(100% - 25px);
+        height: 110px;
+        top: -10px;
+    }
+
+    .iosLandscape .image-clipper .image {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .iosLandscape .image-clipper {
+        height: 140px;
+        width: calc(100% - 40px);
+        text-align: center;
+    }
+
+    .iosLandscape .image-clipper .image {        
+        margin-top: 2px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .iosLandscape .image-clipper {
+        height: 200px;
+        width: calc(100% - 55px);
+    }
+
+    .iosLandscape .image-clipper .image {        
+        margin-top: 5px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .iosLandscape .image-clipper {
+        height: 235px;
+        width: calc(100% - 65px);
+    }
+
+    .iosLandscape .image-clipper .image {        
+        margin-top: 2px;
+    }
 }

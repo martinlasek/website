@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
         
-            <div class="col-12 col-sm-6">
+            <div class="left col-12 col-sm-6">
                 <h2> #(project.name) </h2>
                 <h3> #(project.description) </h3>
                 <a class="btn btn-light mt-3" href="#(project.url)" target="_blank">
@@ -17,9 +17,28 @@
             </div>
 
             <div class="col-12 col-sm-6">
-                <h2>
-                    #(project.name)
-                </h2>
+
+                <div class="#(project.kind)">
+
+                    <div class="image-container">
+                        <div class="image-clipper">
+                            <img class="image" src="#(project.imageUrl)" />
+                        </div>
+
+                        #if(project.kind == "iosLandscape") {
+                            <img class="image-frame" srcset="/images/projects/layout/landscape.png 1x, /images/projects/layout/landscape@2x.png 2x" src="/images/projects/layout/landscape.png" />
+                        }
+
+                        #if(project.kind == "iosPortrait") {
+                            <img class="image-frame" srcset="/images/projects/layout/double-portrait.png 1x, /images/projects/layout/double-portrait@2x.png 2x" src="/images/projects/layout/double-portrait.png" />
+                        }
+
+                        #if(project.kind == "web") {
+                            <img class="image-frame" srcset="/images/projects/layout/macbook.png 1x, /images/projects/layout/macbook@2x.png 2x" src="/images/projects/layout/macbook.png" />
+                        }
+                    </div>
+
+                </div>
             </div>
 
         </div>
