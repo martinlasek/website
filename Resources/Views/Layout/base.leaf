@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="/styles/utilities.css">
     <link rel="stylesheet" href="/styles/footer.css">
     <link rel="stylesheet" href="/styles/navigation.css">
+    <!-- Project Site -->
     <link rel="stylesheet" href="/styles/sites/projects.css">
+    <link rel="stylesheet" href="/styles/sites/projects/ios-landscape.css">
+    <link rel="stylesheet" href="/styles/sites/projects/ios-portrait.css">
+    <link rel="stylesheet" href="/styles/sites/projects/web.css">
+    
     <link rel="stylesheet" href="/styles/sites/home.css">
     <link rel="stylesheet" href="/styles/sites/shop.css">
     <link rel="stylesheet" href="/styles/sites/imprint.css">

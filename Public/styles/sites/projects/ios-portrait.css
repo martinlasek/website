@@ -1,0 +1,102 @@
+.iosPortrait { 
+    padding-top: 50px;
+}
+
+.iosPortrait .image-container { 
+    position: relative;
+}
+
+.iosPortrait .image-frame {
+    width: 290px;
+    height: auto;
+    position: relative;
+    z-index: 20;
+}
+
+.iosPortrait img {
+    width: 100%;
+}
+
+.iosPortrait .image-clipper {
+    position: absolute;
+    width: 103px;
+    left: 0;
+    top: 22px;
+    overflow: hidden;
+    border-radius: 10px;
+    right: 158px;
+    margin: auto;
+    padding-right: 0px;
+}
+
+.iosPortrait .image-clipper-2 {
+    position: absolute;
+    width: 103px;
+    left: 158px;
+    top: 9px;
+    overflow: hidden;
+    border-radius: 10px;
+    right: 0;
+    margin: auto;
+    padding-right: 0px;
+}
+
+@media screen and (min-width: 576px) {
+    .iosPortrait .image-frame {
+        width: 100%;
+    }
+
+    .iosPortrait .image-clipper {
+        width: 87px;
+        top: 18px;
+        right: 131px;
+    }
+
+    .iosPortrait .image-clipper-2 {
+        width: 87px;
+        left: 131px;
+        top: 8px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .iosPortrait .image-clipper {
+        width: 117px;
+        top: 24px;
+        right: 179px;
+    }
+
+    .iosPortrait .image-clipper-2 {
+        width: 116px;
+        left: 178px;
+        top: 11px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .iosPortrait .image-clipper {
+        width: 159px;
+        top: 36px;
+        right: 245px;
+    }
+
+    .iosPortrait .image-clipper-2 {
+        width: 158px;
+        left: 241px;
+        top: 16px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .iosPortrait .image-clipper {
+        width: 190px;
+        top: 42px;
+        right: 293px;
+    }
+
+    .iosPortrait .image-clipper-2 {
+        width: 190px;
+        left: 292px;
+        top: 20px;
+    }
+}

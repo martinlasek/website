@@ -1,0 +1,79 @@
+.web { 
+    padding-top: 50px;
+}
+
+.web .image-container { 
+    position: relative;
+}
+
+.web .image-frame {
+    width: 290px;
+    height: auto;
+    position: relative;
+    z-index: 20;
+}
+
+.web .image {
+    height: 100%;
+    width: auto;
+    margin-left: -15px;
+}
+
+.web .image-clipper {
+    position: absolute;
+    margin: auto;
+    top: -14px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 230px;
+    overflow: hidden;
+    height: 142px;
+}
+
+@media screen and (min-width: 576px) {
+    .web .image-frame {
+        width: 100%;
+    }
+
+    .web .image-clipper {
+        top: -11px;
+        height: 120px;
+        width: calc(100% - 50px);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .web .image-clipper {
+        height: 160px;
+        width: calc(100% - 75px);
+    }
+
+    .web .image {
+        margin-left: -18px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .web .image-clipper {
+        height: 217px;
+        top: -19px;
+        width: calc(100% - 100px);
+    }
+
+    .web .image {
+        margin-left: -23px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .web .image-clipper {
+        height: 260px;
+        top: -22px;
+        width: calc(100% - 125px);
+    }
+
+    .web .image {
+        margin-left: -28px;
+    }
+}

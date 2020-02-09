@@ -25,6 +25,12 @@
                             <img class="image" src="#(project.imageUrl)" />
                         </div>
 
+                        #if(project.secondImageUrl) {
+                            <div class="image-clipper-2">
+                                <img class="image-2" src="#(project.secondImageUrl)" />
+                            </div>
+                        }
+
                         #if(project.kind == "iosLandscape") {
                             <img class="image-frame" srcset="/images/projects/layout/landscape.png 1x, /images/projects/layout/landscape@2x.png 2x" src="/images/projects/layout/landscape.png" />
                         }

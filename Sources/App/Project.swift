@@ -14,6 +14,25 @@ struct Project: Encodable {
   let url: String
   
   let imageUrl: String
+  let secondImageUrl: String?
+  
+  init(
+    kind: Kind,
+    bgColor: BackgroundColor,
+    name: String,
+    description: String,
+    url: String,
+    imageUrl: String,
+    secondImageUrl: String? = nil
+  ) {
+    self.kind = kind
+    self.bgColor = bgColor
+    self.name = name
+    self.description = description
+    self.url = url
+    self.imageUrl = imageUrl
+    self.secondImageUrl = secondImageUrl
+  }
   
   enum Kind: String, Encodable {
     case iosLandscape
@@ -44,7 +63,8 @@ struct Project: Encodable {
         name: "socialdown",
         description: "A personal assistant for Instagram influencer and everyone who wants to grow and become one organically.",
         url: "https://itunes.apple.com/us/app/socialdown/id1453720895",
-        imageUrl: "/images/projects/momoko.png"
+        imageUrl: "/images/projects/socialdown-1.png",
+        secondImageUrl: "/images/projects/socialdown-2.png"
       ),
       Project(
         kind: .web,
@@ -52,7 +72,7 @@ struct Project: Encodable {
         name: "ServerSide.swift",
         description: "Conference Website to buy tickets, read about the talks and see the date and schedule.",
         url: "https://www.serversideswift.info",
-        imageUrl: "/images/projects/momoko.png"
+        imageUrl: "/images/projects/serversideswift.png"
       ),
       Project(
         kind: .web,
@@ -60,7 +80,7 @@ struct Project: Encodable {
         name: "VaporBerlin",
         description: "Meetup Website to vote on topics to influence what talks should be presented on the next meetup.",
         url: "http://vapor.berlin",
-        imageUrl: "/images/projects/momoko.png"
+        imageUrl: "/images/projects/vaporberlin.png"
       ),
     ]
   }
