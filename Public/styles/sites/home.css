@@ -104,20 +104,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px 0;
 }
 
 .contact-section h3 {
     font-size: 1.25rem;
     font-weight: 300;
 }
+
+.contact-section .card {
+    margin-top: 15px;
+}
 /* 
 ** SCREEN SIZES
 */
+@media screen and (min-width: 576px) {
+    .contact-section .card {
+        margin-top: 0;
+    }
+}
+
+
 @media screen and (min-width: 768px) {
     .app-development .container {
         padding-bottom: 0;
     }
-}
-
-@media screen and (min-width: 992px) {
 }
