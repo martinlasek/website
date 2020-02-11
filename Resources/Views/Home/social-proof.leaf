@@ -19,7 +19,7 @@
         <div class="col-12 col-sm-6 col-md-3">
             <div class="social-media text-dark text-center">
                 <img srcset="/images/social-proof/youtube.png 1x, /images/social-proof/youtube@2x.png 2x" src="/images/social-proof/youtube.png" />
-                <div class="count youtube-count">2.632</div>
+                <div class="count youtube-count">2.662</div>
                 <div class="label">subscriber</div>
             </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="col-12 col-sm-6 col-md-3">
             <div class="social-media text-dark text-center">
                 <img srcset="/images/social-proof/instagram.png 1x, /images/social-proof/instagram@2x.png 2x" src="/images/social-proof/instagram.png" />
-                <div class="count instagram-count">loading..</div>
+                <div class="count instagram-count">29.689</div>
                 <div class="label">follower</div>
             </div>
         </div>

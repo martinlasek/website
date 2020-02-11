@@ -1,12 +1,12 @@
 <nav class="navbar bg-dark">
     <div class="container">
-        <a class="navbar-brand bg-none pl-0" href="/">            
-            Martin Lasek
+        <a class="navbar-brand bg-none" href="/">            
+            MARTIN LASEK
         </a>
         <div class="menu">
-            <a href="/projects" class="#if(currentSite.name == "projects") {active}">projects</a>
-            <a href="https://www.youtube.com/c/martinlasek" target="_blank" class="video">videos</a>
-            <a href="/shop" class="shop #if(currentSite.name == "shop") {active}">shop</a>
+            <a href="/projects" class="#if(currentSite.name == "projects") {active}">Projects</a>
+            <a href="https://www.youtube.com/c/martinlasek" target="_blank" class="video">Videos</a>
+            <a href="/shop" class="shop #if(currentSite.name == "shop") {active}">Shop</a>
         </div>
     </div>
 </nav>

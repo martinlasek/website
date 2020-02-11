@@ -61,7 +61,7 @@ struct Project: Encodable {
         kind: .iosPortrait,
         bgColor: .graphit,
         name: "socialdown",
-        description: "A personal assistant for Instagram influencer and everyone who wants to grow and become one organically.",
+        description: "A personal assistant for Instagram influencer and everyone who wants to grow and become one – organically.",
         url: "https://itunes.apple.com/us/app/socialdown/id1453720895",
         imageUrl: "/images/projects/socialdown-1.png",
         secondImageUrl: "/images/projects/socialdown-2.png"

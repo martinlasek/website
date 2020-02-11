@@ -5,7 +5,7 @@ body {
 
 nav.navbar {
   padding: 0 1rem 5px 1rem;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 1;
   top: 0;
@@ -51,6 +51,7 @@ nav.navbar {
 }
 
 @media screen and (min-width: 768px) {
+
   .navbar .container {
     display: flex;
     justify-content: space-between;

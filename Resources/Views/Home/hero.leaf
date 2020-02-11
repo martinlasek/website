@@ -2,9 +2,9 @@
     <img srcset="/images/home/hero.png 1x, /images/home/hero@2x.png 2x" src="/images/home/hero.png" />
     <div class="container content row">
         <div class="col-12 col-sm-8">
-            <h1>iOS, Website and API development.</h1>
+            <h1>iOS, Website and API development</h1>
             <h3 class="pt-3">I help businesses grow in revenue by increasing leads and digitizing processes with elegant and modern Apps, Websites and APIs.</h3>
-            <button class="mt-3 btn btn-light btn-shadow text-danger" onclick="scrollToFooter()">contact</button>
+            <button class="mt-3 btn btn-light btn-shadow text-danger" onclick="scrollToFooter()">Contact</button>
         </div>
     </div>
 </div>
