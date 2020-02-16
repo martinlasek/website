@@ -3,7 +3,9 @@
     <div class="container content row">
         <div class="col-12 col-sm-8">
             <h1>iOS, Website and API development</h1>
-            <h3 class="pt-3">I help businesses grow in revenue by increasing leads and digitizing processes with elegant and modern Apps, Websites and APIs.</h3>
+            <h3 class="pt-3">
+                I help businesses <b>grow in revenue</b> by increasing leads and <b>digitizing processes</b> with elegant and modern Apps, Websites and APIs.
+            </h3>
             <button class="mt-3 btn btn-light btn-shadow text-danger" onclick="scrollToFooter()">Contact</button>
         </div>
     </div>

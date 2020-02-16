@@ -31,7 +31,7 @@
             <div class="social-media text-dark text-center">
                 <a href="https://www.instagram.com/martin_lasek/" target="_blank"></a>
                 <img srcset="/images/social-proof/instagram.png 1x, /images/social-proof/instagram@2x.png 2x" src="/images/social-proof/instagram.png" />
-                <div class="count instagram-count">29.689</div>
+                <div class="count instagram-count">29.723</div>
                 <div class="label">follower</div>
             </div>
         </div>

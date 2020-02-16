@@ -20,6 +20,17 @@
     <link rel="stylesheet" href="/styles/sites/home.css">
     <link rel="stylesheet" href="/styles/sites/shop.css">
     <link rel="stylesheet" href="/styles/sites/imprint.css">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158625875-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158625875-1');
+    </script>
+
 </head>
 <body>
     #embed("Layout/partials/navigation")
