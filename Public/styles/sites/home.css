@@ -134,6 +134,11 @@
 .contact-section .card {
     margin-top: 15px;
 }
+
+.contact-section .card label {
+    font-weight: 600;
+}
+
 /* 
 ** SCREEN SIZES
 */

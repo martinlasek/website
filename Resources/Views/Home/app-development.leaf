@@ -4,9 +4,9 @@
         <div class="col-12 col-sm-6 offset-sm-6">
             <h2 class="text-dark"> App Development </h2>
             <h3 class="text-dark pt-3">
-                Following the <b>Minimum Viable Product</b> principle allows me to go from idea to shipping the first test version in <b>2 weeks</b>.
+                Working after the <b>Minimum Viable Product</b> principle allows me to go from your idea to your first test version in <b>2 weeks</b>.
             </h3>
-            <a class="mt-3 btn btn-light btn-shadow text-danger" href="/projects">More</a>
+            <a class="mt-3 btn btn-light btn-shadow text-danger" href="/projects">App Projects</a>
         </div>
     </div>    
 </div>
