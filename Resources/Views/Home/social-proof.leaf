@@ -4,7 +4,7 @@
             <div class="social-media text-dark text-center">
                 <a href="https://twitter.com/martinlasek" target="_blank"></a>
                 <img srcset="/images/social-proof/twitter.png 1x, /images/social-proof/twitter@2x.png 2x" src="/images/social-proof/twitter.png" />
-                <div class="count twitter-count">919</div>
+                <div class="count twitter-count">954</div>
                 <div class="label">follower</div>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="social-media text-dark text-center">
                 <a href="https://medium.com/@martinlasek" target="_blank"></a>
                 <img srcset="/images/social-proof/medium.png 1x, /images/social-proof/medium@2x.png 2x" src="/images/social-proof/medium.png" />
-                <div class="count medium-count">934</div>
+                <div class="count medium-count">961</div>
                 <div class="label">follower</div>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="social-media text-dark text-center">
                 <a href="https://www.youtube.com/channel/UCoLEXFUHIKXunm9QJjsAftw" target="_blank"></a>
                 <img srcset="/images/social-proof/youtube.png 1x, /images/social-proof/youtube@2x.png 2x" src="/images/social-proof/youtube.png" />
-                <div class="count youtube-count">2.912</div>
+                <div class="count youtube-count">3.112</div>
                 <div class="label">subscriber</div>
             </div>
         </div>
