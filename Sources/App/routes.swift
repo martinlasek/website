@@ -1,6 +1,9 @@
 import Vapor
 
 public func routes(_ router: Router) throws {
+  
+  // MARK: - Martin Lasek
+  
   router.get("/") { req -> Future<View> in
     return try req.view().render("Home/home")
   }
@@ -19,6 +22,13 @@ public func routes(_ router: Router) throws {
     let context = ViewData.Shop(currentSite: CurrentSite("shop"))
     return try req.view().render("shop", context)
   }
+  
+  // MARK: - Social Down
+  let socialdownWishController = socialdown_WishController()
+  let socialdownAPI = router.grouped("api", "socialdown")
+  socialdownAPI.get("wish/list", use: socialdownWishController.list)
+  socialdownAPI.post("wish/create", use: socialdownWishController.create)
+  socialdownAPI.post("wish", socialdown_Wish.parameter, "vote", use: socialdownWishController.vote)
 }
 
 struct CurrentSite: Encodable {
