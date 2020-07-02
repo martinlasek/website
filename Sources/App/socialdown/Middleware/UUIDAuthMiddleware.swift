@@ -6,7 +6,7 @@
 //
 
 import Vapor
-import FluentSQLite
+import FluentPostgreSQL
 /*
 struct UUIDAuthMiddleware: Middleware {
   
