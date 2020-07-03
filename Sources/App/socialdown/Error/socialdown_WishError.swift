@@ -27,6 +27,7 @@ struct socialdown_WishError: AbortError {
   private enum Kind: String {
     case userAlreadyVoted
     case titleAlreadyExists
+    case cannotVoteForOwnWish
   }
   
   static var userAlreadyVoted: socialdown_WishError {
@@ -35,5 +36,9 @@ struct socialdown_WishError: AbortError {
   
   static var titleAlreadyExists: socialdown_WishError {
     return socialdown_WishError(enumKey: .titleAlreadyExists)
+  }
+  
+  static var cannotVoteForOwnWish: socialdown_WishError {
+    return socialdown_WishError(enumKey: .cannotVoteForOwnWish)
   }
 }
