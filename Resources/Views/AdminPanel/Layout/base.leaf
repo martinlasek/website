@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/AdminPanel/wishlist.css">
 </head>
 <body>
-    #if(userInfo.isUser) {
+    #if(metaInfo.isUser) {
         #embed("AdminPanel/Layout/partials/navigation")
     }
     

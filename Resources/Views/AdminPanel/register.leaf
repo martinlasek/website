@@ -10,24 +10,25 @@
       <div class="col-md-6">
           
           <form action="/admin/register" method="POST">
-            <div class="card">
-              <div class="card-body">
-                <div class="form-group">
+
+            <div class="card overflow-hidden p-0">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="form-group">
                     <label for="username">Username</label>
                     <input type="email" name="username" class="form-control" id="username"/>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" />
-                </div>
-              </div>
-            </div> <!-- end card -->
-            
-            <div class="card bg-none">
-              <div class="card-body">
-                <input type="submit" class="btn btn-block btn-primary" value="Register" />
-              </div>
-            </div> <!-- end card -->
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" name="password" class="form-control" id="password" />
+                  </div>
+                </li>
+
+                <li class="list-group-item">
+                  <input type="submit" class="btn btn-block btn-primary" value="Register" />
+                </li>
+              </ul>
+            </div>
 
           </form>
               

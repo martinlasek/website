@@ -6,6 +6,6 @@
 //
 
 struct IndexResponse: Encodable {
-  let userInfo: MetaInfo
+  let metaInfo: MetaInfo
 }
 

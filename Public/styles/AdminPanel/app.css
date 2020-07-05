@@ -49,6 +49,16 @@ html.dark-mode {
 }
 /* DARK MODE - START */
 
+.menu a {
+  padding: 5px 10px;
+  margin: 0 2px
+}
+
+.menu a.active,
+.menu a:hover {
+  border-bottom: 1px solid #007bff;
+}
+
 .card {
   background: none;
   border-radius: 16px;

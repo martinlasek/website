@@ -30,10 +30,10 @@ public func routes(_ router: Router) throws {
     adminRoute.get("register", use: adminPanelController.renderRegister)
     adminRoute.post("register", use: adminPanelController.register)
     adminRoute.get("login", use: adminPanelController.renderLogin)
-    adminRoute.get("logout", use: adminPanelController.logout)
     
     let authSessionRouter = adminRoute.grouped(AdminUser.authSessionsMiddleware())
     authSessionRouter.post("login", use: adminPanelController.login)
+    authSessionRouter.get("logout", use: adminPanelController.logout)
 
     let protectedAdminRouter = authSessionRouter.grouped(RedirectMiddleware<AdminUser>(path: "/admin/login"))
     protectedAdminRouter.get("/", use: adminPanelController.renderIndex)

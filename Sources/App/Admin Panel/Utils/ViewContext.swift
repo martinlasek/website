@@ -1,5 +1,5 @@
 //
-//  UserInfo.swift
+//  metaInfo.swift
 //  App
 //
 //  Created by Martin Lasek on 03.07.20.
@@ -7,7 +7,7 @@
 
 import Vapor
 
-struct UserInfo: Codable {
+struct metaInfo: Codable {
   let isUser: Bool
   let currentSite: CurrentSite
   let title: String
@@ -24,7 +24,7 @@ struct UserInfo: Codable {
   ///
   /// - returns instance of AppInfo
   static func create(_ currentSite: CurrentSite, on req: Request) throws -> Codable {
-    return UserInfo(
+    return metaInfo(
       isUser: try req.isAuthenticated(AdminUser.self),
       currentSite: currentSite,
       title: "Admin Panel"
@@ -32,9 +32,9 @@ struct UserInfo: Codable {
   }
 }
 
-extension UserInfo {
+extension metaInfo {
   struct WishListResponse: Codable {
-    let context: UserInfo
+    let context: metaInfo
     let wishList: [socialdown_Wish]
   }
 }

@@ -4,7 +4,8 @@
             Admin Panel
         </a>
         <div class="menu">
-            <a href="/admin/wish/list?state=pending" class="#if(userInfo.currentSite == "wishList") {active}">Wish List</a>
+            <a href="/admin/wish/list?state=pending" class="#if(metaInfo.currentSite == "wishList") {active}">Wish List</a>
+            <a href="/admin/logout">Logout</a>
         </div>
     </div>
 </nav>
