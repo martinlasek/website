@@ -10,7 +10,7 @@
 
      <!-- Nav Tabs -->
 
-    <ul class="nav nav-tabs mb-2">
+    <ul class="col-12 nav nav-tabs mb-2">
         <li class="nav-item">
             <a class="nav-link text-dark" href="/admin/wish/list">All</a>
         </li>
@@ -28,7 +28,7 @@
         </li>
     </ul>
 
-    <div class="wrapper">
+    <div class="col-12 wrapper">
       #if(count(list) != 0) {
         #for(wish in wishList) {
           #embed("AdminPanel/partials/wish")
