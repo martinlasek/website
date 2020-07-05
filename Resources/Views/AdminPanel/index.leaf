@@ -1,0 +1,16 @@
+#set("title") { #(userInfo.title) }
+
+#set("content") {
+<div class="index-site">
+
+  <div class="row justify-content-center">
+      <h1 class="col-12 text-center pt-4 pb-3">
+        <strong>Index</strong>
+        #if(title) { userInfo }
+      </h1>
+    </div>
+
+</div>
+}
+
+#embed("AdminPanel/Layout/base")

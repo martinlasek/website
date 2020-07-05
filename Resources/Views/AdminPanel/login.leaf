@@ -1,0 +1,43 @@
+#set("title") { Admin Panel }
+
+#set("content") {
+  <h1 class="text-center mt-5 mb-3">
+      <strong> Login </strong>
+  </h1>
+
+  <div class="admin-panel">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+          
+          <form action="/admin/login" method="POST">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="email" name="username" class="form-control" id="username"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" />
+                </div>
+              </div>
+            </div> <!-- end card -->
+            
+            <div class="card bg-none">
+              <div class="card-body">
+                <input type="submit" class="btn btn-block btn-primary" value="Login" />
+              </div>
+            </div> <!-- end card -->
+
+          </form>
+              
+          <div class="d-block text-center">
+              <span class="text-mute mr-1">Don't have an account?</span>
+              <a href="/admin/register">Create one here.</a>
+          </div>
+      </div>
+    </div>
+  </div>
+}
+
+#embed("AdminPanel/Layout/base")

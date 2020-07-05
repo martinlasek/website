@@ -1,0 +1,43 @@
+#set("title") { #(appInfo.title) }
+
+#set("content") {
+<div class="wishlist">
+
+  <div class="row">
+    <h1 class="col-12 pt-4 pb-3">
+      <strong>Wish List</strong>
+    </h1>
+
+     <!-- Nav Tabs -->
+
+    <ul class="nav nav-tabs mb-2">
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="/admin/wish/list">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-warning #if(activeTab == "pending") { active }" href="/admin/wish/list?state=pending">Pending</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-primary #if(activeTab == "approved") { active }" href="/admin/wish/list?state=approved">Approved</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-success #if(activeTab == "implemented") { active }" href="/admin/wish/list?state=implemented">Implemented</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-danger #if(activeTab == "rejected") { active }" href="/admin/wish/list?state=rejected">Rejected</a>
+        </li>
+    </ul>
+
+    <div class="wrapper">
+      #if(count(list) != 0) {
+        #for(wish in wishList) {
+          #embed("AdminPanel/partials/wish")
+        }
+      }
+    </div>
+  </div>
+
+</div>
+}
+
+#embed("AdminPanel/Layout/base")

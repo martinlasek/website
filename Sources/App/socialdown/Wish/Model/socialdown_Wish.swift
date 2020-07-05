@@ -13,10 +13,10 @@ final class socialdown_Wish: PostgreSQLModel {
   let userId: socialdown_User.ID
   
   let title: String
-  var description: String?
+  var description: String
   var state: State
   
-  init(id: Int? = nil, userId: socialdown_User.ID, title: String, description: String?, state: State) {
+  init(id: Int? = nil, userId: socialdown_User.ID, title: String, description: String, state: State) {
     self.id = id
     self.userId = userId
     self.title = title

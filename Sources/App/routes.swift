@@ -1,4 +1,5 @@
 import Vapor
+import Authentication
 
 public func routes(_ router: Router) throws {
   
@@ -23,7 +24,25 @@ public func routes(_ router: Router) throws {
     return try req.view().render("shop", context)
   }
   
+  // MARK: - Admin Panel
+  let adminPanelController = AdminPanelController()
+  router.group("admin") { adminRoute in
+    adminRoute.get("register", use: adminPanelController.renderRegister)
+    adminRoute.post("register", use: adminPanelController.register)
+    adminRoute.get("login", use: adminPanelController.renderLogin)
+    adminRoute.get("logout", use: adminPanelController.logout)
+    
+    let authSessionRouter = adminRoute.grouped(AdminUser.authSessionsMiddleware())
+    authSessionRouter.post("login", use: adminPanelController.login)
+
+    let protectedAdminRouter = authSessionRouter.grouped(RedirectMiddleware<AdminUser>(path: "/admin/login"))
+    protectedAdminRouter.get("/", use: adminPanelController.renderIndex)
+    protectedAdminRouter.get("wish/list", use: adminPanelController.renderWishList)
+    protectedAdminRouter.post("wish", socialdown_Wish.parameter, "change-state", use: adminPanelController.changeState)
+  }
+  
   // MARK: - Social Down
+  
   let socialdownWishController = socialdown_WishController()
   let socialdownAPI = router.grouped("api", "socialdown")
   socialdownAPI.get("wish/list", use: socialdownWishController.list)

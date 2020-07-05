@@ -1,0 +1,11 @@
+.wishlist .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(250px, auto);
+  column-gap: 10px;
+  row-gap: 1em;
+}
+
+.wishlist .card-header {
+  font-weight: 600;
+}

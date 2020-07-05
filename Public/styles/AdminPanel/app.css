@@ -1,0 +1,86 @@
+/* For Footer */
+html {
+  position: relative;
+  min-height: 100%;
+  background-color: #eee;
+}
+html body {
+  padding-bottom: 60px;
+  background-color: #eee;
+}
+
+body {
+	font-family: Lato !important;
+}
+
+div.quote {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+.icon.icon-white {
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DARK MODE - START */
+html.dark-mode {
+  background-color: #121212;
+}
+
+.dark-mode body {
+  color: #ffffff;
+  background-color: #121212;
+}
+
+.dark-mode .card {
+  background-color: #323232;
+}
+
+.dark-mode .navbar {
+  background-color: #323232;
+}
+
+.dark-mode a {
+  color: #ffffff;
+}
+/* DARK MODE - START */
+
+.card {
+  background: none;
+  border-radius: 16px;
+}
+
+.card-header {
+  border-radius: 16px 16px 0 0 !important;
+  background-color: #f7f7f7;
+}
+
+.card-body {
+  background-color: #ffffff;
+}
+
+.card-footer {
+  border-radius: 0 0 16px 16px !important;
+  background-color: #f7f7f7;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+a {
+  font-weight: 600;
+}
+
+a:hover, a.active {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.bg-none {
+  background: none;
+}

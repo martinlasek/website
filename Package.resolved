@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Auth",
+        "repositoryURL": "https://github.com/vapor/auth.git",
+        "state": {
+          "branch": null,
+          "revision": "e6f61b403727ec124214beb3e57deff579f31d00",
+          "version": "2.0.4"
+        }
+      },
+      {
         "package": "Console",
         "repositoryURL": "https://github.com/vapor/console.git",
         "state": {
@@ -53,6 +62,15 @@
           "branch": null,
           "revision": "a3d6587a64ff95cc3d5830d2d08dbe0638753716",
           "version": "1.0.1"
+        }
+      },
+      {
+        "package": "FluentSQLite",
+        "repositoryURL": "https://github.com/vapor/fluent-sqlite.git",
+        "state": {
+          "branch": null,
+          "revision": "c32f5bda84bf4ea691d19afe183d40044f579e11",
+          "version": "3.0.0"
         }
       },
       {
@@ -116,6 +134,15 @@
           "branch": null,
           "revision": "50eaeb8f52a1ce63f1ff3880e1114dd8757a78a6",
           "version": "2.3.2"
+        }
+      },
+      {
+        "package": "SQLite",
+        "repositoryURL": "https://github.com/vapor/sqlite.git",
+        "state": {
+          "branch": null,
+          "revision": "314d9cd21165bcf14215e336a23ff8214f40e411",
+          "version": "3.2.1"
         }
       },
       {

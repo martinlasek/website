@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <h5>#(wish.title)</h5>
+  </div>
+  <div class="card-body p-0">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        #(wish.description)
+      </li>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group btn-block">
+      <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Change State
+      </button>
+      <div class="dropdown-menu btn-block mt-2">
+          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+            <input type="text" class="d-none" name="state" value="pending">
+            <input type="submit" class="dropdown-item text-warning" value="Pending">
+          </form>
+
+          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+            <input type="text" class="d-none" name="state" value="approved">
+            <input type="submit" class="dropdown-item text-primary" value="Approved">
+          </form>
+
+          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+            <input type="text" class="d-none" name="state" value="implemented">
+            <input type="submit" class="dropdown-item text-success" value="Implemented">
+          </form>
+
+          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+            <input type="text" class="d-none" name="state" value="rejected">
+            <input type="submit" class="dropdown-item text-danger" value="Reject">
+          </form>
+      </div>
+  </div>
+  </div>
+</div>

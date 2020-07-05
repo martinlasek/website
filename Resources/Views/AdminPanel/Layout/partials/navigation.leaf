@@ -1,0 +1,10 @@
+<nav class="navbar bg-white">
+    <div class="container">
+        <a class="navbar-brand bg-none" href="/admin">            
+            Admin Panel
+        </a>
+        <div class="menu">
+            <a href="/admin/wish/list?state=pending" class="#if(userInfo.currentSite == "wishList") {active}">Wish List</a>
+        </div>
+    </div>
+</nav>
