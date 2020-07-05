@@ -6,6 +6,6 @@
 //
 
 struct LoginResponse: Encodable {
-  let userInfo: UserInfo
+  let userInfo: MetaInfo
 }
 

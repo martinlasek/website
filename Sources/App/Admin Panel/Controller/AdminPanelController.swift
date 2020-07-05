@@ -39,7 +39,7 @@ final class AdminPanelController {
     return query.all().flatMap { wishList in
       
       let listResponse = try ListWishResponse(
-        userInfo: .create(.wishList, on: req),
+        metaInfo: .create(.wishList, on: req),
         activeTab: listWishRequest.state,
         wishList: wishList.map { try SingleWishResponse.from($0) }
       )

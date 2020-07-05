@@ -6,5 +6,5 @@
 //
 
 struct RegisterResponse: Encodable {
-  let userInfo: UserInfo
+  let userInfo: MetaInfo
 }

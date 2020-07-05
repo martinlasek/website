@@ -6,7 +6,7 @@
 //
 
 struct ListWishResponse: Encodable {
-  let userInfo: UserInfo
+  let metaInfo: MetaInfo
   let activeTab: socialdown_Wish.State?
   let wishList: [SingleWishResponse]
 }
