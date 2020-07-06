@@ -1,6 +1,6 @@
 .wishlist .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(250px, auto);
   column-gap: 10px;
   row-gap: 1em;
@@ -8,4 +8,16 @@
 
 .wishlist .card-header {
   font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .wishlist .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wishlist .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
