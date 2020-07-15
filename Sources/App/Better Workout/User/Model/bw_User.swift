@@ -1,5 +1,5 @@
 //
-//  socialdown_User.swift
+//  bw_User.swift
 //  App
 //
 //  Created by Martin Lasek on 27.04.20.
@@ -8,7 +8,7 @@
 import FluentPostgreSQL
 import Vapor
 
-final class socialdown_User: PostgreSQLModel, ExpressibleByUUID {
+final class bw_User: PostgreSQLModel, ExpressibleByUUID {
   var id: Int?
   var uuid: UUID
   
@@ -27,12 +27,12 @@ final class socialdown_User: PostgreSQLModel, ExpressibleByUUID {
   }
 }
 
-extension socialdown_User: Migration { }
-extension socialdown_User: Content { }
-extension socialdown_User: Parameter { }
+extension bw_User: Migration { }
+extension bw_User: Content { }
+extension bw_User: Parameter { }
 
-extension socialdown_User {
-  var wishList: Children<socialdown_User, socialdown_Wish> {
+extension bw_User {
+  var wishList: Children<bw_User, bw_Wish> {
     return children(\.userId)
   }
 }

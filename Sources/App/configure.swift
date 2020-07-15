@@ -54,7 +54,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 
   // Configure migrations
   var migrations = MigrationConfig()
-  // socialdown
+  
+  // MARK: - socialdown
   migrations.add(
     model: socialdown_User.self,
     database: DatabaseIdentifier<socialdown_User.Database>.psql
@@ -72,7 +73,25 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     database: DatabaseIdentifier<socialdown_UserWish.Database>.psql
   )
   
-  // admin panel
+  // MARK: - Better Workout
+   migrations.add(
+     model: bw_User.self,
+     database: DatabaseIdentifier<bw_User.Database>.psql
+   )
+   migrations.add(
+     migration: bw_Wish.State.self,
+     database: DatabaseIdentifier<bw_Wish.State.Database>.psql
+   )
+   migrations.add(
+     model: bw_Wish.self,
+     database: DatabaseIdentifier<bw_Wish.Database>.psql
+   )
+   migrations.add(
+     model: bw_UserWish.self,
+     database: DatabaseIdentifier<bw_UserWish.Database>.psql
+   )
+  
+  // MARK: - Admin Panel
   migrations.add(
     model: AdminUser.self,
     database: DatabaseIdentifier<AdminUser.Database>.psql

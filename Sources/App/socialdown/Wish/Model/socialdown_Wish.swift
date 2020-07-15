@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  socialdown_Wish.swift
 //  App
 //
 //  Created by Martin Lasek on 27.04.20.

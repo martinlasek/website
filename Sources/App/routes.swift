@@ -41,13 +41,21 @@ public func routes(_ router: Router) throws {
     protectedAdminRouter.post("wish", socialdown_Wish.parameter, "change-state", use: adminPanelController.changeState)
   }
   
-  // MARK: - Social Down
+  // MARK: - socialdown
   
   let socialdownWishController = socialdown_WishController()
   let socialdownAPI = router.grouped("api", "socialdown")
   socialdownAPI.get("wish/list", use: socialdownWishController.list)
   socialdownAPI.post("wish/create", use: socialdownWishController.create)
   socialdownAPI.post("wish", socialdown_Wish.parameter, "vote", use: socialdownWishController.vote)
+  
+  // MARK: - Better Workout
+  
+  let bwWishController = bw_WishController()
+  let bwAPI = router.grouped("api", "betterworkout")
+  bwAPI.get("wish/list", use: bwWishController.list)
+  bwAPI.post("wish/create", use: bwWishController.create)
+  bwAPI.post("wish", bw_Wish.parameter, "vote", use: bwWishController.vote)
 }
 
 struct CurrentSite: Encodable {

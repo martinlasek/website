@@ -1,5 +1,5 @@
 //
-//  socialdown_WishController.swift
+//  bw_WishController.swift
 //  App
 //
 //  Created by Martin Lasek on 05.05.20.
@@ -7,65 +7,65 @@
 
 import Vapor
 
-final class socialdown_WishController {
-  func list(req: Request) throws -> Future<socialdown_ListWishResponse> {
-    return socialdown_Wish.query(on: req)
+final class bw_WishController {
+  func list(req: Request) throws -> Future<bw_ListWishResponse> {
+    return bw_Wish.query(on: req)
       .filter(\.state, .notEqual, .rejected)
       .all()
       .flatMap { wishList in
       
-      return try wishList.map { (wish: socialdown_Wish) -> Future<socialdown_SingleWishResponse> in
+      return try wishList.map { (wish: bw_Wish) -> Future<bw_SingleWishResponse> in
         
-        return try wish.votingUsers.query(on: req).all().flatMap { (votingUsers: [socialdown_User]) in
+        return try wish.votingUsers.query(on: req).all().flatMap { (votingUsers: [bw_User]) in
           
-          return wish.user.query(on: req).first().map { (user: socialdown_User?) in
+          return wish.user.query(on: req).first().map { (user: bw_User?) in
             
             guard let user = user else { throw Abort(.badRequest) }
             
-            return try socialdown_SingleWishResponse(
+            return try bw_SingleWishResponse(
               id: wish.requireID(),
               userUUID: user.uuid,
               title: wish.title,
               description: wish.description,
               state: wish.state,
-              votingUsers: votingUsers.map { socialdown_SingleUserResponse(uuid: $0.uuid) }
+              votingUsers: votingUsers.map { bw_SingleUserResponse(uuid: $0.uuid) }
             )
           }
         }
-      }.flatten(on: req).map { socialdown_ListWishResponse(list: $0) }
+      }.flatten(on: req).map { bw_ListWishResponse(list: $0) }
     }
   }
   
-  func create(req: Request) throws -> Future<socialdown_CreateWishResponse> {
-    return try req.user().flatMap { (user: socialdown_User) in
+  func create(req: Request) throws -> Future<bw_CreateWishResponse> {
+    return try req.user().flatMap { (user: bw_User) in
       return try req
         .content
-        .decode(socialdown_CreateWishRequest.self)
+        .decode(bw_CreateWishRequest.self)
         .map { createWishRequest in
         return (user, createWishRequest)
       }
     }.flatMap { (user, createWishRequest) in
-      return socialdown_Wish
+      return bw_Wish
         .query(on: req)
         .filter(\.title, .equal, createWishRequest.title)
         .first()
         .map { existingWish in
           return (user, createWishRequest, existingWish)
       }
-    }.flatMap { (user, createWishRequest, existingWish) -> Future<socialdown_Wish> in
+    }.flatMap { (user, createWishRequest, existingWish) -> Future<bw_Wish> in
     
       guard existingWish == nil else {
-        throw socialdown_WishError.titleAlreadyExists
+        throw bw_WishError.titleAlreadyExists
       }
       
-      return try socialdown_Wish(
+      return try bw_Wish(
         userId: user.requireID(),
         title: createWishRequest.title,
         description: createWishRequest.description,
         state: createWishRequest.state
       ).save(on: req)
     }.map { savedWish in
-      return socialdown_CreateWishResponse(
+      return bw_CreateWishResponse(
         title: savedWish.title,
         description: savedWish.description,
         state: savedWish.state
@@ -73,29 +73,29 @@ final class socialdown_WishController {
     }
   }
   
-  func vote(req: Request) throws -> Future<socialdown_SingleWishResponse> {
-    return try req.user().flatMap { (user: socialdown_User) in
-      return try req.parameters.next(socialdown_Wish.self).flatMap { wish in
+  func vote(req: Request) throws -> Future<bw_SingleWishResponse> {
+    return try req.user().flatMap { (user: bw_User) in
+      return try req.parameters.next(bw_Wish.self).flatMap { wish in
         return try wish.votingUsers.query(on: req).all().flatMap { votingUsers in
           
           guard wish.userId != (try user.requireID()) else {
-            throw socialdown_WishError.cannotVoteForOwnWish
+            throw bw_WishError.cannotVoteForOwnWish
           }
           
           guard !votingUsers.contains(where: { user.uuid == $0.uuid }) else {
-            throw socialdown_WishError.userAlreadyVoted
+            throw bw_WishError.userAlreadyVoted
           }
           
-          return try socialdown_UserWish(userId: user.requireID(), wishId: wish.requireID()).save(on: req).flatMap { _ in
+          return try bw_UserWish(userId: user.requireID(), wishId: wish.requireID()).save(on: req).flatMap { _ in
             
             return try wish.votingUsers.query(on: req).all().map { newVotingUsers in
-              return try socialdown_SingleWishResponse(
+              return try bw_SingleWishResponse(
                 id: wish.requireID(),
                 userUUID: user.uuid,
                 title: wish.title,
                 description: wish.description,
                 state: wish.state,
-                votingUsers: newVotingUsers.map { socialdown_SingleUserResponse(uuid: $0.uuid) }
+                votingUsers: newVotingUsers.map { bw_SingleUserResponse(uuid: $0.uuid) }
               )
             }
           }
