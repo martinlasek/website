@@ -49,7 +49,8 @@ public func routes(_ router: Router) throws {
     
     // MARK: - betterworkout (web)
     
-    protectedAdminRouter.get("socialdown/wish/list", use: socialdownWEBWishController.renderWishList)
+    protectedAdminRouter.get("betterworkout/wish/list", use: betterworkoutWEBWishController.renderWishList)
+    protectedAdminRouter.post("betterworkout/wish", bw_Wish.parameter, "change-state", use: betterworkoutWEBWishController.changeState)
   }
   
   // MARK: - socialdown (api)
