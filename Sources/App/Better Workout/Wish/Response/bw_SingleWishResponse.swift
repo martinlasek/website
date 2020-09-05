@@ -12,6 +12,6 @@ struct bw_SingleWishResponse: Content {
   let userUUID: UUID
   let title: String
   let description: String?
-  let state: bw_Wish.State
+  let state: WishState
   let votingUsers: [bw_SingleUserResponse]
 }

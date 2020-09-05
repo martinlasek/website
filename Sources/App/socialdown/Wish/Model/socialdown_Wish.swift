@@ -8,15 +8,15 @@
 import FluentPostgreSQL
 import Vapor
 
-final class socialdown_Wish: PostgreSQLModel {
+final class socialdown_Wish: WishModel {
   var id: Int?
   let userId: socialdown_User.ID
   
   let title: String
   var description: String
-  var state: State
+  var state: WishState
   
-  init(id: Int? = nil, userId: socialdown_User.ID, title: String, description: String, state: State) {
+  init(id: Int? = nil, userId: socialdown_User.ID, title: String, description: String, state: WishState) {
     self.id = id
     self.userId = userId
     self.title = title
@@ -24,6 +24,7 @@ final class socialdown_Wish: PostgreSQLModel {
     self.state = state
   }
   
+  /// ⚠️ DEPRECATED! Use `WishState` instead.
   enum State: String, PostgreSQLEnum, PostgreSQLMigration, CaseIterable {    
     case pending
     case approved

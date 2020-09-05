@@ -27,7 +27,8 @@ public func routes(_ router: Router) throws {
   // MARK: - Admin Panel
   
   let adminPanelController = AdminPanelController()
-  let socialdownWEBWishController = socialdown_web_WishController()
+  let socialdownWEBWishController = sd_web_WishController()
+  let betterworkoutWEBWishController = bw_web_WishController()
   
   router.group("admin") { adminRoute in
     adminRoute.get("register", use: adminPanelController.renderRegister)
@@ -38,16 +39,22 @@ public func routes(_ router: Router) throws {
     authSessionRouter.post("login", use: adminPanelController.login)
     authSessionRouter.get("logout", use: adminPanelController.logout)
 
-    // MARK: - socialdown (web)
     let protectedAdminRouter = authSessionRouter.grouped(RedirectMiddleware<AdminUser>(path: "/admin/login"))
     protectedAdminRouter.get("/", use: adminPanelController.renderIndex)
-    protectedAdminRouter.get("wish/list", use: socialdownWEBWishController.renderWishList)
-    protectedAdminRouter.post("wish", socialdown_Wish.parameter, "change-state", use: socialdownWEBWishController.changeState)
+    
+    // MARK: - socialdown (web)
+    
+    protectedAdminRouter.get("socialdown/wish/list", use: socialdownWEBWishController.renderWishList)
+    protectedAdminRouter.post("socialdown/wish", socialdown_Wish.parameter, "change-state", use: socialdownWEBWishController.changeState)
+    
+    // MARK: - betterworkout (web)
+    
+    protectedAdminRouter.get("socialdown/wish/list", use: socialdownWEBWishController.renderWishList)
   }
   
   // MARK: - socialdown (api)
   
-  let socialdownAPIWishController = socialdown_api_WishController()
+  let socialdownAPIWishController = sd_api_WishController()
   let socialdownAPI = router.grouped("api", "socialdown")
   socialdownAPI.get("wish/list", use: socialdownAPIWishController.list)
   socialdownAPI.post("wish/create", use: socialdownAPIWishController.create)

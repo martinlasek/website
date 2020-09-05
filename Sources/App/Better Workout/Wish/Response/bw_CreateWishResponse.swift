@@ -10,5 +10,5 @@ import Vapor
 struct bw_CreateWishResponse: Content {
   let title: String
   var description: String?
-  var state: bw_Wish.State
+  var state: WishState
 }

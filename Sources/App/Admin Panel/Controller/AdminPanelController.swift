@@ -13,17 +13,17 @@ final class AdminPanelController {
   // MARK: - View
   
   func renderRegister(req: Request) throws -> Future<View> {
-    let registerResponse = try RegisterResponse(metaInfo: .create(.register, on: req))
+    let registerResponse = try RegisterResponse(metaInfo: .create(.register, .none, on: req))
     return try req.view().render("AdminPanel/register", registerResponse)
   }
   
   func renderLogin(req: Request) throws -> Future<View> {
-    let loginResponse = try LoginResponse(metaInfo: .create(.login, on: req))
+    let loginResponse = try LoginResponse(metaInfo: .create(.login, .none, on: req))
     return try req.view().render("AdminPanel/login", loginResponse)
   }
   
   func renderIndex(req: Request) throws -> Future<View> {
-    let indexResponse = try IndexResponse(metaInfo: .create(.index, on: req))
+    let indexResponse = try IndexResponse(metaInfo: .create(.index, .none, on: req))
     return try req.view().render("AdminPanel/index", indexResponse)
   }
   
@@ -75,7 +75,7 @@ final class AdminPanelController {
           return req.redirect(to: "/admin/login")
         }
         try req.authenticateSession(user)
-        return req.redirect(to: "/admin/wish/list")
+        return req.redirect(to: "/admin/socialdown/wish/list")
       }
     }
   }

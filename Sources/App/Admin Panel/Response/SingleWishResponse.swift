@@ -9,9 +9,9 @@ struct SingleWishResponse: Encodable {
   let id: Int
   let title: String
   let description: String
-  let state: socialdown_Wish.State
+  let state: WishState
   
-  static func from(_ wishModel: socialdown_Wish) throws -> SingleWishResponse {
+  static func from<M: WishModel>(_ wishModel: M) throws -> SingleWishResponse {
     return SingleWishResponse(
       id: try wishModel.requireID(),
       title: wishModel.title,

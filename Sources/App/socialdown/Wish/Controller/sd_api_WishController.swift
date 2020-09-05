@@ -1,5 +1,5 @@
 //
-//  socialdown_api_WishController.swift
+//  sd_api_WishController.swift
 //  App
 //
 //  Created by Martin Lasek on 05.05.20.
@@ -7,7 +7,8 @@
 
 import Vapor
 
-final class socialdown_api_WishController {
+/// SocialDown API WishController
+final class sd_api_WishController {
   func list(req: Request) throws -> Future<socialdown_ListWishResponse> {
     return socialdown_Wish.query(on: req)
       .filter(\.state, .notEqual, .rejected)

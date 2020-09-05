@@ -10,5 +10,5 @@ import Vapor
 struct socialdown_CreateWishRequest: Codable {
   let title: String
   var description: String
-  var state: socialdown_Wish.State = .pending
+  var state: WishState = .pending
 }

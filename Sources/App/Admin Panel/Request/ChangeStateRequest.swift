@@ -6,5 +6,5 @@
 //
 
 struct ChangeStateRequest: Codable {
-  let state: socialdown_Wish.State
+  let state: WishState
 }

@@ -8,31 +8,20 @@
 import FluentPostgreSQL
 import Vapor
 
-final class bw_Wish: PostgreSQLModel {
+final class bw_Wish: WishModel {
   var id: Int?
   let userId: bw_User.ID
   
   let title: String
   var description: String
-  var state: State
+  var state: WishState
   
-  init(id: Int? = nil, userId: bw_User.ID, title: String, description: String, state: State) {
+  init(id: Int? = nil, userId: bw_User.ID, title: String, description: String, state: WishState) {
     self.id = id
     self.userId = userId
     self.title = title
     self.description = description
     self.state = state
-  }
-  
-  enum State: String, PostgreSQLEnum, PostgreSQLMigration, CaseIterable {    
-    case pending
-    case approved
-    case implemented
-    case rejected
-    
-    static func reflectDecoded() throws -> (bw_Wish.State, bw_Wish.State) {
-      return (.pending, .approved)
-    }
   }
 }
 

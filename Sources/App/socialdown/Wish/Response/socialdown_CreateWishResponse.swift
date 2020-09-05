@@ -10,5 +10,5 @@ import Vapor
 struct socialdown_CreateWishResponse: Content {
   let title: String
   var description: String?
-  var state: socialdown_Wish.State
+  var state: WishState
 }

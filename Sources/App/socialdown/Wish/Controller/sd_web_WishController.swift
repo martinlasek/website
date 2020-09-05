@@ -7,8 +7,9 @@
 
 import Vapor
 
+/// SocialDown Web WishController
 final class sd_web_WishController {
-  private let dispatcher = sd_WishListDispatcher()
+  private let dispatcher = sd_WishDispatcher()
   
   func renderWishList(req: Request) throws -> Future<View> {
     let listWishRequest = try req.query.decode(ListWishRequest.self)

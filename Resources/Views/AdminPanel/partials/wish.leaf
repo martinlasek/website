@@ -15,22 +15,22 @@
           Change State
       </button>
       <div class="dropdown-menu btn-block mt-2">
-          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+          <form action="/admin/#(metaInfo.app)/wish/#(wish.id)/change-state" method="POST" class="mb-0">
             <input type="text" class="d-none" name="state" value="pending">
             <input type="submit" class="dropdown-item text-warning" value="Pending">
           </form>
 
-          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+          <form action="/admin/#(metaInfo.app)/wish/#(wish.id)/change-state" method="POST" class="mb-0">
             <input type="text" class="d-none" name="state" value="approved">
             <input type="submit" class="dropdown-item text-primary" value="Approved">
           </form>
 
-          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+          <form action="/admin/#(metaInfo.app)/wish/#(wish.id)/change-state" method="POST" class="mb-0">
             <input type="text" class="d-none" name="state" value="implemented">
             <input type="submit" class="dropdown-item text-success" value="Implemented">
           </form>
 
-          <form action="/admin/wish/#(wish.id)/change-state" method="POST" class="mb-0">
+          <form action="/admin/#(metaInfo.app)/wish/#(wish.id)/change-state" method="POST" class="mb-0">
             <input type="text" class="d-none" name="state" value="rejected">
             <input type="submit" class="dropdown-item text-danger" value="Reject">
           </form>

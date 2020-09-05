@@ -1,4 +1,4 @@
-#set("title") { #(appInfo.title) }
+#set("title") { #(metaInfo.title) }
 
 #set("content") {
 <div class="wishlist">
@@ -12,19 +12,19 @@
 
     <ul class="col-12 nav nav-tabs mb-2">
         <li class="nav-item">
-            <a class="nav-link text-dark" href="/admin/wish/list">All</a>
+            <a class="nav-link text-dark" href="/admin/#(metaInfo.app)/wish/list">All</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-warning #if(activeTab == "pending") { active }" href="/admin/wish/list?state=pending">Pending</a>
+            <a class="nav-link text-warning #if(activeTab == "pending") { active }" href="/admin/#(metaInfo.app)/wish/list?state=pending">Pending</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-primary #if(activeTab == "approved") { active }" href="/admin/wish/list?state=approved">Approved</a>
+            <a class="nav-link text-primary #if(activeTab == "approved") { active }" href="/admin/#(metaInfo.app)/wish/list?state=approved">Approved</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-success #if(activeTab == "implemented") { active }" href="/admin/wish/list?state=implemented">Implemented</a>
+            <a class="nav-link text-success #if(activeTab == "implemented") { active }" href="/admin/#(metaInfo.app)/wish/list?state=implemented">Implemented</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-danger #if(activeTab == "rejected") { active }" href="/admin/wish/list?state=rejected">Rejected</a>
+            <a class="nav-link text-danger #if(activeTab == "rejected") { active }" href="/admin/#(metaInfo.app)/wish/list?state=rejected">Rejected</a>
         </li>
     </ul>
 
