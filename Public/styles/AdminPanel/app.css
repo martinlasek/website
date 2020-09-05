@@ -1,18 +1,17 @@
-/* For Footer */
 html {
   position: relative;
   min-height: 100%;
-  background-color: #eee;
 }
 html body {
   padding-bottom: 60px;
-  background-color: #eee;
 }
 
 body {
 	font-family: Lato !important;
 }
-
+nav.navbar {
+  background-color: #f7f7f7;
+}
 div.quote {
   font-weight: 300;
   font-style: italic;

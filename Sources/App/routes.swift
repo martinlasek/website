@@ -25,7 +25,10 @@ public func routes(_ router: Router) throws {
   }
   
   // MARK: - Admin Panel
+  
   let adminPanelController = AdminPanelController()
+  let socialdownWEBWishController = socialdown_web_WishController()
+  
   router.group("admin") { adminRoute in
     adminRoute.get("register", use: adminPanelController.renderRegister)
     adminRoute.post("register", use: adminPanelController.register)
@@ -35,23 +38,24 @@ public func routes(_ router: Router) throws {
     authSessionRouter.post("login", use: adminPanelController.login)
     authSessionRouter.get("logout", use: adminPanelController.logout)
 
+    // MARK: - socialdown (web)
     let protectedAdminRouter = authSessionRouter.grouped(RedirectMiddleware<AdminUser>(path: "/admin/login"))
     protectedAdminRouter.get("/", use: adminPanelController.renderIndex)
-    protectedAdminRouter.get("wish/list", use: adminPanelController.renderWishList)
-    protectedAdminRouter.post("wish", socialdown_Wish.parameter, "change-state", use: adminPanelController.changeState)
+    protectedAdminRouter.get("wish/list", use: socialdownWEBWishController.renderWishList)
+    protectedAdminRouter.post("wish", socialdown_Wish.parameter, "change-state", use: socialdownWEBWishController.changeState)
   }
   
-  // MARK: - socialdown
+  // MARK: - socialdown (api)
   
-  let socialdownWishController = socialdown_WishController()
+  let socialdownAPIWishController = socialdown_api_WishController()
   let socialdownAPI = router.grouped("api", "socialdown")
-  socialdownAPI.get("wish/list", use: socialdownWishController.list)
-  socialdownAPI.post("wish/create", use: socialdownWishController.create)
-  socialdownAPI.post("wish", socialdown_Wish.parameter, "vote", use: socialdownWishController.vote)
+  socialdownAPI.get("wish/list", use: socialdownAPIWishController.list)
+  socialdownAPI.post("wish/create", use: socialdownAPIWishController.create)
+  socialdownAPI.post("wish", socialdown_Wish.parameter, "vote", use: socialdownAPIWishController.vote)
   
   // MARK: - Better Workout
   
-  let bwWishController = bw_WishController()
+  let bwWishController = bw_api_WishController()
   let bwAPI = router.grouped("api", "betterworkout")
   bwAPI.get("wish/list", use: bwWishController.list)
   bwAPI.post("wish/create", use: bwWishController.create)

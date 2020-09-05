@@ -1,4 +1,4 @@
-<nav class="navbar bg-white">
+<nav class="navbar">
     <div class="container">
         <a class="navbar-brand bg-none" href="/admin">            
             Admin Panel

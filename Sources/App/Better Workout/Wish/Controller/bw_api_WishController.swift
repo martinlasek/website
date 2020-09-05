@@ -1,5 +1,5 @@
 //
-//  bw_WishController.swift
+//  bw_api_WishController.swift
 //  App
 //
 //  Created by Martin Lasek on 05.05.20.
@@ -7,7 +7,7 @@
 
 import Vapor
 
-final class bw_WishController {
+final class bw_api_WishController {
   func list(req: Request) throws -> Future<bw_ListWishResponse> {
     return bw_Wish.query(on: req)
       .filter(\.state, .notEqual, .rejected)
