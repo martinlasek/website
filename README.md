@@ -7,5 +7,5 @@
     website to learn more about my projects and skills
 </p>
 <p align="center">
-    <img src="index.png" width="100%" alt="wwww.martinlasek.com">
+    <img src="index-min.png" width="100%" alt="wwww.martinlasek.com">
 </p>
