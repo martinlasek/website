@@ -28,6 +28,11 @@
     background: linear-gradient(to bottom right, #F46978, #F9B98E);
 }
 
+.project.violet {
+  background: linear-gradient(to bottom right, #e754f9, #0477da);
+}
+
+
 /** Image Frame **/
 
 @media screen and (min-width: 576px) {

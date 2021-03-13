@@ -11,9 +11,9 @@
       
       <div class="d-flex flex-column text-center justify-content-center m-t-15 m-b-30">
         <div class="card b-radius-8 p-4 b-none">
-          <div class="text-gradient-blue">
+          <div class="text-white">
             Martin J. Lasek <br />
-            <a href="mailto:heylasek@gmail.com" class="email">heylasek@gmail.com</a>
+            <a href="mailto:heylasek@gmail.com" class="mt-3 btn btn-light btn-shadow text-primary">heylasek@gmail.com</a>
           </div>
         </div>
       </div>

@@ -45,10 +45,20 @@ struct Project: Encodable {
     case graphit
     case orange
     case peach
+    case violet
   }
   
   static func all() -> [Project] {
     return [
+      Project(
+        kind: .iosPortrait,
+        bgColor: .violet,
+        name: "Better Workout",
+        description: "Work out without any equipment! Try pre-defined workouts or create your own to become the best version of yourself!",
+        url: "https://apps.apple.com/at/app/better-workout/id1523173452#?platform=iphone",
+        imageUrl: "/images/projects/better-workout-1.png",
+        secondImageUrl: "/images/projects/better-workout-2.png"
+      ),
       Project(
         kind: .iosLandscape,
         bgColor: .red,

@@ -1,8 +1,13 @@
+.imprint-site h1 {
+  color: #1b2938;
+  font-size: 32px;
+}
+
 .imprint-site .card {
     background-color: #1b2938;
 }
 
-.imprint-site h1 {
-    color: #1b2938;
-    font-size: 32px;
+.imprint-site .email {
+  color: #ffffff;
+  text-decoration: underline;
 }
