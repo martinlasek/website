@@ -29,27 +29,17 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
   config.prefer(MemoryKeyedCache.self, for: KeyedCache.self)
   
   // Database
-  if
-    let url = Environment.get("DATABASE_URL"),
-    let postgresqlConfig = PostgreSQLDatabaseConfig(url: url)
-  {
+  let envURL = Environment.get("DATABASE_URL")
+  let altURL = "postgres://website@localhost:5432/website"
+  let transport: PostgreSQLConnection.TransportConfig = env == .development ? .cleartext : .unverifiedTLS
+  
+  if let postgresqlConfig = PostgreSQLDatabaseConfig(url: envURL ?? altURL, transport: transport) {
     services.register(postgresqlConfig)
     let postgres = PostgreSQLDatabase(config: postgresqlConfig)
     
     var databases = DatabasesConfig()
     databases.add(database: postgres, as: .psql)
     services.register(databases)
-  } else {
-    // user = website, database = website
-    let url = "postgres://website@localhost:5432/website"
-    if let postgresqlConfig = PostgreSQLDatabaseConfig(url: url) {
-      services.register(postgresqlConfig)
-      let postgres = PostgreSQLDatabase(config: postgresqlConfig)
-      
-      var databases = DatabasesConfig()
-      databases.add(database: postgres, as: .psql)
-      services.register(databases)
-    }
   }
 
   // Configure migrations
