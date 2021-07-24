@@ -7,6 +7,10 @@
     padding: 30px 0;
 }
 
+.project:first-child {
+    padding: 60px 0;
+}
+
 .project h3 {
     font-size: 1.25rem;
     font-weight: 300;
