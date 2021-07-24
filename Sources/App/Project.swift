@@ -1,5 +1,5 @@
 //
-//  ProjectList.swift
+//  Project.swift
 //  App
 //
 //  Created by Martin Lasek on 15.04.19.
@@ -15,6 +15,13 @@ struct Project: Encodable {
   
   let imageUrl: String
   let secondImageUrl: String?
+
+  let theme: Theme
+    
+  enum Theme: String, Encodable {
+    case dark
+    case light
+  }
   
   init(
     kind: Kind,
@@ -23,7 +30,8 @@ struct Project: Encodable {
     description: String,
     url: String,
     imageUrl: String,
-    secondImageUrl: String? = nil
+    secondImageUrl: String? = nil,
+    theme: Theme = .light
   ) {
     self.kind = kind
     self.bgColor = bgColor
@@ -32,6 +40,7 @@ struct Project: Encodable {
     self.url = url
     self.imageUrl = imageUrl
     self.secondImageUrl = secondImageUrl
+    self.theme = theme
   }
   
   enum Kind: String, Encodable {
@@ -46,10 +55,21 @@ struct Project: Encodable {
     case orange
     case peach
     case violet
+    case green
   }
   
   static func all() -> [Project] {
     return [
+      Project(
+        kind: .iosPortrait,
+        bgColor: .green,
+        name: "mi-cuit",
+        description: "See what the best restaurants in Paris are serving for lunch today. At 11 am every day, menus go live.",
+        url: "https://apps.apple.com/us/app/mi-cuit/id1510431386",
+        imageUrl: "/images/projects/mi-cuit-1.gif",
+        secondImageUrl: "/images/projects/mi-cuit-2.png",
+        theme: .dark
+      ),
       Project(
         kind: .iosPortrait,
         bgColor: .violet,
@@ -83,15 +103,7 @@ struct Project: Encodable {
         description: "Conference Website to buy tickets, read about the talks and see the date and schedule.",
         url: "https://www.serversideswift.info",
         imageUrl: "/images/projects/serversideswift.png"
-      ),
-      Project(
-        kind: .web,
-        bgColor: .peach,
-        name: "VaporBerlin",
-        description: "Meetup Website to vote on topics to influence what talks should be presented on the next meetup.",
-        url: "http://vapor.berlin",
-        imageUrl: "/images/projects/vaporberlin.png"
-      ),
+      )
     ]
   }
 }

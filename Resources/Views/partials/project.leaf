@@ -35,8 +35,12 @@
                             <img class="image-frame" srcset="/images/projects/layout/landscape.png 1x, /images/projects/layout/landscape@2x.png 2x" src="/images/projects/layout/landscape.png" />
                         }
 
-                        #if(project.kind == "iosPortrait") {
+                        #if(project.kind == "iosPortrait" &&  project.theme == "light") {
                             <img class="image-frame" srcset="/images/projects/layout/double-portrait.png 1x, /images/projects/layout/double-portrait@2x.png 2x" src="/images/projects/layout/double-portrait.png" />
+                        }
+                        
+                        #if(project.kind == "iosPortrait" &&  project.theme == "dark") {
+                            <img class="image-frame" srcset="/images/projects/layout/double-portrait-b.png 1x, /images/projects/layout/double-portrait-b@2x.png 2x" src="/images/projects/layout/double-portrait.png" />
                         }
 
                         #if(project.kind == "web") {

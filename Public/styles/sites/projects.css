@@ -32,6 +32,10 @@
   background: linear-gradient(to bottom right, #e754f9, #0477da);
 }
 
+.project.green {
+  background: linear-gradient(to bottom right, #00ae00, #00bd77)
+}
+
 
 /** Image Frame **/
 
