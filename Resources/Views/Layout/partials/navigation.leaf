@@ -4,9 +4,8 @@
             MARTIN LASEK
         </a>
         <div class="menu">
-            <a href="/projects" class="#if(currentSite.name == "projects") {active}">Portfolio</a>
+            <a href="/projects" class="#if(currentSite.name == "projects") {active}">Projects</a>
             <a href="https://www.youtube.com/c/martinlasek" target="_blank" class="video">Youtube</a>
-            <a href="/shop" class="shop #if(currentSite.name == "shop") {active}">Shop</a>
         </div>
     </div>
 </nav>
