@@ -19,9 +19,8 @@ public func routes(_ router: Router) throws {
     return try req.view().render("imprint", context)
   }
   
-  router.get("/shop") { req -> Future<View> in
-    let context = ViewData.Shop(currentSite: CurrentSite("shop"))
-    return try req.view().render("shop", context)
+  router.get("/terms-of-use-privacy-policy") { req -> Future<View> in
+    return try req.view().render("terms-of-use-privacy-policy")
   }
   
   // MARK: - Admin Panel
