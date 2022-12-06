@@ -5,11 +5,11 @@
 
   <div class="container">
     <div class="row justify-content-center">
-      <h1 class="col-12 text-center pt-5 pb-3">
+      <h1 class="col-12 text-center pt-5 pb-3 text-black" style="color: black;">
         <strong>Terms of Service & Privacy Policy</strong>
       </h1>
       
-      <p>
+      <p style="color: black;" class="text-black">
       By using “Better Workout”, you agree to our Terms of Use and our Privacy Policy. I invite you to fully read this page and make sure you understand its content prior to using “Better Workout”.
       
       Martin Lasek operates the website and the “Better Workout” mobile application (the “Service”) (name on the AppStore subject to change for search and discovery purposes).
