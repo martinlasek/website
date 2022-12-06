@@ -19,8 +19,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 
   /// Register middleware
   var middlewares = MiddlewareConfig()
-  middlewares.use(FileMiddleware.self)
   middlewares.use(ErrorMiddleware.self)
+  middlewares.use(FileMiddleware.self)
   middlewares.use(SessionsMiddleware.self)
   services.register(middlewares)
   
