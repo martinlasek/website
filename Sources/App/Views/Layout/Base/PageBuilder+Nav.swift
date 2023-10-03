@@ -24,6 +24,7 @@ extension PageBuilder {
 
                                     .a(attributes: [.class("btn btn-sm btn-light"), .href("/tutorials")], "Tutorials"),
                                     .a(attributes: [.class("btn btn-sm btn-light"), .href("/projects")], "Projects"),
+                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/sponsorship")], "Sponsorship"),
                                     .a(attributes: [.class("btn btn-sm btn-light"), .href("/about")], "About")
                                 )
                             )
