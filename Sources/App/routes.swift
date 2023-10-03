@@ -1,11 +1,15 @@
 import Vapor
+import Leaf
+import HtmlVaporSupport
 
-func routes(_ app: Application) throws {
-    app.get { req async in
-        "It works!"
-    }
-
-    app.get("hello") { req async -> String in
-        "Hello, world!"
+func routes(_ app: Vapor.Application) throws {
+    app.get { req throws -> Node in
+        PageBuilder.base {
+            Node.p("It's dangerous to go alone, take this!")
+        }
     }
 }
+
+
+
+

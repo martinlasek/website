@@ -1,0 +1,15 @@
+<div class="row justify-content-center align-items-center">
+    <div class="col-auto p-0">
+        <a href="/#import("link")">
+            <img src="/images/wishkit-logo.png" style="width: 30px; height: 30px; filter: drop-shadow(0px 0px 3px #35d180);" />
+        </a>
+    </div>
+
+    <div class="col-auto d-flex ps-2 pe-0">
+        <h1 class="fs-5 font-medium m-0">
+            <a href="/#import("link")" class="text-dark decoration-none">
+                WishKit
+            </a>
+        </h1>
+    </div>
+</div>

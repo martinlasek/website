@@ -1,0 +1,7 @@
+#extend("Layout/base"):
+    #export("content"):
+        <div class="container">
+            Content Articles
+        </div>
+    #endexport
+#endextend

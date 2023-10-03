@@ -1,0 +1,2 @@
+#extend("Layout/Partials/navigation"):#endextend
+#import("content")

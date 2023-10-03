@@ -1,0 +1,20 @@
+.navigation {
+    background: rgb(255,133,49);
+    background: linear-gradient(to bottom, #fa893f, #f83627);
+}
+
+.navigation a {
+    color: #fa893f;
+    border: none;
+}
+
+.navigation a:hover {
+    background-color: #fa893f;
+    color: #ffffff;
+}
+
+.navigation .btn-group {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 #dd1300;
+}
