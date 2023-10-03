@@ -75,6 +75,11 @@ extension PageBuilder {
             .link(attributes: [
                 .href("/styles/main.css"),
                 .rel(.stylesheet)
+            ]),
+
+            .link(attributes: [
+                .href("/styles/swift-syntax.css"),
+                .rel(.stylesheet)
             ])
         )
     }

@@ -1,45 +1,9 @@
 //
-//  Layout.swift
+//  PageBuilder.swift
 //  website
 //
 //  Created by Martin Lasek on 10/3/23.
 //  Copyright © 2023 Martin Lasek. All rights reserved.
 //
 
-import HtmlVaporSupport
-
-struct PageBuilder {
-    static func base(canonUrlPath: String = "", _ content: () -> Node) -> Node {
-        return Node.html(attributes: [.lang(.en), .data("bs-theme", "dark")],
-            head(canonUrlPath: canonUrlPath),
-            .body(
-                navigation(),
-                .div(attributes: [.class("container pt-3 pb-3")],
-                     content()
-                )
-            )
-        )
-    }
-
-    static func navigation(_ content: (() -> Node)? = nil) -> Node {
-        .nav(attributes: [.class("p-4 navbar navbar-expand navigation")],
-             .div(attributes: [.class("container-fluid")],
-                  .div(attributes: [.class("w-100 d-flex justify-content-center flex-column text-center")],
-                       .p(attributes: [.class("h1 fw-bold text-light")], "Martin Lasek"),
-                       .p(attributes: [.class("text-light")], "Swift Tutorials, Articles and iOS Tips and Tricks"),
-
-                        .ul(attributes: [.class("navbar-nav m-auto")],
-                            .li(attributes: [.class("nav-item")],
-                                .div(attributes: [.class("btn-group"), .role(.init(rawValue: "role")), .ariaLabel("navigation")],
-                                     
-                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/articles")], "Articles"),
-                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/projects")], "Projects"),
-                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/about")], "About")
-                                )
-                            )
-                        )
-                  )
-             )
-        )
-    }
-}
+struct PageBuilder { }
