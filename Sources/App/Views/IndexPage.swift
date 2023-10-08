@@ -9,9 +9,5 @@
 import HtmlVaporSupport
 
 struct IndexPage {
-    static func create(with latestArticle: Node) -> Node {
-        PageBuilder.base {
-            latestArticle
-        }
-    }
+    
 }

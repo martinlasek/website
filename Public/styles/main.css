@@ -1,22 +1,28 @@
 .navigation {
     background: rgb(255,133,49);
-    background: linear-gradient(to bottom, #fa893f, #f83627);
+    background: linear-gradient(to bottom, #e50045, #9d002f);
 }
 
 .navigation a {
-    color: #fa893f;
+    color: #e50045;
     border: none;
+    margin-right: 2px;
 }
 
-.navigation a:hover {
-    background-color: #fa893f;
+.navigation a:last-child {
+    margin: 0;
+}
+
+.navigation a:hover, .navigation a.active {
+    background-color: #e50045;
     color: #ffffff;
 }
 
 .navigation .btn-group {
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 5px 0 #dd1300;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
 }
 
 .container {
@@ -24,7 +30,11 @@
 }
 
 .article {
-/*    background-color: #121212;*/
     border-radius: 12px;
-    padding: 15px;
+    padding: 15px 20px;
+}
+
+.article h1 {
+    font-size: 24px;
+    font-weight: bold;
 }

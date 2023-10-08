@@ -8,8 +8,33 @@
 
 import HtmlVaporSupport
 
+enum NavLink: CaseIterable {
+    case tutorials
+    case projects
+    case sponsorship
+    case about
+
+    var description: String{
+        switch self {
+        case .tutorials: "Tutorials"
+        case .projects: "Projects"
+        case .sponsorship: "Sponsorship"
+        case .about: "About"
+        }
+    }
+
+    var href: String {
+        switch self {
+        case .tutorials: "tutorials"
+        case .projects: "projects"
+        case .sponsorship: "sponsorship"
+        case .about: "about"
+        }
+    }
+}
+
 extension PageBuilder {
-    static func navigation(_ content: (() -> Node)? = nil) -> Node {
+    static func navigation(navLink: NavLink = .tutorials, _ content: (() -> Node)? = nil) -> Node {
         .nav(attributes: [.class("p-4 navbar navbar-expand navigation")],
              .div(attributes: [.class("container-fluid")],
                   .div(attributes: [.class("w-100 d-flex justify-content-center flex-column text-center")],
@@ -21,11 +46,14 @@ extension PageBuilder {
                         .ul(attributes: [.class("navbar-nav m-auto")],
                             .li(attributes: [.class("nav-item")],
                                 .div(attributes: [.class("btn-group"), .role(.init(rawValue: "role")), .ariaLabel("navigation")],
-
-                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/tutorials")], "Tutorials"),
-                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/projects")], "Projects"),
-                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/sponsorship")], "Sponsorship"),
-                                    .a(attributes: [.class("btn btn-sm btn-light"), .href("/about")], "About")
+                                    .fragment(
+                                        NavLink.allCases.map { link in
+                                            .a(
+                                                attributes: [.class("btn btn-sm btn-light \(link == navLink ? "active" : "")"), .href("/\(link.href)")],
+                                               .text(link.description)
+                                            )
+                                        }
+                                    )
                                 )
                             )
                         )

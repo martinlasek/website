@@ -9,11 +9,28 @@
 import HtmlVaporSupport
 
 struct Article {
-    static var latest: Node {
-        return all.first ?? Node()
+    let headline: String
+    let subheadline: String
+    let slug: String
+    let published_at: String // 8 Oct 2023
+
+    let node: () -> Node
+
+    static var latest: Article {
+        let lastIndex = all.count - 1
+        return all[lastIndex]
     }
 
-    static var all: [Node] = [
+    static var all: [Article] = [
         Article.a_001_UIHostingControllerAndSafeArea
     ]
+
+    static func excerpt(for article: Article) -> Node {
+        return
+            .div(attributes: [.class("article bg-body-tertiary")],
+                 .h1(.text(article.headline)),
+                 .p(attributes: [.class("text-muted mb-1 small")], "Published on \(article.published_at)"),
+                 .p(.text(article.subheadline))
+            )
+    }
 }
