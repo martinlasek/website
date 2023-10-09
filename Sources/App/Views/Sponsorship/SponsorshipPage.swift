@@ -20,7 +20,7 @@ struct SponsorshipPage {
                 """),
 
                 .div(attributes: [.class("text-center pb-3")],
-                     .a(attributes: [.class("btn btn-md ml-button")], .text("Become A Sponsor"))
+                     .a(attributes: [.class("btn btn-md ml-button"), .mailto("heylasek@gmail.com")], .text("Become A Sponsor"))
                 ),
 
                  // MARK: - Details
