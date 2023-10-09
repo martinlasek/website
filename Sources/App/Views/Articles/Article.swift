@@ -28,9 +28,11 @@ struct Article {
     static func excerpt(for article: Article) -> Node {
         return
             .div(attributes: [.class("article bg-body-tertiary")],
-                 .h1(.text(article.headline)),
-                 .p(attributes: [.class("text-muted mb-1 small")], "Published on \(article.published_at)"),
-                 .p(.text(article.subheadline))
+                 .a(attributes: [.href("/tutorials/\(article.slug)")],
+                    .h1(.text(article.headline)),
+                    .p(attributes: [.class("text-muted mb-1 small")], "Published on \(article.published_at)"),
+                    .p(attributes: [.class("mb-0")], .text(article.subheadline))
+                 )
             )
     }
 }

@@ -12,4 +12,10 @@ func routes(_ app: Vapor.Application) throws {
             .fragment(Article.all.map(Article.excerpt))
         }
     }
+
+    for article in Article.all {
+        app.get("\(NavLink.tutorials.href)", "\(article.slug)") { req throws -> Node in
+            PageBuilder.base(canonUrlPath: "tutorials/\(article.slug)", article.node)
+        }
+    }
 }

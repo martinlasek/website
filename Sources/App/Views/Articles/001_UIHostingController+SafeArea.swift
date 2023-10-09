@@ -24,7 +24,7 @@ extension Article {
             
             node: {
                 .div(attributes: [.class("article bg-body-tertiary")],
-                     .h1(.init(stringLiteral: headline)),
+                     .h1(.text(headline)),
 
                      .pre(
                         .code(
@@ -49,9 +49,7 @@ extension Article {
                         )
                      ),
 
-                    .p(
-                        "Here’s how you can ignore the safeArea when using a UIHostingController."
-                    )
+                    .p("Here’s how you can ignore the safeArea when using a UIHostingController.")
                 )
             }
         )
