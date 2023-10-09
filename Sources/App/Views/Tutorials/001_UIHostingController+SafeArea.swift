@@ -15,6 +15,7 @@ extension Article {
         let headline = "UIHostingController + SafeArea"
         let subheadline = "How to ignore the SafeArea when using a UIHostingController."
         let slug = "uihostingcontroller-and-safearea"
+        let tweetLink = "https://twitter.com/intent/tweet?via=martinlasek&text=» \(headline.urlEncoded()) «&url=https://www.martinlasek.com/articles/\(slug)"
 
         return Article(
             headline: headline,
@@ -73,9 +74,29 @@ extension Article {
                           .img(src: Article.Image.a_001_the_solution.imgSrc, alt: "", attributes: [.class("w-100")])
                      ),
 
-                    .p("That’s it. No private _disableSafeArea apis, no hacky extensions. Pure SwiftUI ✨")
+                    .p("That's it! You've successfully expanded your view beyond the safe area!"),
+
+                    .p("I am happy you read my article and hope you found it useful! If you have any suggestions of any kind don't hesitate let me know. I’d love to hear from you! "),
+
+                    .br,
+                     
+                    .div(attributes: [.class("pb-3")],
+                         .a(attributes: [.href(tweetLink), .target(.blank), .class("share")],
+                            .i(attributes: [.class("bi bi-twitter me-2")]),
+                            .text("Share on Twitter")
+                         )
+                    )
                 )
             }
         )
     }()
+}
+
+public extension String {
+    func urlEncoded() -> String {
+        addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)?
+            .replacingOccurrences(of: "&", with: "%26")
+            .replacingOccurrences(of: "+", with: "%2B")
+        ?? ""
+    }
 }

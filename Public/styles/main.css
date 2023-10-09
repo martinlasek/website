@@ -1,3 +1,13 @@
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .navigation {
     background: rgb(255,133,49);
     background: linear-gradient(to bottom, #e50045, #9d002f);
@@ -34,17 +44,6 @@
     padding: 15px 20px;
 }
 
-.article h1 {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.article h2 {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-
 .article a {
     text-decoration: none;
     color: var(--bs-body-color);
@@ -62,4 +61,22 @@
     background-color: #1A1721;
     margin-left: -5px;
 }
+
+.article code {
+    font-size: var(--bs-body-font-size);
+}
+
+.article a.share {
+    background-color: #e50e45;
+    padding: 5px 8px;
+    border-radius: 8px;
+}
+
+.article a.share:hover {
+    filter: brightness(120%);
+}
+
+.c-card {
+    border-radius: 12px;
+    padding: 15px 20px;
 }

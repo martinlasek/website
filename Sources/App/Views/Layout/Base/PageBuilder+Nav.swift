@@ -8,11 +8,21 @@
 
 import HtmlVaporSupport
 
-enum NavLink: CaseIterable {
+enum NavLink: CaseIterable, Equatable {
+
     case tutorials
     case projects
     case sponsorship
     case about
+
+    static var allCases: [NavLink] {
+        return [
+            .tutorials,
+            .projects,
+            .sponsorship,
+            .about
+        ]
+    }
 
     var description: String{
         switch self {
@@ -34,7 +44,7 @@ enum NavLink: CaseIterable {
 }
 
 extension PageBuilder {
-    static func navigation(navLink: NavLink = .tutorials, _ content: (() -> Node)? = nil) -> Node {
+    static func navigation(navLink: NavLink, _ content: (() -> Node)? = nil) -> Node {
         .nav(attributes: [.class("p-4 navbar navbar-expand navigation")],
              .div(attributes: [.class("container-fluid")],
                   .div(attributes: [.class("w-100 d-flex justify-content-center flex-column text-center")],

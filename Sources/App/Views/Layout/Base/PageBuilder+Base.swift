@@ -9,13 +9,18 @@
 import HtmlVaporSupport
 
 extension PageBuilder {
-    static func base(canonUrlPath: String = "", _ content: () -> Node) -> Node {
+    static func base(canonUrlPath: NavLink, _ content: () -> Node) -> Node {
         return Node.html(attributes: [.lang(.en), .data("bs-theme", "dark")],
-            head(canonUrlPath: canonUrlPath),
+             head(canonUrlPath: canonUrlPath.href),
             .body(
-                navigation(),
+                navigation(navLink: canonUrlPath),
                 .div(attributes: [.class("container pt-4 pb-3")],
                      content()
+                ),
+                .footer(attributes: [.class("footer")],
+                        .span(attributes: [.class("text-center small d-block text-muted pt-5 pb-3")],
+                              .text("Copyright © 2023 Martin Lasek. All Rights Reserved.")
+                        )
                 )
             )
         )
