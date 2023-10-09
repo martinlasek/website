@@ -8,6 +8,10 @@ h2 {
     font-weight: bold;
 }
 
+.text-ml-red {
+    color: #e50045;
+}
+
 .navigation {
     background: rgb(255,133,49);
     background: linear-gradient(to bottom, #e50045, #9d002f);
@@ -79,4 +83,38 @@ h2 {
 .c-card {
     border-radius: 12px;
     padding: 15px 20px;
+}
+
+.ml-button {
+    background-color: #e50e45;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.ml-button:hover {
+    background-color: #e50e45;
+    filter: brightness(120%);
+}
+
+a.ml-link {
+    color: #e50e45;
+    text-decoration: none;
+}
+
+a.ml-link:hover {
+    color: #e50e45;
+    filter: brightness(120%);
+}
+
+.sponsor {
+    border: 3px solid #e50e45;
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sponsor img {
+    max-width: 200px;
+    max-height: 50px;
 }

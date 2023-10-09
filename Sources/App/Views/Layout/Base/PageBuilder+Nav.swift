@@ -24,6 +24,15 @@ enum NavLink: CaseIterable, Equatable {
         ]
     }
 
+    var id: String {
+        switch self {
+        case .tutorials: "tutorials"
+        case .projects: "projects"
+        case .sponsorship: "sponsorship"
+        case .about: "about"
+        }
+    }
+
     var description: String{
         switch self {
         case .tutorials: "Tutorials"

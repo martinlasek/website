@@ -9,12 +9,12 @@
 import HtmlVaporSupport
 
 extension PageBuilder {
-    static func base(canonUrlPath: NavLink, _ content: () -> Node) -> Node {
+    static func base(navLink: NavLink, _ content: () -> Node) -> Node {
         return Node.html(attributes: [.lang(.en), .data("bs-theme", "dark")],
-             head(canonUrlPath: canonUrlPath.href),
+             head(canonUrlPath: navLink.href),
             .body(
-                navigation(navLink: canonUrlPath),
-                .div(attributes: [.class("container pt-4 pb-3")],
+                navigation(navLink: navLink),
+                .div(attributes: [.class("\(navLink.id) container pt-4 pb-3")],
                      content()
                 ),
                 .footer(attributes: [.class("footer")],
