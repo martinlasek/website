@@ -26,7 +26,7 @@ struct AboutPage {
                 ),
 
                 .p("""
-                    I hope you will find value in the value I create. Don't hesitate to reach out anytime if you have any questions or feedback. Your input is always appreciated!
+                    I hope you will find value in the content I create. Don't hesitate to reach out anytime if you have any questions or feedback. Your input is always appreciated!
                 """)
             )
         }

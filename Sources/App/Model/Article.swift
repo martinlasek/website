@@ -30,7 +30,7 @@ struct Article {
             .div(attributes: [.class("article bg-body-tertiary")],
                  .a(attributes: [.href("/tutorials/\(article.slug)")],
                     .h1(.text(article.headline)),
-                    .p(attributes: [.class("text-muted mb-1 small")], "Published on \(article.published_at)"),
+                    .p(attributes: [.class("text-secondary mb-1 small")], "Published on \(article.published_at)"),
                     .p(attributes: [.class("mb-0")], .text(article.subheadline))
                  )
             )

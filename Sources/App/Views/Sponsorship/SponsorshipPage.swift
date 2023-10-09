@@ -47,14 +47,7 @@ struct SponsorshipPage {
 
                 .h2(attributes: [.class("pb-2")], "Example of an advertisement"),
 
-                .sponsor(
-                    logoUrl: "https://www.wishkit.io/images/wishkit-logo.png",
-                    websiteLink: "https://www.wishkit.io?ref=martinlasek"
-                ) {
-                    "WishKit allows you to build better products with customer feedback. Capture and analyze product feedback and feature requests in one place."
-                },
-
-                .br,
+                .sponsor(.example),
 
                 .p("Thank you for considering supporting my work and allowing me to continue providing value to the Swift community!")
             )

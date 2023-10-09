@@ -16,18 +16,23 @@ extension Article {
         let subheadline = "How to ignore the SafeArea when using a UIHostingController."
         let slug = "uihostingcontroller-and-safearea"
         let tweetLink = "https://twitter.com/intent/tweet?via=martinlasek&text=» \(headline.urlEncoded()) «&url=https://www.martinlasek.com/articles/\(slug)"
+        let publishedAt = "8 Oct 2023"
 
         return Article(
             headline: headline,
             subheadline: subheadline,
             slug: slug,
-            published_at: "8 Oct 2023",
-            
+            published_at: publishedAt,
+
             node: {
                 .div(attributes: [.class("article bg-body-tertiary")],
-                     .h1(attributes: [.class("mb-3")], .text(headline)),
+                     .h1(attributes: [.class("mb-2")], .text(headline)),
+
+                    .p(attributes: [.class("text-secondary small")], "Published on \(publishedAt)"),
 
                     .p("Here’s how you can ignore the safeArea when using a UIHostingController."),
+
+                    .sponsor(.current),
 
                     .h2("The Problem"),
                     .p("You are ignoring the safeArea in your outermost view. But when you present it using UIHostingController — it doesn’t work and your view is not expanding beyond the safe area."),
