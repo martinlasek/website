@@ -14,7 +14,7 @@ extension PageBuilder {
             head(canonUrlPath: canonUrlPath),
             .body(
                 navigation(),
-                .div(attributes: [.class("container pt-3 pb-3")],
+                .div(attributes: [.class("container pt-4 pb-3")],
                      content()
                 )
             )
