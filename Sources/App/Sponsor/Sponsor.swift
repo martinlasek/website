@@ -13,30 +13,20 @@ struct Sponsor {
     let buttonText: String
 
     static var current: Sponsor {
-        Sponsor(
-            logoUrl: "https://www.wishkit.io/images/wishkit-logo.png",
-            websiteLink: "https://www.wishkit.io?ref=martinlasek",
-            description: "Gather customer feedback and prioritize features that convert. WishKit allows you to build better products and best of all - it only takes 100 seconds to integrate.",
-            buttonText: "Try For Free"
-        )
-    }
-
-    static var example: Sponsor {
-        Sponsor(
-            logoUrl: "https://www.wishkit.io/images/wishkit-logo.png",
-            websiteLink: "https://www.wishkit.io?ref=martinlasek",
-            description: "Gather customer feedback and prioritize features that convert. WishKit allows you to build better products and best of all - it only takes 100 seconds to integrate.",
-            buttonText: "Try For Free"
-        )
+        return example
     }
 
     static let all: [Sponsor] = [
         // WishKit
+        example
+    ]
+
+    static var example: Sponsor {
         Sponsor(
-            logoUrl: "https://www.wishkit.io/images/wishkit-logo.png",
+            logoUrl: "/sponsors/wishkit-logo.png",
             websiteLink: "https://www.wishkit.io?ref=martinlasek",
             description: "Gather customer feedback and prioritize features that convert. WishKit allows you to build better products and best of all - it only takes 100 seconds to integrate.",
             buttonText: "Try For Free"
         )
-    ]
+    }
 }
