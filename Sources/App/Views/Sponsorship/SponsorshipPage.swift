@@ -27,7 +27,7 @@ struct SponsorshipPage {
 
                 .h2("Details"),
 
-                .p("To keep pricing simple there's one flat weekly rate that covers", .b(" exclusive "), "sponsorship for the site."),
+                .p("To keep pricing simple there's only one flat weekly rate that covers", .b(" exclusive "), "sponsorship for the site."),
                 
                 .p("""
                     You won't be placed alongside other sponsors or part of a rotating schedule. Instead, you'll enjoy exclusive sponsorship for an entire week.
