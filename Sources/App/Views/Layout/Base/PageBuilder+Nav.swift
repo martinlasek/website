@@ -10,14 +10,14 @@ import HtmlVaporSupport
 
 enum NavLink: CaseIterable, Equatable {
 
-    case tutorials
+    case articles
     case projects
     case sponsorship
     case about
 
     static var allCases: [NavLink] {
         return [
-            .tutorials,
+            .articles,
             .projects,
             .sponsorship,
             .about
@@ -26,7 +26,7 @@ enum NavLink: CaseIterable, Equatable {
 
     var id: String {
         switch self {
-        case .tutorials: "tutorials"
+        case .articles: "articles"
         case .projects: "projects"
         case .sponsorship: "sponsorship"
         case .about: "about"
@@ -35,7 +35,7 @@ enum NavLink: CaseIterable, Equatable {
 
     var description: String{
         switch self {
-        case .tutorials: "Tutorials"
+        case .articles: "Articles"
         case .projects: "Projects"
         case .sponsorship: "Sponsorship"
         case .about: "About"
@@ -44,7 +44,7 @@ enum NavLink: CaseIterable, Equatable {
 
     var href: String {
         switch self {
-        case .tutorials: "tutorials"
+        case .articles: "articles"
         case .projects: "projects"
         case .sponsorship: "sponsorship"
         case .about: "about"

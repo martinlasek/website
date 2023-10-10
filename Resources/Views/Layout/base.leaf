@@ -1,9 +1,0 @@
-<!doctype html>
-<html lang="en" data-bs-theme="dark" class="bg-body">
-    #extend("Layout/head"):#endextend
-    <body class="bg-light-gray">
-        #extend("Layout/Partials/content"):#endextend
-
-        #extend("Layout/footer"):#endextend
-    </body>
-</html>

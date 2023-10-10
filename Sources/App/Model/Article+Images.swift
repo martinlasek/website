@@ -12,7 +12,7 @@ extension Article {
         case a_001_the_solution = "001_the_solution.png"
 
         var imgSrc: String {
-            return "/tutorials/\(self.rawValue)"
+            return "/articles/\(self.rawValue)"
         }
     }
 }
