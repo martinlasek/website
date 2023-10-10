@@ -46,6 +46,7 @@ h2 {
 .article {
     border-radius: 12px;
     padding: 15px 20px;
+    overflow-wrap: break-word;
 }
 
 .article a {

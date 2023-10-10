@@ -1,6 +1,6 @@
 //
 //  Article+002 Article.swift
-//
+//  website
 //
 //  Created by Martin Lasek on 10/10/23.
 //  Copyright © 2023 Martin Lasek. All rights reserved.
@@ -34,7 +34,7 @@ extension Article {
                     .h2("The Solution"),
 
                     .text("""
-                        Select your blue project file in Xcode. Then on the right make sure you selected your project name under "Target" and go to "Signing & Capabilities". Finally under App Sandbox check "Outgoing Connections".
+                        Select your blue project file in Xcode. Then on the right make sure you selected your project name under "Targets" and go to "Signing & Capabilities". Finally under App Sandbox check "Outgoing Connections".
                     """),
 
                     .image(.a_002_xcode_check_outgoing_connection),
