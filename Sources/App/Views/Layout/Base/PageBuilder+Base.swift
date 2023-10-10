@@ -9,6 +9,10 @@
 import HtmlVaporSupport
 
 extension PageBuilder {
+    static func base(navLink: NavLink, _ content: Node) -> Node {
+        return base(navLink: navLink, { content })
+    }
+    
     static func base(navLink: NavLink, _ content: () -> Node) -> Node {
         return Node.html(attributes: [.lang(.en), .data("bs-theme", "dark")],
              head(canonUrlPath: navLink.href),

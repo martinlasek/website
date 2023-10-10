@@ -12,7 +12,7 @@ func routes(_ app: Vapor.Application) throws {
     // MARK: - Article Detail Papges
     for article in Article.all {
         app.get("\(NavLink.articles.href)", "\(article.slug)") { req throws -> Node in
-            PageBuilder.base(navLink: .articles, article.node)
+            PageBuilder.base(navLink: .articles, Article.layout(for: article))
         }
     }
 
