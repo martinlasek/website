@@ -20,7 +20,7 @@ extension Article {
             slug: slug,
             published_at: publishedAt,
             contentList: [
-                .opener("When you create a new macOS project and try make a network request you will notice it won't work right away. Let's fix this!"),
+                .opener("When you create a new macOS project and try to make a network request you will notice it won't work right away. Let's fix that!"),
 
                     .h2("The Problem"),
 
