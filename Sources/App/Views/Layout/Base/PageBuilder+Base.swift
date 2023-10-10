@@ -21,7 +21,17 @@ extension PageBuilder {
                         .span(attributes: [.class("text-center small d-block text-muted pt-5 pb-3")],
                               .text("Copyright © 2023 Martin Lasek. All Rights Reserved.")
                         )
-                )
+                ),
+                .raw("""
+                    <!-- Google tag (gtag.js) -->
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EV6Z0YNYR1"></script>
+                    <script>
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-EV6Z0YNYR1');
+                    </script>
+                """)
             )
         )
     }
