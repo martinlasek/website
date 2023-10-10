@@ -1,3 +1,7 @@
+:root {
+    --ml-primary-text-color: #e20067;
+}
+
 h1 {
     font-size: 28px;
     font-weight: bold;
@@ -9,16 +13,16 @@ h2 {
 }
 
 .text-ml-red {
-    color: #e50045;
+    color: #e20067;
 }
 
 .navigation {
     background: rgb(255,133,49);
-    background: linear-gradient(to bottom, #e50045, #9d002f);
+    background: linear-gradient(to bottom, #e20067, #fb6a6a);
 }
 
 .navigation a {
-    color: #e50045;
+    color: var(--ml-primary-text-color);
     border: none;
     margin-right: 2px;
 }
@@ -28,7 +32,7 @@ h2 {
 }
 
 .navigation a:hover, .navigation a.active {
-    background-color: #e50045;
+    background-color: var(--ml-primary-text-color);
     color: #ffffff;
 }
 
@@ -55,16 +59,7 @@ h2 {
 }
 
 .article a:hover h1 {
-    color: #e50045;
-}
-
-.article .highlight {
-    display: inline-block;
-    padding: 0 4px 2px 4px;
-    border: 1px solid #546AFF;
-    border-radius: 5px;
-    background-color: #1A1721;
-    margin-left: -5px;
+    color: var(--ml-primary-text-color);
 }
 
 .article code {
@@ -72,7 +67,7 @@ h2 {
 }
 
 .article a.share {
-    background-color: #e50e45;
+    background-color: var(--ml-primary-text-color);
     padding: 5px 8px;
     border-radius: 8px;
 }
@@ -87,29 +82,29 @@ h2 {
 }
 
 .ml-button {
-    background-color: #e50e45;
+    background-color: var(--ml-primary-text-color);
     border-radius: 8px;
     color: #ffffff;
     text-decoration: none;
 }
 
 .ml-button:hover {
-    background-color: #e50e45;
+    background-color: var(--ml-primary-text-color);
     filter: brightness(120%);
 }
 
 a.ml-link {
-    color: #e50e45;
+    color: var(--ml-primary-text-color);
     text-decoration: none;
 }
 
 a.ml-link:hover {
-    color: #e50e45;
+    color: var(--ml-primary-text-color);
     filter: brightness(120%);
 }
 
 .sponsor {
-    border: 3px solid #e50e45;
+    border: 3px solid var(--ml-primary-text-color);
     border-radius: 20px;
     color: #ffffff;
     text-decoration: none;
