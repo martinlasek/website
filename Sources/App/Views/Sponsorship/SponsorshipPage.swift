@@ -15,8 +15,8 @@ struct SponsorshipPage {
                  .h1("Sponsorship"),
 
                 .p("""
-                    I have been publishing content since August 2017 and have since been able to establish myself in the iOS and Swift community
-                    If you dould you like to support my work feel free to reach out and share your product with developers all around the world.
+                    I have been publishing content since August 2017 and have since been able to establish myself in the iOS and Swift community.
+                    If you would you like to support my work feel free to reach out and share your product with developers all around the world.
                 """),
 
                 .div(attributes: [.class("text-center pb-3")],
