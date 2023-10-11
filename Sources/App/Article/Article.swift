@@ -47,7 +47,13 @@ struct Article {
         default: ()
         }
 
-        let day = components[0]
+        let dayInt = Int(components[0]) ?? 0
+        var day = components[0]
+        
+        if dayInt < 10 {
+            day = "0\(dayInt)"
+        }
+
         let year = components[2]
 
         return "\(year)-\(month)-\(day)"
