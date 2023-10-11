@@ -60,6 +60,7 @@ h2 {
 
 .article a:hover h1 {
     color: var(--ml-primary-text-color);
+    filter: brightness(120%)
 }
 
 .article code {

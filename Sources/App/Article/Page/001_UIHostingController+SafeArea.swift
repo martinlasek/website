@@ -31,16 +31,16 @@ extension Article {
                 .text("You are ignoring the safeArea in your outermost view. But when you present it using UIHostingController — it doesn’t work and your view is not expanding beyond the safe area."),
 
                 .code("""
-                    struct FeatureList: View {
-                        var body: some View {
+                struct FeatureList: View {
+                    var body: some View {
 
-                            VStack {
-                                ...
-                            }
-                            .background(Color.red)
-                            .ignoresSafeArea(.all)
+                        VStack {
+                            ...
                         }
+                        .background(Color.red)
+                        .ignoresSafeArea(.all)
                     }
+                }
                 """),
 
                 .image(.a_001_the_problem),
@@ -50,17 +50,17 @@ extension Article {
                 .text("Add a .frame(maxWidth: .infinity) modifier to your view. Take that view and wrap it inside a ZStack and add the background and ignoreSafeArea modifier to the ZStack."),
 
                 .code("""
-                    struct FeatureList: View {
-                        var body: some View {
-                            ZStack {
-                                VStack {
-                                    ...
-                                }.frame(maxWidth: .infinity)
-                            }
-                            .background(Color.red)
-                            .ignoresSafeArea(.all)
+                struct FeatureList: View {
+                    var body: some View {
+                        ZStack {
+                            VStack {
+                                ...
+                            }.frame(maxWidth: .infinity)
                         }
+                        .background(Color.red)
+                        .ignoresSafeArea(.all)
                     }
+                }
                 """),
 
                 .image(.a_001_the_solution),

@@ -26,7 +26,7 @@ struct Article {
     ]
 
     var dateForSitemap: String {
-        var components = published_at.split(separator: " ")
+        let components = published_at.split(separator: " ")
 
         guard components.count == 3 else { return "" }
 
