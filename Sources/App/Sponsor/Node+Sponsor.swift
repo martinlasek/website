@@ -15,7 +15,7 @@ extension Node {
              .a(attributes: [.href(sponsor.websiteLink), .class("sponsor d-block p-3"), .target(.blank)],
                 .span(attributes: [.class("d-flex mb-3")],
                       .img(attributes: [.src(sponsor.logoUrl), .class("me-auto")]),
-                      .span(attributes: [.class("align-self-start text-ml-red small")], .i("SPONSOR"))
+                      .span(attributes: [.class("align-self-start text-ml-primary small")], .i("SPONSOR"))
                 ),
 
                 .p(attributes: [.class("mb-3")], .text(sponsor.description)),

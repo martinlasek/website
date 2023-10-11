@@ -1,5 +1,5 @@
 :root {
-    --ml-primary-text-color: #e20067;
+    --ml-primary-text-color: #05a88f;
 }
 
 h1 {
@@ -12,13 +12,13 @@ h2 {
     font-weight: bold;
 }
 
-.text-ml-red {
-    color: #e20067;
+.text-ml-primary {
+    color: var(--ml-primary-text-color);
 }
 
 .navigation {
     background: rgb(255,133,49);
-    background: linear-gradient(to bottom, #e20067, #fb6a6a);
+    background: linear-gradient(to top, #0ed180, #008f97)
 }
 
 .navigation a {
