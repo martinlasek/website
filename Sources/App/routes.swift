@@ -64,11 +64,11 @@ func routes(_ app: Vapor.Application) throws {
                 \(Article.all.map({ article in
                     """
                     <url>
-                        <loc>https://www.martinlasek.com/article/\(article.slug)</loc>
+                        <loc>https://www.martinlasek.com/articles/\(article.slug)</loc>
                         <lastmod>\(article.dateForSitemap)</lastmod>
                     </url>
                     """
-                }))
+                }).joined())
             </urlset>
         """)
     }
