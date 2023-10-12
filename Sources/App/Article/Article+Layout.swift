@@ -15,7 +15,7 @@ extension Article {
             .div(attributes: [.class("article bg-body-tertiary mb-3")],
                  .a(attributes: [.href("/articles/\(article.slug)")],
                     .h1(.text(article.headline)),
-                    .p(attributes: [.class("text-secondary mb-1 small")], "Published on \(article.published_at)"),
+                    .p(attributes: [.class("text-secondary mb-1 small")], "Published on \(article.published_at.readableFormat)"),
                     .p(attributes: [.class("mb-0")], .text(article.subheadline))
                  )
             )
@@ -26,7 +26,7 @@ extension Article {
 
         return .div(attributes: [.class("article bg-body-tertiary")],
             .h1(attributes: [.class("mb-2")], .text(article.headline)),
-            .p(attributes: [.class("text-secondary small")], "Published on \(article.published_at)"),
+                    .p(attributes: [.class("text-secondary small")], "Published on \(article.published_at.readableFormat)"),
 
 
             .fragment(article.contentList.map({ content in

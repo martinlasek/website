@@ -11,8 +11,7 @@ extension Article {
         let headline = "How to fix: A server with the specified hostname could not be found"
         let subheadline = "When creating a new macOS app you won't be able to make a network request right away."
         let slug = "how-to-fix-server-with-unspecified-hostname-not-found"
-        let tweetLink = "https://twitter.com/intent/tweet?via=martinlasek&text=» \(headline.urlEncoded()) «&url=https://www.martinlasek.com/articles/\(slug)"
-        let publishedAt = "10 Oct 2023"
+        let publishedAt: Article.PublishedDate = .date(10, .oct, 2023)
 
         return Article(
             headline: headline,

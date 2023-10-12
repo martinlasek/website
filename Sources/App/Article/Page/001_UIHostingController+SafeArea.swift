@@ -15,8 +15,7 @@ extension Article {
         let headline = "UIHostingController + SafeArea"
         let subheadline = "How to ignore the SafeArea when using a UIHostingController."
         let slug = "uihostingcontroller-and-safearea"
-        let tweetLink = "https://twitter.com/intent/tweet?via=martinlasek&text=» \(headline.urlEncoded()) «&url=https://www.martinlasek.com/articles/\(slug)"
-        let publishedAt = "8 Oct 2023"
+        let publishedAt: Article.PublishedDate = .date(8, .oct, 2023)
 
         return Article(
             headline: headline,

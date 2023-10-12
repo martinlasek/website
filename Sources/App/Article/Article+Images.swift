@@ -13,6 +13,8 @@ extension Article {
 
         case a_002_xcode_check_outgoing_connection = "002_xcode_check_outgoing_connection.png"
 
+        case a_003_texteditor_placeholder_result = "003_texteditor_placeholder_result.gif"
+
         var imgSrc: String {
             return "/articles/\(self.rawValue)"
         }

@@ -12,7 +12,7 @@ struct Article {
     let headline: String
     let subheadline: String
     let slug: String
-    let published_at: String // "10 Oct 2023"
+    let published_at: PublishedDate // "10 Oct 2023"
     let contentList: [Article.Content]
 
     static var latest: Article {
@@ -21,42 +21,17 @@ struct Article {
     }
 
     static var all: [Article] = [
+        Article.a_003_texteditor_placeholder,
         Article.a_002_FixingServerWithSpecifiedHostnameNotFound,
         Article.a_001_UIHostingControllerAndSafeArea
     ]
 
     var dateForSitemap: String {
-        let components = published_at.split(separator: " ")
-
-        guard components.count == 3 else { return "" }
-
-        var month = ""
-        switch components[1] {
-        case "Jan": month = "01"
-        case "Feb": month = "02"
-        case "Mar": month = "03"
-        case "Apr": month = "04"
-        case "May": month = "05"
-        case "Jun": month = "06"
-        case "Jul": month = "07"
-        case "Aug": month = "08"
-        case "Sep": month = "09"
-        case "Oct": month = "10"
-        case "Nov": month = "11"
-        case "Dec": month = "12"
-        default: ()
+        switch published_at {
+        case .date(let day, let month, let year):
+            let dayResult = day < 10 ? "0\(day)" : String(day)
+            return "\(year)-\(month.numericValue)-\(dayResult)"
         }
-
-        let dayInt = Int(components[0]) ?? 0
-        var day = components[0]
-        
-        if dayInt < 10 {
-            day = "0\(dayInt)"
-        }
-
-        let year = components[2]
-
-        return "\(year)-\(month)-\(day)"
     }
 }
 
@@ -76,6 +51,52 @@ extension Article {
                 switch self {
                 case .point(let value): return value
                 }
+            }
+        }
+    }
+
+    enum PublishedDate {
+        typealias Day = Int
+        typealias Year = Int
+
+        case date(Day, Article.Month, Year)
+
+        var readableFormat: String {
+            switch self {
+            case .date(let day, let month, let year):
+                return "\(day) \(month.rawValue) \(year)"
+            }
+        }
+    }
+
+    enum Month: String {
+        case jan = "Jan"
+        case feb = "Feb"
+        case mar = "Mar"
+        case apr = "Apr"
+        case may = "May"
+        case jun = "Jun"
+        case jul = "Jul"
+        case aug = "Aug"
+        case sep = "Sep"
+        case oct = "Oct"
+        case nov = "Nov"
+        case dec = "Dec"
+
+        var numericValue: String {
+            switch self {
+            case .jan: return "01"
+            case .feb: return "02"
+            case .mar: return "03"
+            case .apr: return "04"
+            case .may: return "05"
+            case .jun: return "06"
+            case .jul: return "07"
+            case .aug: return "08"
+            case .sep: return "09"
+            case .oct: return "10"
+            case .nov: return "11"
+            case .dec: return "12"
             }
         }
     }
