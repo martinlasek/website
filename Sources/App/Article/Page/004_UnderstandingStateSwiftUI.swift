@@ -60,8 +60,8 @@ extension Article {
             .text("Don't worry if this feels a little intimidating. These functions to style and manipulate a view are just new right now. But just like we slowly learned how to set the background color of a UIView to blue:"),
 
             .code("""
-            override func viewDidLoad(_ animated: Bool) {
-                super.viewDidLoad(animated)
+            override func viewDidAppear(_ animated: Bool) {
+                super.viewDidAppear(animated)
                 myView.backgroundColor = .blue
             }
             """),
@@ -70,7 +70,7 @@ extension Article {
             .text("Okay, now with our adjustments you should have an awesome looking view like this:"),
             .image(.a_004_styled_content_view),
 
-            .h2("Understanding State"),
+            .h2("3. Understanding State"),
             .text("Looking at our code we actually want to pass a name of a Pokemon into our Text view. Let’s not forget that we have nothing fancy but just a simple struct. We did use structs before and defined variables and functions inside of them."),
             .text("So let’s define a variable with a pokemon name and a function that changes it:"),
 
