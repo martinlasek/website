@@ -28,19 +28,19 @@ extension Article {
                         ZStack {
                             TextEditor(text: $text)
 
-                            VStack {
-                                HStack {
-                                    if text.isEmpty {
+                            if text.isEmpty {
+                                VStack {
+                                    HStack {
                                         Text("Optional")
                                             .foregroundStyle(.tertiary)
                                             .padding(.top, 8)
                                             .padding(.leading, 5)
+
+                                        Spacer()
                                     }
 
                                     Spacer()
                                 }
-
-                                Spacer()
                             }
                         }
                     }
