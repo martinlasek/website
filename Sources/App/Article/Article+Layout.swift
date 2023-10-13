@@ -65,7 +65,7 @@ extension Article {
 
             .br,
 
-            .div(attributes: [.class("pb-3")],
+            .div(attributes: [.class("pb-3 text-center")],
                  .a(attributes: [.href(tweetLink), .target(.blank), .class("share")],
                     .i(attributes: [.class("bi bi-twitter me-2")]),
                     .text("Share on Twitter")
