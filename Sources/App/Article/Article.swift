@@ -44,6 +44,7 @@ struct Article: MetaTagProvider {
     }
 
     static var all: [Article] = [
+        Article.a_004_UnderstandingStateSwiftUI,
         Article.a_003_texteditor_placeholder,
         Article.a_002_FixingServerWithSpecifiedHostnameNotFound,
         Article.a_001_UIHostingControllerAndSafeArea
@@ -66,6 +67,7 @@ extension Article {
         case code(String)
         case image(Article.Image)
         case list([Bulletpoint])
+        case banner(Banner)
 
         enum Bulletpoint {
             case point(String)
@@ -75,6 +77,10 @@ extension Article {
                 case .point(let value): return value
                 }
             }
+        }
+
+        enum Banner {
+            case primary(String)
         }
     }
 

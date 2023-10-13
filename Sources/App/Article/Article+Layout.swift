@@ -53,6 +53,11 @@ extension Article {
                             .li(.text(point.value))
                         }))
                     )
+                case .banner(let kind):
+                    switch kind {
+                    case .primary(let text):
+                        return .div(attributes: [.class("alert alert-primary fs-italic")], .text(text))
+                    }
                 }
             })),
 
