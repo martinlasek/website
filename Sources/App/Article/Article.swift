@@ -8,12 +8,35 @@
 
 import HtmlVaporSupport
 
-struct Article {
+struct Article: MetaTagProvider {
     let headline: String
     let subheadline: String
     let slug: String
     let published_at: PublishedDate // "10 Oct 2023"
+
+    // Used for the meta tag
+    let imagePath: String?
+    
     let contentList: [Article.Content]
+
+    // Used for the meta tag
+    var canonicalPath: String { return slug }
+
+    init(
+        headline: String,
+        subheadline: String,
+        slug: String,
+        published_at: PublishedDate,
+        imagePath: String? = nil,
+        contentList: [Article.Content]
+    ) {
+        self.headline = headline
+        self.subheadline = subheadline
+        self.slug = slug
+        self.published_at = published_at
+        self.imagePath = imagePath
+        self.contentList = contentList
+    }
 
     static var latest: Article {
         let lastIndex = all.count - 1
