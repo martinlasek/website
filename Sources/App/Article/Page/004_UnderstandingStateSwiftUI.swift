@@ -131,7 +131,9 @@ extension Article {
             .text("We can finish our random Pokemon name picker with actual random names:"),
             .code("""
             struct ContentView: View {
-                @State var pokemonName = "Charmander"
+                @State
+                var pokemonName = "Charmander"
+                
                 var body: some View {
                     VStack {
                         Text(pokemonName)
