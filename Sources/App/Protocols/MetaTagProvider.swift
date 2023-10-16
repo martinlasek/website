@@ -26,7 +26,7 @@ extension MetaTagProvider {
     }
 
     var fullCanonUrl: String {
-        return "\(hostUrl)/\(canonicalPath)"
+        return "\(hostUrl)/articles/\(canonicalPath)"
     }
 
     var fullImageUrl: String {

@@ -58,6 +58,8 @@ extension Article {
                     case .primary(let text):
                         return .div(attributes: [.class("alert alert-primary fs-italic")], .text(text))
                     }
+                case .link(let article):
+                    return .a(attributes: [.href(article.fullCanonUrl), .class("ml-link d-block mb-3"), .target(.blank)], .text(article.headline))
                 }
             })),
 
