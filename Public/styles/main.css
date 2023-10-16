@@ -125,3 +125,9 @@ a.ml-link:hover {
     --bs-alert-border-color: var(--ml-primary-border-subtle);
     --bs-alert-link-color: var(--ml-primary-text-emphasis);
 }
+
+/* ARTICLE - IMAGE */
+
+.article .image img {
+    border-radius: 12px;
+}

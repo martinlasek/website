@@ -11,7 +11,7 @@ import Splash
 
 extension Node {
     static func codeblock(_ content: String) -> Node {
-        .pre(.code(.raw(
+        .pre(attributes: [.class("mb-3")], .code(.raw(
             SyntaxHighlighter(format: HTMLOutputFormat()).highlight(content)
         )))
     }

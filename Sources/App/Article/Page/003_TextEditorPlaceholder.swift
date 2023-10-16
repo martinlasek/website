@@ -9,7 +9,7 @@
 extension Article {
     
     static let a_003_texteditor_placeholder = Article(
-        headline: "How To: Add a placeholder to TextEditor in SwiftUI.",
+        headline: "How To: Add a placeholder to TextEditor in SwiftUI",
         subheadline: "SwiftUI currently only supports a placeholder for TextField but not for the TextEditor - Let's fix that!",
         slug: "how-to-add-a-placeholder-to-texteditor",
         published_at: .date(12, .oct, 2023),

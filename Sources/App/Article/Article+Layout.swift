@@ -44,7 +44,7 @@ extension Article {
                 case .code(let text):
                     return .codeblock(text)
                 case .image(let image):
-                    return .div(attributes: [.class("text-center p-5 pt-2")],
+                    return .div(attributes: [.class("text-center pb-2 image mb-3")],
                                 .img(src: image.imgSrc, alt: "", attributes: [.class("w-100")])
                     )
                 case .list(let points):
