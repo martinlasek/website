@@ -27,7 +27,14 @@ struct AboutPage {
 
                 .p("""
                     I hope you will find value in the content I create. Don't hesitate to reach out anytime if you have any questions or feedback. Your input is always appreciated!
-                """)
+                """),
+
+                .br,
+
+                .div(attributes: [.class("text-center")],
+                     .a(attributes: [.href("https://twitter.com/martinlasek"), .target(.blank), .class("ml-link")], .i(attributes: [.class("bi bi-twitter fs-4 me-3")])),
+                     .a(attributes: [.href("https://github.com/martinlasek"), .target(.blank), .class("ml-link")], .i(attributes: [.class("bi bi-github fs-4")]))
+                )
             )
         }
     }()
