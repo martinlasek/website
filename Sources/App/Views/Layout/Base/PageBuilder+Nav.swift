@@ -58,7 +58,7 @@ extension PageBuilder {
              .div(attributes: [.class("container-fluid")],
                   .div(attributes: [.class("w-100 d-flex justify-content-center flex-column text-center")],
                        
-                        .p(attributes: [.class("h1 fw-bold text-light")], "Martin Lasek"),
+                        .a(attributes: [.class("h1 fw-bold text-light text-decoration-none bg-transparent"), .href("/")], "Martin Lasek"),
 
                         .p(attributes: [.class("text-light")], "Swift Tutorials and iOS Tips and Tricks"),
 
