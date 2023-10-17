@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  Sponsor.swift
+//  website
 //
 //  Created by Martin Lasek on 10/9/23.
 //  Copyright © 2023 Martin Lasek. All rights reserved.
@@ -25,7 +25,7 @@ struct Sponsor {
         Sponsor(
             logoUrl: "/sponsors/wishkit-logo.png",
             websiteLink: "https://www.wishkit.io?ref=martinlasek",
-            description: "Gather customer feedback and prioritize features that convert. WishKit allows you to build better products and best of all - it only takes 100 seconds to integrate.",
+            description: "Collect user feedback from your iOS and macOS app. Prioritize what features to build next based on user interest and votes.",
             buttonText: "Try For Free"
         )
     }
