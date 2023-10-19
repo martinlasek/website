@@ -28,6 +28,9 @@ extension Article {
         case a_005_list_id_broken_example = "005_list_id_broken_example.png"
         case a_005_add_navigation = "005_add_navigation.png"
 
+        case a_006_the_problem = "006_the_problem.png"
+        case a_006_the_solution = "006_the_solution.png"
+
         var imgSrc: String {
             return "/articles/\(self.rawValue)"
         }
