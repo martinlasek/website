@@ -32,7 +32,7 @@ extension Article {
                         .background(
                             GeometryReader { proxy in
                                 Color.red.onAppear {
-                                    print("🔥 Size: \\(proxy.size)")
+                                    print("🔥 \\(proxy.size)")
                                 }
                             }
                         )
