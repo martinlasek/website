@@ -12,7 +12,7 @@ import Splash
 extension Article {
 
     static let a_006_Get_Size_Of_View = Article(
-        headline: "Get the size of a view in SwiftUI",
+        headline: "How To: Get the size of a view in SwiftUI",
         subheadline: "How to get the size of a view in SwiftUI using GeometryReader.",
         slug: "get-size-of-view-in-swiftui",
         published_at: .date(19, .oct, 2023),
