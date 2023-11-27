@@ -38,7 +38,7 @@ struct SponsorshipPage {
 
                 .ul(
                     .li("Your ad placement on all content pages including your logo and a link."),
-                    .li("A thank you ", .a(attributes: [.href("https://twitter.com/MartinLasek"), .class("ml-link")], "tweet from Martin"), " to his 3,400+ followers."),
+                    .li("A thank you ", .a(attributes: [.href("https://twitter.com/MartinLasek"), .class("ml-link")], "tweet from Martin"), " to his 3,500+ followers."),
                     .li("You are added to the list of sponsors with a backlink to your website."),
                     .li(.b("To top it off, the cost is just $100 per week for everything."))
                 ),
