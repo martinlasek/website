@@ -91,7 +91,7 @@ extension PageBuilder {
 
             .init(.raw("<!-- CSS -->")),
             .link(attributes: [
-                .href("/styles/main.css"),
+                .href("/styles/main-09-24-2024.css"),
                 .rel(.stylesheet)
             ]),
 
@@ -166,7 +166,7 @@ extension PageBuilder {
             // MARK:  - CUSTOM
 
             .link(attributes: [
-                .href("/styles/main.css"),
+                .href("/styles/main-09-24-2024.css"),
                 .rel(.stylesheet)
             ]),
 

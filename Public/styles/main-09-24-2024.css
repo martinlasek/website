@@ -50,7 +50,7 @@ h2 {
     max-width: 920px;
 }
 
-a.article {
+.article {
     border-radius: 12px;
     padding: 15px 20px;
     overflow-wrap: break-word;
@@ -79,6 +79,8 @@ a.article:hover h1 {
     background-color: var(--ml-primary-text-color);
     padding: 5px 8px;
     border-radius: 8px;
+    color: white;
+    text-decoration: none;
 }
 
 .article a.share:hover {
