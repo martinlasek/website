@@ -42,7 +42,7 @@ h2 {
 .navigation .btn-group {
     border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
     background-color: #ffffff;
 }
 
@@ -59,11 +59,11 @@ h2 {
 a.article {
     text-decoration: none;
     color: var(--bs-body-color);
-    border: 1px solid transparent;
+    border: 2px solid transparent;
 }
 
 a.article:hover {
-    border: 1px solid var(--ml-primary-text-color);
+    border: 2px solid var(--ml-primary-text-color);
 }
 
 a.article:hover h1 {
