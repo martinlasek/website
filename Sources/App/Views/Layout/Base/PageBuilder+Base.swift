@@ -7,6 +7,7 @@
 //
 
 import HtmlVaporSupport
+import Foundation
 
 extension PageBuilder {
     static func base(navLink: NavLink, _ content: Node) -> Node {
@@ -18,6 +19,8 @@ extension PageBuilder {
     }
 
     static func base(navLink: NavLink, _ content: () -> Node) -> Node {
+        let year = Calendar.current.component(.year, from: Date())
+        
         return Node.html(attributes: [.lang(.en), .data("bs-theme", "dark")],
              head(canonUrlPath: navLink.href),
             .body(
@@ -26,8 +29,8 @@ extension PageBuilder {
                      content()
                 ),
                 .footer(attributes: [.class("footer")],
-                        .span(attributes: [.class("text-center small d-block text-muted pt-5 pb-3")],
-                              .text("Copyright © 2023 Martin Lasek. All Rights Reserved.")
+                        .span(attributes: [.class("text-center small d-block text-ml-primary pt-5 pb-4")],
+                              .text("Copyright © \(year) Martin Lasek. All Rights Reserved.")
                         )
                 ),
                 .raw("""

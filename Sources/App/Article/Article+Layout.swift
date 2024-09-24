@@ -12,12 +12,10 @@ extension Article {
 
     static func excerpt(for article: Article) -> Node {
         return
-            .div(attributes: [.class("article bg-body-tertiary mb-3")],
-                 .a(attributes: [.href("/articles/\(article.slug)")],
-                    .h1(.text(article.headline)),
-                    .p(attributes: [.class("text-secondary mb-1 small")], "Published on \(article.published_at.readableFormat)"),
-                    .p(attributes: [.class("mb-0")], .text(article.subheadline))
-                 )
+            .a(attributes: [.href("/articles/\(article.slug)"), .class("article bg-body-tertiary mb-3 d-block")],
+               .h1(.text(article.headline)),
+               .p(attributes: [.class("text-secondary mb-1 small")], "Published on \(article.published_at.readableFormat)"),
+               .p(attributes: [.class("mb-0")], .text(article.subheadline))
             )
     }
 

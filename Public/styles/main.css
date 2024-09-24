@@ -50,18 +50,23 @@ h2 {
     max-width: 920px;
 }
 
-.article {
+a.article {
     border-radius: 12px;
     padding: 15px 20px;
     overflow-wrap: break-word;
 }
 
-.article a {
+a.article {
     text-decoration: none;
     color: var(--bs-body-color);
+    border: 1px solid transparent;
 }
 
-.article a:hover h1 {
+a.article:hover {
+    border: 1px solid var(--ml-primary-text-color);
+}
+
+a.article:hover h1 {
     color: var(--ml-primary-text-color);
     filter: brightness(120%)
 }

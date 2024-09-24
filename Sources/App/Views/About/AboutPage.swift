@@ -21,7 +21,7 @@ struct AboutPage {
                         Following very much the idea of:
                     """),
 
-                    .p(attributes: [.class("h5 fw-light p-3")],
+                    .p(attributes: [.class("fw-light text-center pt-5 pb-5")],
                        .i("""
                             "If you can't explain it to a six-year-old, you don't understand it yourself." - Albert Einstein
                         """)
@@ -39,7 +39,7 @@ struct AboutPage {
                     )
                 ),
 
-                .div(attributes: [.class("c-card bg-body-tertiary mt-2 mb-5")],
+                .div(attributes: [.class("c-card bg-body-tertiary mt-3 mb-5")],
                      .h2(attributes: [.class("mb-3")], "Featured In"),
 
                     .a(
