@@ -25,7 +25,7 @@ struct Sponsor {
         Sponsor(
             logoUrl: "/sponsors/wishkit-logo.png",
             websiteLink: "https://www.wishkit.io?ref=martinlasek",
-            description: "Collect user feedback from your iOS and macOS app. Prioritize what features to build next based on user interest and votes.",
+            description: "Gather user feedback and manage feature requests directly within your app. Empower users to suggest features, vote on ideas, and collaborate, all while you prioritize based on popularity.",
             buttonText: "Try For Free"
         )
     }

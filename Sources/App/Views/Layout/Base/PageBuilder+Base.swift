@@ -48,6 +48,8 @@ extension PageBuilder {
     }
 
     static func base(navLink: NavLink, meta: MetaTagProvider, _ content: () -> Node) -> Node {
+        let year = Calendar.current.component(.year, from: Date())
+        
         return Node.html(attributes: [.lang(.en), .data("bs-theme", "dark")],
              head(meta),
             .body(
@@ -57,7 +59,7 @@ extension PageBuilder {
                 ),
                 .footer(attributes: [.class("footer")],
                         .span(attributes: [.class("text-center small d-block text-muted pt-5 pb-3")],
-                              .text("Copyright © 2023 Martin Lasek. All Rights Reserved.")
+                              .text("Copyright © \(year) Martin Lasek. All Rights Reserved.")
                         )
                 ),
                 .raw("""

@@ -44,6 +44,7 @@ struct Article: MetaTagProvider {
     }
 
     static var all: [Article] = [
+        Article.a_007_Error_AppIntentsSSUTraining,
         Article.a_006_Get_Size_Of_View,
         Article.a_005_List_And_Identifiable,
         Article.a_004_UnderstandingStateSwiftUI,

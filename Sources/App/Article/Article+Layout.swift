@@ -25,7 +25,8 @@ extension Article {
         return .div(attributes: [.class("article bg-body-tertiary")],
             .h1(attributes: [.class("mb-2")], .text(article.headline)),
                     .p(attributes: [.class("text-secondary small")], "Published on \(article.published_at.readableFormat)"),
-
+                    
+            .hr,
 
             .fragment(article.contentList.map({ content in
                 switch content {
@@ -60,12 +61,12 @@ extension Article {
                     return .a(attributes: [.href(article.fullCanonUrl), .class("ml-link d-block mb-3"), .target(.blank)], .text(article.headline))
                 }
             })),
+                    
+            .hr,
 
-            .p("I am happy you read my article and hope you found it useful! If you have any suggestions of any kind don't hesitate let me know. I’d love to hear from you!"),
+            .p(attributes: [.class("text-ml-primary text-center")], .text("I hope you found it useful! If you have any suggestions or feedback, let me know. I’d love to hear from you!")),
 
-            .br,
-
-            .div(attributes: [.class("pb-3 text-center")],
+            .div(attributes: [.class("pt-2 pb-3 text-center")],
                  .a(attributes: [.href(tweetLink), .target(.blank), .class("share")],
                     .i(attributes: [.class("bi bi-twitter me-2")]),
                     .text("Share on Twitter")

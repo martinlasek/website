@@ -30,6 +30,9 @@ extension Article {
 
         case a_006_the_problem = "006_the_problem.png"
         case a_006_the_solution = "006_the_solution.png"
+        
+        case a_007_the_problem = "007_the_problem.png"
+        case a_007_the_solution = "007_the_solution.png"
 
         var imgSrc: String {
             return "/articles/\(self.rawValue)"
