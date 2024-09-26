@@ -29,7 +29,7 @@ extension PageBuilder {
                      content()
                 ),
                 .footer(attributes: [.class("footer")],
-                        .span(attributes: [.class("text-center small d-block text-ml-primary pt-5 pb-4")],
+                        .span(attributes: [.class("text-center small d-block pt-3 pb-5")],
                               .text("Copyright © \(year) Martin Lasek. All Rights Reserved.")
                         )
                 ),
@@ -58,7 +58,7 @@ extension PageBuilder {
                      content()
                 ),
                 .footer(attributes: [.class("footer")],
-                        .span(attributes: [.class("text-center small d-block text-muted pt-5 pb-3")],
+                        .span(attributes: [.class("text-center small d-block text-muted pt-3 pb-5")],
                               .text("Copyright © \(year) Martin Lasek. All Rights Reserved.")
                         )
                 ),
