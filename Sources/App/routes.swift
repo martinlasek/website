@@ -4,6 +4,12 @@ import HtmlVaporSupport
 
 func routes(_ app: Vapor.Application) throws {
 
+    for page in MomokoPages.all {
+        app.get("apps", "\(page.appSlug)", "\(page.slug)") { _ -> Node in
+            page.content
+        }
+    }
+
     // MARK: - Index
 
     app.get(use: getIndex)
