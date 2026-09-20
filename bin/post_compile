@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "-----> Verifying article rendering and app-information routes on Linux"
+swift --version
+swift test --disable-automatic-resolution -c release \
+  --filter 'ArticleRenderingTests|AppInfoPageTests'
+
+# Tests may relink App with their own settings. Restore the buildpack's
+# production linkage before it copies the executable into the release.
+echo "-----> Restoring production executable build settings"
+if [[ -n "${SWIFT_DYNAMIC_STDLIB:-}" ]]; then
+  swift build ${SWIFT_BUILD_FLAGS:-} -c "${SWIFT_BUILD_CONFIGURATION:-release}"
+else
+  swift build ${SWIFT_BUILD_FLAGS:-} -c "${SWIFT_BUILD_CONFIGURATION:-release}" --static-swift-stdlib
+fi
