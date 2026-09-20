@@ -7,12 +7,11 @@
 //
 
 import HtmlVaporSupport
-import Splash
 
 extension Node {
     static func codeblock(_ content: String) -> Node {
-        .pre(attributes: [.class("mb-3")], .code(.raw(
-            SyntaxHighlighter(format: HTMLOutputFormat()).highlight(content)
-        )))
+        // Splash's SwiftGrammar initialization traps on the deployed Linux runtime.
+        // Keep code readable and HTML-escaped until highlighting is verified there.
+        .pre(attributes: [.class("mb-3")], .code(.text(content)))
     }
 }
