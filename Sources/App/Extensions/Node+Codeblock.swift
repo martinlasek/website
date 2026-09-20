@@ -10,8 +10,7 @@ import HtmlVaporSupport
 
 extension Node {
     static func codeblock(_ content: String) -> Node {
-        // Splash's SwiftGrammar initialization traps on the deployed Linux runtime.
-        // Keep code readable and HTML-escaped until highlighting is verified there.
+        // Keep code HTML-escaped and readable without client-side highlighting.
         .pre(attributes: [.class("mb-3")], .code(.text(content)))
     }
 }

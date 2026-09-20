@@ -7,7 +7,6 @@
 //
 
 import HtmlVaporSupport
-import Splash
 
 extension Node {
     static func sponsor(_ sponsor: Sponsor) -> Node {

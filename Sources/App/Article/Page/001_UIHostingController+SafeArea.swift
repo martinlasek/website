@@ -7,7 +7,6 @@
 //
 
 import HtmlVaporSupport
-import Splash
 
 extension Article {
     
