@@ -2,6 +2,10 @@
 
 This repository contains Martin Lasek's Swift/Vapor personal website.
 
+## Release ownership
+
+Martin handles all commits, pushes, and deployments. Assistants may edit files, run local checks, and prepare review notes, but must not commit, push, deploy, or trigger a release. Leave those actions to Martin; do not interpret a general "sounds good" or "let's do it" as permission to perform them.
+
 ## Shared publishing skills
 
 Claude skills live in `.claude/skills/`. Codex discovers the same folders through relative symlinks in `.agents/skills/`, so both assistants use one maintained copy.

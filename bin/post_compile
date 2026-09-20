@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-echo "-----> Verifying article rendering and app-information routes on Linux"
+echo "-----> Running website regression tests on Linux"
 swift --version
-swift test --disable-automatic-resolution -c release \
-  --filter 'ArticleRenderingTests|AppInfoPageTests'
+swift test --disable-automatic-resolution -c release
 
 # Tests may relink App with their own settings. Restore the buildpack's
 # production linkage before it copies the executable into the release.

@@ -1,5 +1,4 @@
 import Vapor
-import Leaf
 import HtmlVaporSupport
 
 func routes(_ app: Vapor.Application) throws {
@@ -49,33 +48,20 @@ func routes(_ app: Vapor.Application) throws {
         }
     }
 
-    // MARK: - Sitemap
+    // MARK: - Search discovery
 
-    app.get("sitemap") { req throws -> Node in
-        return .raw("""
-            <?xml version="1.0" encoding="UTF-8"?>
-            <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-                <url>
-                    <loc>https://www.martinlasek.com/about</loc>
-                    <lastmod>2023-10-10</lastmod>
-                </url>
-                <url>
-                    <loc>https://www.martinlasek.com/sponsorship</loc>
-                    <lastmod>2023-10-10</lastmod>
-                </url>
-                <url>
-                    <loc>https://www.martinlasek.com/projects</loc>
-                    <lastmod>2023-10-10</lastmod>
-                </url>
-                \(Article.all.map({ article in
-                    """
-                    <url>
-                        <loc>https://www.martinlasek.com/articles/\(article.slug)</loc>
-                        <lastmod>\(article.dateForSitemap)</lastmod>
-                    </url>
-                    """
-                }).joined())
-            </urlset>
-        """)
+    app.get("sitemap.xml") { _ -> Response in
+        Sitemap.response()
+    }
+
+    app.get("sitemap") { _ -> Response in
+        Sitemap.response()
+    }
+
+    app.get("robots.txt") { _ -> Response in
+        Response(
+            headers: ["Content-Type": "text/plain; charset=utf-8"],
+            body: .init(string: "User-agent: *\nAllow: /\nSitemap: \(Sitemap.siteURL)/sitemap.xml\n")
+        )
     }
 }

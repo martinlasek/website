@@ -1,0 +1,39 @@
+import Vapor
+
+struct Sitemap {
+    static let siteURL = "https://www.martinlasek.com"
+
+    static var urls: [String] {
+        // The current homepage is an archive duplicate canonicalized to /articles.
+        ["/articles", "/about", "/projects", "/sponsorship"].map { siteURL + $0 }
+        + Article.all.map(\.fullCanonUrl)
+        + MomokoPages.all.map { "\(siteURL)/apps/\($0.appSlug)/\($0.slug)" }
+    }
+
+    static func response() -> Response {
+        Response(
+            headers: ["Content-Type": "application/xml; charset=utf-8"],
+            body: .init(string: render(urls: urls))
+        )
+    }
+
+    static func render(urls: [String]) -> String {
+        let entries = urls.map { "  <url><loc>\(escapeXML($0))</loc></url>" }.joined(separator: "\n")
+        // Publication dates are not verified modification dates, so omit lastmod.
+        return """
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        \(entries)
+        </urlset>
+        """
+    }
+
+    private static func escapeXML(_ value: String) -> String {
+        value
+            .replacingOccurrences(of: "&", with: "&amp;")
+            .replacingOccurrences(of: "<", with: "&lt;")
+            .replacingOccurrences(of: ">", with: "&gt;")
+            .replacingOccurrences(of: "\"", with: "&quot;")
+            .replacingOccurrences(of: "'", with: "&apos;")
+    }
+}
