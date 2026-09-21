@@ -2,7 +2,7 @@ import Foundation
 import HtmlVaporSupport
 
 enum SiteLayout {
-    static let stylesheet = "/styles/site-v1.css"
+    static let stylesheet = "/styles/site-v2.css"
 
     /// Callers supply only destinations that are ready to launch.
     static func page(
@@ -12,6 +12,7 @@ enum SiteLayout {
         currentPath: String,
         shouldTrackAnalytics: Bool = false,
         isPreview: Bool = false,
+        hasHeroBackdrop: Bool = false,
         content: Node
     ) -> Node {
         .html(attributes: [.lang(.en)],
@@ -20,7 +21,7 @@ enum SiteLayout {
                 .link(attributes: [.rel(.stylesheet), .href(stylesheet)]),
                 isPreview ? .meta(name: "robots", content: "noindex,nofollow") : .fragment([])
             ),
-            .body(attributes: [.class("site")],
+            .body(attributes: [.class(hasHeroBackdrop ? "site site-home" : "site")],
                 .a(attributes: [.href("#main"), .class("site-skip")], "Skip to content"),
                 header(navigation: navigation, currentPath: currentPath),
                 .main(attributes: [.id("main")], content),
@@ -45,11 +46,13 @@ enum SiteLayout {
                 .nav(attributes: [.class("site-desktop-nav"), .init("aria-label", "Main")],
                     links(navigation, currentPath: currentPath)),
                 .div(attributes: [.class("site-contact")],
+                    SocialLinks.content,
                     SiteComponents.button(SiteLink(title: "Connect on X ↗", destination: "https://twitter.com/martinlasek"))),
                 .details(attributes: [.class("site-mobile-nav")], .summary("Menu"),
                     .nav(attributes: [.init("aria-label", "Mobile")],
                         links(navigation, currentPath: currentPath),
-                        .a(attributes: [.href("https://twitter.com/martinlasek")], "Connect on X ↗")
+                        SocialLinks.content,
+                        SiteComponents.button(SiteLink(title: "Connect on X ↗", destination: "https://twitter.com/martinlasek"))
                     )
                 )
             )
@@ -65,8 +68,7 @@ enum SiteLayout {
                 ),
                 .nav(attributes: [.init("aria-label", "Footer")],
                     links(footerLinks, currentPath: ""),
-                    .a(attributes: [.href("https://twitter.com/martinlasek"), .init("aria-label", "Martin on X")], "X"),
-                    .a(attributes: [.href("https://github.com/martinlasek"), .init("aria-label", "Martin on GitHub")], "GitHub")
+                    SocialLinks.content
                 ),
                 .p(.text("© \(Calendar.current.component(.year, from: Date())) Martin Lasek"))
             )

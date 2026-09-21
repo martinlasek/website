@@ -10,7 +10,7 @@ enum PublicSite {
     static func page(metadata: PageMetadata, shouldTrackAnalytics: Bool, content: Node) -> Node {
         SiteLayout.page(metadata: metadata, navigation: navigation,
                         footerLinks: navigation + [SiteLink(title: "Sponsor", destination: "/sponsorship")],
-                        currentPath: metadata.canonicalPath, shouldTrackAnalytics: shouldTrackAnalytics, content: content)
+                        currentPath: metadata.canonicalPath, shouldTrackAnalytics: shouldTrackAnalytics, hasHeroBackdrop: metadata.canonicalPath == "/", content: content)
     }
 
     static var posts: [Article] {
