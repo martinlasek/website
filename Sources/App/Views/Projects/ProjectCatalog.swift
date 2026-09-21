@@ -36,10 +36,25 @@ enum ProjectCatalog {
             highlights: ["Read formatted text, tables, images, and selectable code blocks.", "See the preview update when a file changes on disk.", "Return to your last opened folder and file."],
             links: [SiteLink(title: "Visit ReadMarkdown ↗", destination: "https://www.readmarkdown.com/")],
             iconPath: "/images/projects/readmarkdown-v1.png"
+        ),
+        Project(
+            slug: "wondercaptions", name: "WonderCaptions", summary: "Create and edit bilingual subtitles for your videos on Mac.",
+            category: "macOS",
+            overview: "WonderCaptions generates subtitles for your videos on your Mac. Edit the text and timing in a timeline, preview the result, and export a video with the subtitles embedded.",
+            highlights: [
+                "Generate English subtitles and add Traditional Chinese as a second language.",
+                "Adjust subtitle text, timing, and fonts with a live preview.",
+                "Export subtitled videos as MP4 or MOV."
+            ],
+            links: [
+                SiteLink(title: "Visit WonderCaptions ↗", destination: "https://www.wondercaptions.com/"),
+                SiteLink(title: "View on the App Store ↗", destination: "https://apps.apple.com/app/id6761455318")
+            ],
+            iconPath: "/images/projects/wondercaptions-v1.png"
         )
     ]
 
     static var cards: [AppCard] {
-        all.map(\.card) + [AppCard(name: "Bilingual Subtitles")]
+        all.map(\.card)
     }
 }

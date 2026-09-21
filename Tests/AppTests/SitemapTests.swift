@@ -29,7 +29,7 @@ final class SitemapTests: XCTestCase {
         XCTAssertEqual(root.name, "urlset")
         XCTAssertEqual(root.uri, "http://www.sitemaps.org/schemas/sitemap/0.9")
         let urls = root.elements(forName: "url").compactMap { $0.elements(forName: "loc").first?.stringValue }
-        XCTAssertEqual(urls.count, 19)
+        XCTAssertEqual(urls.count, 20)
         XCTAssertEqual(Set(urls).count, urls.count)
         XCTAssertTrue(urls.contains("https://www.martinlasek.com/articles/error-app-intents-ssu-training"))
         XCTAssertTrue(urls.contains("https://www.martinlasek.com/"))
