@@ -86,7 +86,7 @@ final class MetadataTests: XCTestCase {
         for path in ["/", "/blog", "/about", "/apps", "/sponsor"] + MomokoPages.all.map({ "/apps/\($0.appSlug)/\($0.slug)" }) {
             try app.test(.GET, path) { response in
                 let document = try self.headDocument(response.body.string)
-                let canonicalPath = path
+                let canonicalPath = path == "/apps" ? "/projects" : path
                 XCTAssertEqual(try self.values(document, "//link[@rel='canonical']/@href"), [SiteURL.origin + canonicalPath])
                 XCTAssertEqual(try self.values(document, "//meta[@property='og:type']/@content"), ["website"])
                 XCTAssertEqual(try self.values(document, "//meta[@name='description']/@content").count, 1)

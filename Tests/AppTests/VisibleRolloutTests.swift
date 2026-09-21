@@ -52,7 +52,7 @@ final class VisibleRolloutTests: XCTestCase {
             XCTAssertEqual(html.components(separatedBy: "aria-label=\"Martin on X\"").count - 1, 3)
             XCTAssertEqual(html.components(separatedBy: "<svg ").count - 1, 6)
             XCTAssertTrue(html.contains("Hi, I'm"))
-            XCTAssertTrue(html.contains("href=\"/apps\""))
+            XCTAssertTrue(html.contains("href=\"/projects\""))
             XCTAssertTrue(html.contains("href=\"/blog\""))
             XCTAssertEqual(html.components(separatedBy: "class=\"site-post-card\"").count - 1, 3)
             XCTAssertFalse(html.contains("noindex"))
@@ -68,7 +68,7 @@ final class VisibleRolloutTests: XCTestCase {
                 XCTAssertTrue(html.contains(article.cover!.path))
             }
         }
-        for (old, destination) in [("/articles", "/blog"), ("/projects", "/apps"), ("/sponsorship", "/sponsor")] {
+        for (old, destination) in [("/articles", "/blog"), ("/sponsorship", "/sponsor")] {
             try app.test(.GET, old) { response in
                 XCTAssertEqual(response.status, .movedPermanently)
                 XCTAssertEqual(response.headers.first(name: .location), destination)

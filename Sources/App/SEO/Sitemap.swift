@@ -6,7 +6,8 @@ struct Sitemap {
     static var urls: [String] { urls(for: Article.all) }
 
     static func urls(for articles: [Article]) -> [String] {
-        ["/", "/blog", "/apps", "/about", "/sponsor"].map { siteURL + $0 }
+        ["/", "/blog", "/projects", "/about", "/sponsor"].map { siteURL + $0 }
+        + ProjectCatalog.all.map { siteURL + $0.canonicalPath }
         + articles.map(\.fullCanonUrl)
         + MomokoPages.all.map { "\(siteURL)/apps/\($0.appSlug)/\($0.slug)" }
     }

@@ -12,7 +12,7 @@ final class SiteComponentsTests: XCTestCase {
             let app = Vapor.Application(environment)
             defer { app.shutdown() }
             try routes(app)
-            let paths = ["/", "/blog", "/apps", "/about", "/sponsor"] + Article.all.map(\.canonicalPath)
+            let paths = ["/", "/blog", "/apps", "/projects", "/about", "/sponsor"] + Article.all.map(\.canonicalPath) + ProjectCatalog.all.map(\.canonicalPath)
             for path in paths {
                 try app.test(.GET, path) { response in
                     XCTAssertEqual(response.status, .ok)

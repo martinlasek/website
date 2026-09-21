@@ -27,7 +27,7 @@ struct AboutPage {
                     .aside(attributes: [.class("site-info-panel")],
                         .h2("Explore my work"),
                         .ul(
-                            .li(.a(attributes: [.href("/apps")], "Apps & projects")),
+                            .li(.a(attributes: [.href("/projects")], "Projects")),
                             .li(.a(attributes: [.href("/blog")], "Swift tutorials & writing")),
                             .li(.a(attributes: [.href("/sponsor")], "Sponsor my writing"))
                         )

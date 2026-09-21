@@ -2,7 +2,7 @@ import HtmlVaporSupport
 
 enum PublicSite {
     static let navigation = [
-        SiteLink(title: "Apps", destination: "/apps"),
+        SiteLink(title: "Projects", destination: "/projects"),
         SiteLink(title: "Blog", destination: "/blog"),
         SiteLink(title: "About", destination: "/about")
     ]
@@ -22,19 +22,6 @@ enum PublicSite {
     }
 
     static var products: Node {
-        .div(attributes: [.class("site-app-grid")],
-            .fragment(["Momoko", "WishKit", "PostBurst", "ReadMarkdown", "Bilingual Subtitles"].map { name in
-                let contents: Node = .fragment([
-                    .div(attributes: [.class("site-product-monogram"), .init("aria-hidden", "true")], .text(String(name.prefix(1)))),
-                    .h3(.text(name)),
-                    name == "WishKit" ? .p("Collect feature requests and feedback inside your app.") : .fragment([])
-                ])
-                return .article(attributes: [.class("site-app-card")],
-                    name == "WishKit"
-                        ? .a(attributes: [.class("site-app-link"), .href("https://www.wishkit.io/")], contents)
-                        : .div(attributes: [.class("site-app-link")], contents)
-                )
-            })
-        )
+        SiteComponents.appGrid(ProjectCatalog.cards)
     }
 }

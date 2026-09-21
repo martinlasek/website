@@ -17,8 +17,9 @@ func routes(_ app: Vapor.Application) throws {
     app.get("blog") { request -> Node in
         BlogPage.content(shouldTrackAnalytics: request.application.environment == .production)
     }
+    // Serve an alias: reversing the previously shipped /projects redirect could create cached loops.
     app.get("apps") { request -> Node in
-        AppsPage.content(shouldTrackAnalytics: request.application.environment == .production)
+        ProjectsPage.content(shouldTrackAnalytics: request.application.environment == .production)
     }
     app.get("articles") { request in request.redirect(to: "/blog", redirectType: .permanent) }
 
@@ -28,7 +29,14 @@ func routes(_ app: Vapor.Application) throws {
 
     // MARK: - Projects
 
-    app.get("projects") { request in request.redirect(to: "/apps", redirectType: .permanent) }
+    app.get("projects") { request -> Node in
+        ProjectsPage.content(shouldTrackAnalytics: request.application.environment == .production)
+    }
+    for project in ProjectCatalog.all {
+        app.get("projects", "\(project.slug)") { request -> Node in
+            ProjectPage.content(project, shouldTrackAnalytics: request.application.environment == .production)
+        }
+    }
 
     // MARK: - Sponsorship
 
