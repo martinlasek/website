@@ -9,8 +9,8 @@
 import HtmlVaporSupport
 
 struct SponsorshipPage {
-    static let content: Node = {
-        PageBuilder.base(navLink: .sponsorship) {
+    static func content(shouldTrackAnalytics: Bool = false) -> Node {
+        PageBuilder.base(navLink: .sponsorship, shouldTrackAnalytics: shouldTrackAnalytics) {
             .div(attributes: [.class("c-card bg-body-tertiary")],
                  .h1("Sponsorship"),
 
@@ -52,5 +52,5 @@ struct SponsorshipPage {
                 .p("Thank you for considering supporting my work and allowing me to continue providing value to the Swift community!")
             )
         }
-    }()
+    }
 }

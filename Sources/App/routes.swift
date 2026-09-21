@@ -21,7 +21,7 @@ func routes(_ app: Vapor.Application) throws {
     // MARK: - Projects
 
     app.get("\(NavLink.projects.href)") { req throws -> Node in
-        PageBuilder.base(navLink: .projects) {
+        PageBuilder.base(navLink: .projects, shouldTrackAnalytics: req.application.environment == .production) {
             .h1(attributes: [.class("text-center")], "Coming Soon")
         }
     }
@@ -29,17 +29,17 @@ func routes(_ app: Vapor.Application) throws {
     // MARK: - Sponsorship
 
     app.get("\(NavLink.sponsorship.href)") { req throws -> Node in
-        SponsorshipPage.content
+        SponsorshipPage.content(shouldTrackAnalytics: req.application.environment == .production)
     }
 
     // MARK: - About
 
     app.get("\(NavLink.about.href)") { req throws -> Node in
-        AboutPage.content
+        AboutPage.content(shouldTrackAnalytics: req.application.environment == .production)
     }
 
     func getIndex(_ req: Request) throws -> Node {
-        PageBuilder.base(navLink: NavLink.articles) {
+        PageBuilder.base(navLink: NavLink.articles, shouldTrackAnalytics: req.application.environment == .production) {
             .fragment(Article.all.map(Article.excerpt))
         }
     }

@@ -9,8 +9,8 @@
 import HtmlVaporSupport
 
 struct AboutPage {
-    static let content: Node = {
-        PageBuilder.base(navLink: .about) {
+    static func content(shouldTrackAnalytics: Bool = false) -> Node {
+        PageBuilder.base(navLink: .about, shouldTrackAnalytics: shouldTrackAnalytics) {
             .div(
 
                 .div(attributes: [.class("c-card bg-body-tertiary")],
@@ -70,5 +70,5 @@ struct AboutPage {
                 )
             )
         }
-    }()
+    }
 }

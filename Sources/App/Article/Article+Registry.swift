@@ -38,8 +38,12 @@ extension Article {
                 }
             }
             let path = article.canonicalPath.split(separator: "/").map { PathComponent.constant(String($0)) }
-            app.on(.GET, path) { _ -> Node in
-                PageBuilder.base(navLink: .articles, meta: article, Article.layout(for: article))
+            app.on(.GET, path) { request -> Node in
+                PageBuilder.base(
+                    navLink: .articles, meta: article,
+                    shouldTrackAnalytics: request.application.environment == .production,
+                    Article.layout(for: article)
+                )
             }
         }
     }
