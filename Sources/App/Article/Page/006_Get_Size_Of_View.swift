@@ -16,6 +16,8 @@ extension Article {
         slug: "get-size-of-view-in-swiftui",
         canonicalPath: "/articles/get-size-of-view-in-swiftui",
         published_at: .date(19, .oct, 2023),
+        category: "Swift",
+        cover: ArticleCover(path: "/images/blog/get-size-of-view-in-swiftui.png", alt: "", width: 1200, height: 630),
 
         contentList: [
             .opener("Here’s how you can get the size of any view in SwiftUI using the GeometryReader."),

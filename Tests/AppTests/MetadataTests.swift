@@ -30,7 +30,7 @@ final class MetadataTests: XCTestCase {
                 XCTAssertEqual(try self.values(head, "//meta[@property='og:type']/@content"), ["article"])
                 XCTAssertEqual(try self.values(head, "//meta[@name='description']/@content"), [article.subheadline])
                 XCTAssertEqual(try self.values(head, "//title"), [article.headline])
-                XCTAssertTrue(try self.values(head, "//meta[@property='og:image']/@content").isEmpty)
+                XCTAssertEqual(try self.values(head, "//meta[@property='og:image']/@content"), [article.fullImageUrl!])
                 XCTAssertFalse(response.body.string.contains("default-share-image"))
                 XCTAssertFalse(response.body.string.contains("/images/favicon/"))
             }
@@ -83,10 +83,10 @@ final class MetadataTests: XCTestCase {
         let app = Vapor.Application(.testing)
         defer { app.shutdown() }
         try routes(app)
-        for path in ["/", "/articles", "/about", "/projects", "/sponsorship"] + MomokoPages.all.map({ "/apps/\($0.appSlug)/\($0.slug)" }) {
+        for path in ["/", "/blog", "/about", "/apps", "/sponsorship"] + MomokoPages.all.map({ "/apps/\($0.appSlug)/\($0.slug)" }) {
             try app.test(.GET, path) { response in
                 let document = try self.headDocument(response.body.string)
-                let canonicalPath = path == "/" ? "/articles" : path
+                let canonicalPath = path
                 XCTAssertEqual(try self.values(document, "//link[@rel='canonical']/@href"), [SiteURL.origin + canonicalPath])
                 XCTAssertEqual(try self.values(document, "//meta[@property='og:type']/@content"), ["website"])
                 XCTAssertEqual(try self.values(document, "//meta[@name='description']/@content").count, 1)

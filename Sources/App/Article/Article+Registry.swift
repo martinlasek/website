@@ -21,8 +21,7 @@ extension Article {
                       ["png", "jpg", "jpeg"].contains((cover.path as NSString).pathExtension.lowercased()) else {
                     throw ArticleRegistryError.invalidCover(article.slug)
                 }
-            } else if article.canonicalPath.hasPrefix("/blog/") {
-                // Existing articles retain their current layout until final assets are approved.
+            } else {
                 throw ArticleRegistryError.missingCover(article.slug)
             }
         }

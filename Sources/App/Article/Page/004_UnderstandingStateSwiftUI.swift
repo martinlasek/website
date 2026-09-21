@@ -13,6 +13,8 @@ extension Article {
         slug: "understanding-state-in-swiftui",
         canonicalPath: "/articles/understanding-state-in-swiftui",
         published_at: .date(13, .oct, 2023),
+        category: "Swift",
+        cover: ArticleCover(path: "/images/blog/understanding-state-in-swiftui.png", alt: "", width: 1200, height: 630),
         contentList: [
             .opener("In this tutorial we will dive into the fundamentals of State — what it is, why it’s good and how to use it."),
 

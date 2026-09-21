@@ -29,11 +29,13 @@ final class SitemapTests: XCTestCase {
         XCTAssertEqual(root.name, "urlset")
         XCTAssertEqual(root.uri, "http://www.sitemaps.org/schemas/sitemap/0.9")
         let urls = root.elements(forName: "url").compactMap { $0.elements(forName: "loc").first?.stringValue }
-        XCTAssertEqual(urls.count, 14)
+        XCTAssertEqual(urls.count, 15)
         XCTAssertEqual(Set(urls).count, urls.count)
         XCTAssertTrue(urls.contains("https://www.martinlasek.com/articles/error-app-intents-ssu-training"))
-        XCTAssertFalse(urls.contains("https://www.martinlasek.com/"))
-        XCTAssertFalse(urls.contains { $0.contains("/blog") })
+        XCTAssertTrue(urls.contains("https://www.martinlasek.com/"))
+        XCTAssertTrue(urls.contains("https://www.martinlasek.com/blog"))
+        XCTAssertFalse(urls.contains("https://www.martinlasek.com/articles"))
+        XCTAssertFalse(urls.contains("https://www.martinlasek.com/projects"))
 
         for url in urls {
             let path = try XCTUnwrap(URL(string: url)?.path)

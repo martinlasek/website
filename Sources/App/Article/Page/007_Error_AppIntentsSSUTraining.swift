@@ -16,6 +16,8 @@ extension Article {
         slug: "error-app-intents-ssu-training",
         canonicalPath: "/articles/error-app-intents-ssu-training",
         published_at: .date(26, .sep, 2024),
+        category: "Swift",
+        cover: ArticleCover(path: "/images/blog/error-app-intents-ssu-training.png", alt: "", width: 1200, height: 630),
 
         contentList: [
             .opener("Here’s how to fix the error 'Command AppIntentsSSUTraining failed with a nonzero exit code'"),

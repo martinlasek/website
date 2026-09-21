@@ -16,6 +16,8 @@ extension Article {
         slug: "uihostingcontroller-and-safearea",
         canonicalPath: "/articles/uihostingcontroller-and-safearea",
         published_at: .date(8, .oct, 2023),
+        category: "Swift",
+        cover: ArticleCover(path: "/images/blog/uihostingcontroller-and-safearea.png", alt: "", width: 1200, height: 630),
 
         contentList: [
             .opener("Here’s how you can ignore the safeArea when using a UIHostingController."),

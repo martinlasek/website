@@ -12,7 +12,7 @@ final class SiteComponentsTests: XCTestCase {
             let app = Vapor.Application(environment)
             defer { app.shutdown() }
             try routes(app)
-            let paths = ["/", "/articles", "/projects", "/about", "/sponsorship"] + Article.all.map(\.canonicalPath)
+            let paths = ["/", "/blog", "/apps", "/about", "/sponsorship"] + Article.all.map(\.canonicalPath)
             for path in paths {
                 try app.test(.GET, path) { response in
                     XCTAssertEqual(response.status, .ok)
@@ -20,7 +20,7 @@ final class SiteComponentsTests: XCTestCase {
                     let expected = environment == .production ? 1 : 0
                     XCTAssertEqual(html.components(separatedBy: "https://www.googletagmanager.com/gtag/js?").count - 1, expected, path)
                     XCTAssertEqual(html.components(separatedBy: "gtag('config', 'G-EV6Z0YNYR1')").count - 1, expected, path)
-                    XCTAssertFalse(html.contains(SiteLayout.stylesheet), "Legacy pages must not adopt new styles yet")
+                    XCTAssertEqual(html.contains(SiteLayout.stylesheet), ["/", "/blog", "/apps"].contains(path))
                 }
             }
             for page in MomokoPages.all {

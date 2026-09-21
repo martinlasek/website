@@ -11,8 +11,16 @@ func routes(_ app: Vapor.Application) throws {
 
     // MARK: - Index
 
-    app.get(use: getIndex)
-    app.get("\(NavLink.articles.href)", use: getIndex)
+    app.get { request -> Node in
+        HomePage.content(shouldTrackAnalytics: request.application.environment == .production)
+    }
+    app.get("blog") { request -> Node in
+        BlogPage.content(shouldTrackAnalytics: request.application.environment == .production)
+    }
+    app.get("apps") { request -> Node in
+        AppsPage.content(shouldTrackAnalytics: request.application.environment == .production)
+    }
+    app.get("articles") { request in request.redirect(to: "/blog", redirectType: .permanent) }
 
     // MARK: - Article Detail Papges
 
@@ -20,11 +28,7 @@ func routes(_ app: Vapor.Application) throws {
 
     // MARK: - Projects
 
-    app.get("\(NavLink.projects.href)") { req throws -> Node in
-        PageBuilder.base(navLink: .projects, shouldTrackAnalytics: req.application.environment == .production) {
-            .h1(attributes: [.class("text-center")], "Coming Soon")
-        }
-    }
+    app.get("projects") { request in request.redirect(to: "/apps", redirectType: .permanent) }
 
     // MARK: - Sponsorship
 
@@ -36,12 +40,6 @@ func routes(_ app: Vapor.Application) throws {
 
     app.get("\(NavLink.about.href)") { req throws -> Node in
         AboutPage.content(shouldTrackAnalytics: req.application.environment == .production)
-    }
-
-    func getIndex(_ req: Request) throws -> Node {
-        PageBuilder.base(navLink: NavLink.articles, shouldTrackAnalytics: req.application.environment == .production) {
-            .fragment(Article.all.map(Article.excerpt))
-        }
     }
 
     // MARK: - Search discovery

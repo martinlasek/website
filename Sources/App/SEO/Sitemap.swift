@@ -6,8 +6,7 @@ struct Sitemap {
     static var urls: [String] { urls(for: Article.all) }
 
     static func urls(for articles: [Article]) -> [String] {
-        // The current homepage is an archive duplicate canonicalized to /articles.
-        ["/articles", "/about", "/projects", "/sponsorship"].map { siteURL + $0 }
+        ["/", "/blog", "/apps", "/about", "/sponsorship"].map { siteURL + $0 }
         + articles.map(\.fullCanonUrl)
         + MomokoPages.all.map { "\(siteURL)/apps/\($0.appSlug)/\($0.slug)" }
     }

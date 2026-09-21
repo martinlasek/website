@@ -35,8 +35,8 @@ enum NavLink: CaseIterable, Equatable {
 
     var description: String{
         switch self {
-        case .articles: "Articles"
-        case .projects: "Projects"
+        case .articles: "Blog"
+        case .projects: "Apps"
         case .sponsorship: "Sponsorship"
         case .about: "About"
         }
@@ -44,8 +44,8 @@ enum NavLink: CaseIterable, Equatable {
 
     var href: String {
         switch self {
-        case .articles: "articles"
-        case .projects: "projects"
+        case .articles: "blog"
+        case .projects: "apps"
         case .sponsorship: "sponsorship"
         case .about: "about"
         }

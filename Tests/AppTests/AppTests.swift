@@ -6,7 +6,7 @@ final class AppTests: XCTestCase {
     func testPublicPagesRemainAvailable() async throws {
         try await withApplication { app in
             let paths = [
-                "/", "/articles", "/about", "/projects", "/sponsorship",
+                "/", "/blog", "/about", "/apps", "/sponsorship",
                 "/articles/error-app-intents-ssu-training",
                 "/articles/get-size-of-view-in-swiftui",
                 "/articles/list-and-identifiable-in-swiftui",

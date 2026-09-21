@@ -36,6 +36,9 @@ extension Article {
                     .p(attributes: [.class("text-secondary small")], "Published on \(article.published_at.readableFormat)"),
                     
             .hr,
+            .fragment(article.cover.map { cover in [
+                .img(src: cover.path, alt: cover.alt, attributes: [.class("w-100 mb-4"), .init("width", String(cover.width)), .init("height", String(cover.height)), .init("style", "height: auto"), .init("fetchpriority", "high")])
+            ] } ?? []),
 
             .fragment(article.contentList.map({ content in
                 switch content {
