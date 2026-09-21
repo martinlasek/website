@@ -20,7 +20,7 @@ final class SiteComponentsTests: XCTestCase {
                     let expected = environment == .production ? 1 : 0
                     XCTAssertEqual(html.components(separatedBy: "https://www.googletagmanager.com/gtag/js?").count - 1, expected, path)
                     XCTAssertEqual(html.components(separatedBy: "gtag('config', 'G-EV6Z0YNYR1')").count - 1, expected, path)
-                    XCTAssertEqual(html.contains(SiteLayout.stylesheet), ["/", "/blog", "/apps"].contains(path))
+                    XCTAssertEqual(html.contains(SiteLayout.stylesheet), (["/", "/blog", "/apps"].contains(path) || path.hasPrefix("/articles/")))
                 }
             }
             for page in MomokoPages.all {

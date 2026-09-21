@@ -38,10 +38,14 @@ extension Article {
             }
             let path = article.canonicalPath.split(separator: "/").map { PathComponent.constant(String($0)) }
             app.on(.GET, path) { request -> Node in
-                PageBuilder.base(
-                    navLink: .articles, meta: article,
-                    shouldTrackAnalytics: request.application.environment == .production,
-                    Article.layout(for: article)
+                let json = try article.structuredData()
+                return SiteLayout.page(
+                    metadata: article, navigation: PublicSite.navigation,
+                    footerLinks: PublicSite.navigation + [SiteLink(title: "Sponsor", destination: "/sponsorship")],
+                    currentPath: "/blog", shouldTrackAnalytics: request.application.environment == .production,
+                    hasSwiftCode: article.hasSwiftCode,
+                    headContent: .init(.raw("<script type=\"application/ld+json\">\(json)</script>")),
+                    content: .div(attributes: [.class("site-wrap")], Article.layout(for: article))
                 )
             }
         }

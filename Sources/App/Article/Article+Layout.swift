@@ -31,21 +31,18 @@ extension Article {
         shareURL.percentEncodedQuery = shareURL.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
         let tweetLink = shareURL.string!
 
-        return .div(attributes: [.class("article bg-body-tertiary")],
-            .h1(attributes: [.class("mb-2")], .text(article.headline)),
-                    .p(attributes: [.class("text-secondary small")], "Published on \(article.published_at.readableFormat)"),
-                    
-            .hr,
-            .fragment(article.cover.map { cover in [
-                .img(src: cover.path, alt: cover.alt, attributes: [.class("w-100 mb-4"), .init("width", String(cover.width)), .init("height", String(cover.height)), .init("style", "height: auto"), .init("fetchpriority", "high")])
-            ] } ?? []),
-
-            .fragment(article.contentList.map({ content in
+        let modifiedDate: Node
+        if let date = article.modifiedAt {
+            modifiedDate = .span("Updated ", .time(attributes: [.init("datetime", date.iso8601)], .text(date.readableFormat)))
+        } else {
+            modifiedDate = .fragment([])
+        }
+        let body: Node = .fragment(article.contentList.map({ content in
                 switch content {
                 case .opener(let text):
                     return .fragment([
                         .p(.text(text)),
-                        .sponsor(.current)
+                        articleSponsor
                     ])
 
                 case .h2(let text):
@@ -55,8 +52,8 @@ extension Article {
                 case .code(let text):
                     return .codeblock(text)
                 case .image(let image):
-                    return .div(attributes: [.class("text-center pb-2 image mb-3")],
-                                .img(src: image.imgSrc, alt: "", attributes: [.class("w-100")])
+                    return .figure(attributes: [.class("site-tutorial-image")],
+                                .init(.img(src: image.imgSrc, alt: "", attributes: [.init("loading", "lazy")]))
                     )
                 case .list(let points):
                     return .ul(
@@ -67,23 +64,52 @@ extension Article {
                 case .banner(let kind):
                     switch kind {
                     case .primary(let text):
-                        return .div(attributes: [.class("alert alert-primary fs-italic")], .text(text))
+                        return .div(attributes: [.class("site-note")], .text(text))
                     }
                 case .link(let article):
-                    return .a(attributes: [.href(article.fullCanonUrl), .class("ml-link d-block mb-3"), .target(.blank)], .text(article.headline))
+                    return .a(attributes: [.href(article.fullCanonUrl), .class("site-related-link"), .target(.blank)], .text(article.headline))
                 }
-            })),
+            }))
+
+        return .article(attributes: [.class("site-reading site-article")],
+            .a(attributes: [.href("/blog"), .class("site-back")], "← All posts"),
+            .h1(.text(article.headline)),
+            .p(attributes: [.class("site-article-summary")], .text(article.subheadline)),
+            .div(attributes: [.class("site-byline")],
+                .a(attributes: [.href("/about")], .text(article.author)),
+                .time(attributes: [.init("datetime", article.published_at.iso8601)], .text(article.published_at.readableFormat)),
+                .span(.text("\(article.readingMinutes) min read")),
+                modifiedDate
+            ),
+            .fragment(article.cover.map { cover in [
+                .figure(attributes: [.class("site-article-hero")],
+                    .init(.img(src: cover.path, alt: Html.escapeTextNode(text: cover.alt), attributes: [.init("width", String(cover.width)), .init("height", String(cover.height)), .init("fetchpriority", "high")])) )
+            ] } ?? []),
+
+            body,
                     
             .hr,
 
-            .p(attributes: [.class("text-ml-primary text-center")], .text("I hope you found it useful! If you have any suggestions or feedback, let me know. I’d love to hear from you!")),
+            .p(attributes: [.class("site-article-ending")], .text("I hope you found it useful! If you have any suggestions or feedback, let me know. I’d love to hear from you!")),
 
-            .div(attributes: [.class("pt-2 pb-3 text-center")],
-                 .a(attributes: [.href(Html.escapeTextNode(text: tweetLink)), .target(.blank), .class("share")],
-                    .i(attributes: [.class("bi bi-twitter me-2")]),
+            .div(attributes: [.class("site-actions")],
+                 .a(attributes: [.href(Html.escapeTextNode(text: tweetLink)), .target(.blank), .class("site-button")],
                     .text("Share on Twitter")
                  )
             )
         )
     }
+
+    private static var articleSponsor: Node {
+        let sponsor = Sponsor.current
+        return .aside(attributes: [.class("site-sponsor"), .init("aria-label", "Sponsor")],
+            .a(attributes: [.href(Html.escapeTextNode(text: sponsor.websiteLink)), .init("rel", "sponsored"), .class("site-sponsor-link")],
+                .div(attributes: [.class("site-sponsor-heading")],
+                    .img(src: sponsor.logoUrl, alt: "WishKit", attributes: [.init("width", "100"), .init("loading", "lazy")]),
+                    .span("Sponsor")),
+                .p(.text(sponsor.description)),
+                .span(attributes: [.class("site-button")], .text(sponsor.buttonText)))
+        )
+    }
+
 }

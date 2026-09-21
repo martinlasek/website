@@ -2,7 +2,7 @@ import Foundation
 import HtmlVaporSupport
 
 enum SiteLayout {
-    static let stylesheet = "/styles/site-v2.css"
+    static let stylesheet = "/styles/site-v3.css"
 
     /// Callers supply only destinations that are ready to launch.
     static func page(
@@ -13,11 +13,14 @@ enum SiteLayout {
         shouldTrackAnalytics: Bool = false,
         isPreview: Bool = false,
         hasHeroBackdrop: Bool = false,
+        hasSwiftCode: Bool = false,
+        headContent: ChildOf<Tag.Head> = .fragment([]),
         content: Node
     ) -> Node {
         .html(attributes: [.lang(.en)],
             .head(
                 PageBuilder.metadata(metadata),
+                headContent,
                 .link(attributes: [.rel(.stylesheet), .href(stylesheet)]),
                 isPreview ? .meta(name: "robots", content: "noindex,nofollow") : .fragment([])
             ),
@@ -26,6 +29,11 @@ enum SiteLayout {
                 header(navigation: navigation, currentPath: currentPath),
                 .main(attributes: [.id("main")], content),
                 footer(links: footerLinks),
+                hasSwiftCode ? .raw("""
+                <script defer data-manual src="/scripts/prism-1.30.0/prism-core.min.js"></script>
+                <script defer src="/scripts/prism-1.30.0/prism-swift.min.js"></script>
+                <script defer src="/scripts/prism-1.30.0/highlight-swift.js"></script>
+                """) : .fragment([]),
                 Analytics.scripts(isEnabled: shouldTrackAnalytics && !isPreview)
             )
         )

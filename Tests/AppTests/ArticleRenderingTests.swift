@@ -10,7 +10,7 @@ final class ArticleRenderingTests: XCTestCase {
 
         XCTAssertEqual(
             html,
-            "<pre class=\"mb-3\"><code>\tlet value = \"&lt;script>alert('hello')&lt;/script> &amp;amp; > 🐱\"\n\n    print(value)\n</code></pre>"
+            "<pre class=\"language-swift\" tabindex=\"0\" aria-label=\"Swift code example\"><code class=\"language-swift\">\tlet value = \"&lt;script>alert('hello')&lt;/script> &amp;amp; > 🐱\"\n\n    print(value)\n</code></pre>"
         )
         XCTAssertFalse(html.contains("<script>"))
     }
@@ -18,7 +18,7 @@ final class ArticleRenderingTests: XCTestCase {
     func testEmptyCodeBlock() {
         XCTAssertEqual(
             Html.render(Node.codeblock("")),
-            "<pre class=\"mb-3\"><code></code></pre>"
+            "<pre class=\"language-swift\" tabindex=\"0\" aria-label=\"Swift code example\"><code class=\"language-swift\"></code></pre>"
         )
     }
 
@@ -40,7 +40,7 @@ final class ArticleRenderingTests: XCTestCase {
                         switch content {
                         case .code(let code):
                             XCTAssertTrue(
-                                html.contains("<code>\(Html.escapeTextNode(text: code))</code>"),
+                                html.contains("<code class=\"language-swift\">\(Html.escapeTextNode(text: code))</code>"),
                                 "Missing or altered code in \(article.slug)"
                             )
                         case .image(let image):
@@ -64,7 +64,7 @@ final class ArticleRenderingTests: XCTestCase {
             for content in article.contentList {
                 if case .code(let code) = content {
                     XCTAssertTrue(
-                        html.contains("<code>\(Html.escapeTextNode(text: code))</code>"),
+                        html.contains("<code class=\"language-swift\">\(Html.escapeTextNode(text: code))</code>"),
                         article.slug
                     )
                 }
