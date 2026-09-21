@@ -9,7 +9,7 @@ enum PublicSite {
 
     static func page(metadata: PageMetadata, shouldTrackAnalytics: Bool, content: Node) -> Node {
         SiteLayout.page(metadata: metadata, navigation: navigation,
-                        footerLinks: navigation + [SiteLink(title: "Sponsor", destination: "/sponsorship")],
+                        footerLinks: navigation + [SiteLink(title: "Sponsor", destination: "/sponsor")],
                         currentPath: metadata.canonicalPath, shouldTrackAnalytics: shouldTrackAnalytics, hasHeroBackdrop: metadata.canonicalPath == "/", content: content)
     }
 

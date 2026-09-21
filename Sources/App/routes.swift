@@ -32,6 +32,8 @@ func routes(_ app: Vapor.Application) throws {
 
     // MARK: - Sponsorship
 
+    app.get("sponsorship") { request in request.redirect(to: "/sponsor", redirectType: .permanent) }
+
     app.get("\(NavLink.sponsorship.href)") { req throws -> Node in
         SponsorshipPage.content(shouldTrackAnalytics: req.application.environment == .production)
     }

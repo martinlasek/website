@@ -3,6 +3,40 @@ import Foundation
 import XCTVapor
 
 final class VisibleRolloutTests: XCTestCase {
+    func testSupportingPagesUseSharedDesignAndSocialContact() throws {
+        let app = Application(.testing)
+        defer { app.shutdown() }
+        try routes(app)
+        for path in ["/about", "/sponsor"] {
+            try app.test(.GET, path) { response in
+                let html = response.body.string
+                XCTAssertEqual(response.status, .ok)
+                XCTAssertTrue(html.contains("site-about-layout"))
+                XCTAssertTrue(html.contains(SiteLayout.stylesheet))
+                XCTAssertTrue(html.contains("href=\"/sponsor\""))
+                XCTAssertFalse(html.contains("href=\"/sponsorship\""))
+                XCTAssertFalse(html.contains("mailto:"))
+                XCTAssertFalse(html.contains("heylasek@gmail.com"))
+                XCTAssertFalse(html.contains("$149"))
+                XCTAssertFalse(html.contains("3,750"))
+                XCTAssertFalse(html.contains("Seattle"))
+                XCTAssertFalse(html.contains("stripe"))
+                XCTAssertFalse(html.contains("noindex"))
+                let headerEnd = try XCTUnwrap(html.range(of: "</header>"))
+                XCTAssertFalse(html[..<headerEnd.lowerBound].contains("Connect on X"))
+            }
+        }
+        XCTAssertTrue(Sitemap.urls.contains(SiteURL.origin + "/sponsor"))
+        XCTAssertFalse(Sitemap.urls.contains(SiteURL.origin + "/sponsorship"))
+        try app.test(.HEAD, "/sponsorship") { response in
+            XCTAssertEqual(response.status, .movedPermanently)
+            XCTAssertEqual(response.headers.first(name: .location), "/sponsor")
+        }
+        try app.test(.GET, "/sponsorship/missing") { response in
+            XCTAssertEqual(response.status, .notFound)
+        }
+    }
+
     func testHomeAndBlogUseNewDesignAndPreserveLegacyDestinations() throws {
         let uncovered = Article(headline: "Test", subheadline: "Test", slug: "legacy-test", canonicalPath: "/articles/legacy-test", published_at: .date(1, .jan, 2026), contentList: [])
         XCTAssertThrowsError(try Article.validate([uncovered]))
@@ -34,7 +68,7 @@ final class VisibleRolloutTests: XCTestCase {
                 XCTAssertTrue(html.contains(article.cover!.path))
             }
         }
-        for (old, destination) in [("/articles", "/blog"), ("/projects", "/apps")] {
+        for (old, destination) in [("/articles", "/blog"), ("/projects", "/apps"), ("/sponsorship", "/sponsor")] {
             try app.test(.GET, old) { response in
                 XCTAssertEqual(response.status, .movedPermanently)
                 XCTAssertEqual(response.headers.first(name: .location), destination)

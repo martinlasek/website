@@ -2,7 +2,7 @@ import Foundation
 import HtmlVaporSupport
 
 enum SiteLayout {
-    static let stylesheet = "/styles/site-v3.css"
+    static let stylesheet = "/styles/site-v4.css"
 
     /// Callers supply only destinations that are ready to launch.
     static func page(
@@ -54,13 +54,11 @@ enum SiteLayout {
                 .nav(attributes: [.class("site-desktop-nav"), .init("aria-label", "Main")],
                     links(navigation, currentPath: currentPath)),
                 .div(attributes: [.class("site-contact")],
-                    SocialLinks.content,
-                    SiteComponents.button(SiteLink(title: "Connect on X ↗", destination: "https://twitter.com/martinlasek"))),
+                    SocialLinks.content),
                 .details(attributes: [.class("site-mobile-nav")], .summary("Menu"),
                     .nav(attributes: [.init("aria-label", "Mobile")],
                         links(navigation, currentPath: currentPath),
-                        SocialLinks.content,
-                        SiteComponents.button(SiteLink(title: "Connect on X ↗", destination: "https://twitter.com/martinlasek"))
+                        SocialLinks.content
                     )
                 )
             )

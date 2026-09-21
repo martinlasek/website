@@ -83,7 +83,7 @@ final class MetadataTests: XCTestCase {
         let app = Vapor.Application(.testing)
         defer { app.shutdown() }
         try routes(app)
-        for path in ["/", "/blog", "/about", "/apps", "/sponsorship"] + MomokoPages.all.map({ "/apps/\($0.appSlug)/\($0.slug)" }) {
+        for path in ["/", "/blog", "/about", "/apps", "/sponsor"] + MomokoPages.all.map({ "/apps/\($0.appSlug)/\($0.slug)" }) {
             try app.test(.GET, path) { response in
                 let document = try self.headDocument(response.body.string)
                 let canonicalPath = path

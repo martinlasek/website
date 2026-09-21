@@ -41,7 +41,7 @@ extension Article {
                 let json = try article.structuredData()
                 return SiteLayout.page(
                     metadata: article, navigation: PublicSite.navigation,
-                    footerLinks: PublicSite.navigation + [SiteLink(title: "Sponsor", destination: "/sponsorship")],
+                    footerLinks: PublicSite.navigation + [SiteLink(title: "Sponsor", destination: "/sponsor")],
                     currentPath: "/blog", shouldTrackAnalytics: request.application.environment == .production,
                     hasSwiftCode: article.hasSwiftCode,
                     headContent: .init(.raw("<script type=\"application/ld+json\">\(json)</script>")),

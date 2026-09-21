@@ -46,7 +46,7 @@ enum NavLink: CaseIterable, Equatable {
         switch self {
         case .articles: "blog"
         case .projects: "apps"
-        case .sponsorship: "sponsorship"
+        case .sponsorship: "sponsor"
         case .about: "about"
         }
     }
