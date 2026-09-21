@@ -6,6 +6,7 @@ enum ProjectCatalog {
             overview: "Momoko is one of my game projects. Its gameplay brings together waves, upgrades, and character unlocks across individual runs.",
             highlights: ["Play through waves and choose upgrades.", "Collect Moko and unlock characters."],
             links: [
+                SiteLink(title: "View on the App Store ↗", destination: "https://apps.apple.com/app/id1371665660"),
                 SiteLink(title: "Support", destination: "/apps/momoko/support"),
                 SiteLink(title: "Privacy policy", destination: "/apps/momoko/privacy-policy"),
                 SiteLink(title: "Terms", destination: "/apps/momoko/terms")
@@ -33,7 +34,7 @@ enum ProjectCatalog {
             category: "macOS",
             overview: "ReadMarkdown is a read-only Markdown viewer for Mac. Open a document from Finder or browse a folder of Markdown files in its sidebar.",
             highlights: ["Read formatted text, tables, images, and selectable code blocks.", "See the preview update when a file changes on disk.", "Return to your last opened folder and file."],
-            links: [],
+            links: [SiteLink(title: "Visit ReadMarkdown ↗", destination: "https://www.readmarkdown.com/")],
             iconPath: "/images/projects/readmarkdown-v1.png"
         )
     ]

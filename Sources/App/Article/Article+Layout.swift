@@ -103,7 +103,8 @@ extension Article {
     private static var articleSponsor: Node {
         let sponsor = Sponsor.current
         return .aside(attributes: [.class("site-sponsor"), .init("aria-label", "Sponsor")],
-            .a(attributes: [.href(Html.escapeTextNode(text: sponsor.websiteLink)), .init("rel", "sponsored"), .class("site-sponsor-link")],
+            .a(attributes: [.href(Html.escapeTextNode(text: sponsor.websiteLink)), .target(.blank), .init("rel", "sponsored noopener"),
+                            .init("aria-label", "WishKit sponsor (opens in a new tab)"), .class("site-sponsor-link")],
                 .div(attributes: [.class("site-sponsor-heading")],
                     .img(src: sponsor.logoUrl, alt: "WishKit", attributes: [.init("width", "100"), .init("loading", "lazy")]),
                     .span("Sponsor")),
