@@ -2,7 +2,7 @@ import Foundation
 import HtmlVaporSupport
 
 enum SiteLayout {
-    static let stylesheet = "/styles/site-v5.css"
+    static let stylesheet = "/styles/site-v6.css"
 
     /// Callers supply only destinations that are ready to launch.
     static func page(
@@ -27,7 +27,7 @@ enum SiteLayout {
             .body(attributes: [.class(hasHeroBackdrop ? "site site-home" : "site")],
                 .a(attributes: [.href("#main"), .class("site-skip")], "Skip to content"),
                 header(navigation: navigation, currentPath: currentPath),
-                .main(attributes: [.id("main")], content),
+                .main(attributes: [.id("main"), .init("tabindex", "-1")], content),
                 footer(links: footerLinks),
                 hasSwiftCode ? .raw("""
                 <script defer data-manual src="/scripts/prism-1.30.0/prism-core.min.js"></script>

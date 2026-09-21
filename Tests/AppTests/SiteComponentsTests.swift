@@ -44,7 +44,7 @@ final class SiteComponentsTests: XCTestCase {
             ))
             let doc = try document(html)
             XCTAssertEqual(try doc.nodes(forXPath: "//link[@rel='canonical']").count, 1)
-            XCTAssertEqual(try doc.nodes(forXPath: "//main[@id='main']").count, 1)
+            XCTAssertEqual(try doc.nodes(forXPath: "//main[@id='main'][@tabindex='-1']").count, 1)
             XCTAssertEqual(try doc.nodes(forXPath: "//details/summary").count, 1)
             XCTAssertEqual(try doc.nodes(forXPath: "//nav/a[@aria-current='page']").count, 2)
             XCTAssertEqual(try doc.nodes(forXPath: "//a[@href='/apps']").count, 0)
