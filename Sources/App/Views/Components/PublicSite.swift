@@ -8,7 +8,12 @@ enum PublicSite {
     ]
 
     static func page(metadata: PageMetadata, shouldTrackAnalytics: Bool, content: Node) -> Node {
-        SiteLayout.page(metadata: metadata, navigation: navigation,
+        var metadata = metadata
+        if metadata.imagePath == nil {
+            metadata.imagePath = "/images/site/social-default-v1.png"
+            metadata.imageAlt = "Martin Lasek — apps, games and practical Swift tutorials, with an illustrated mountain landscape."
+        }
+        return SiteLayout.page(metadata: metadata, navigation: navigation,
                         footerLinks: navigation + [SiteLink(title: "Sponsor", destination: "/sponsor")],
                         currentPath: metadata.canonicalPath, shouldTrackAnalytics: shouldTrackAnalytics, hasHeroBackdrop: metadata.canonicalPath == "/", content: content)
     }

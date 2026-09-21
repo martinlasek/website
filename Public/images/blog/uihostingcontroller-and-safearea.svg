@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+ <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#26364c"/><stop offset="1" stop-color="#141b29"/></linearGradient></defs>
+ <rect width="1200" height="630" fill="url(#bg)"/>
+ <circle cx="1130" cy="40" r="260" fill="#acdab0" opacity=".07"/>
+ <path d="M0 545 L270 456 L450 516 L720 430 L960 510 L1200 420 V630 H0Z" fill="#101824" opacity=".5"/>
+ <rect x="64" y="65" width="5" height="31" rx="2" fill="#acdab0"/>
+ <text x="85" y="88" fill="#acdab0" font-family="Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="3">UIKIT + SWIFTUI</text>
+ <text x="64" y="265" fill="#ffffff" font-family="Arial,sans-serif" font-size="61" font-weight="700" letter-spacing="-1.8">Beyond the</text>
+ <text x="64" y="343" fill="#ffffff" font-family="Arial,sans-serif" font-size="61" font-weight="700" letter-spacing="-1.8">safe area</text>
+ <text x="64" y="558" fill="#c1cddd" font-family="Arial,sans-serif" font-size="23">martinlasek.com</text>
+ <g transform="translate(725 161)"><rect width="410" height="315" rx="25" fill="#2e3f55" stroke="#61718a"/>
+ <circle cx="28" cy="27" r="5" fill="#acdab0"/><circle cx="47" cy="27" r="5" fill="#7c8a9f"/><circle cx="66" cy="27" r="5" fill="#7c8a9f"/>
+ <path d="M0 55 H410" stroke="#61718a"/>
+ <text x="205" y="93" text-anchor="middle" fill="#d2dcea" font-family="Arial,sans-serif" font-size="15" letter-spacing="1">HOSTING CONTROLLER</text>
+ <rect x="127" y="118" width="156" height="95" rx="18" fill="#acdab0"/>
+ <text x="205" y="181" text-anchor="middle" fill="#152032" font-family="Arial,sans-serif" font-size="47" font-weight="700">[ ]</text>
+ <text x="205" y="266" text-anchor="middle" fill="#e4eaf3" font-family="Arial,sans-serif" font-size="20">Edge to edge</text></g></svg>

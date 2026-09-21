@@ -8,6 +8,14 @@ enum HomePage {
             shouldTrackAnalytics: shouldTrackAnalytics,
             content: .fragment([
                 .section(attributes: [.class("site-hero")],
+                    .raw("""
+                    <picture class="site-hero-art" aria-hidden="true">
+                      <source media="(max-width: 800px)" type="image/webp" srcset="/images/site/hero-mobile-v1.webp">
+                      <source media="(max-width: 800px)" type="image/jpeg" srcset="/images/site/hero-mobile-v1.jpg">
+                      <source type="image/webp" srcset="/images/site/hero-desktop-v1.webp">
+                      <img src="/images/site/hero-desktop-v1.jpg" width="1920" height="640" alt="" fetchpriority="high" decoding="async">
+                    </picture>
+                    """),
                     .div(attributes: [.class("site-wrap site-hero-inner")],
                         .p(attributes: [.class("site-eyebrow")], "Building apps for a more playful, useful world"),
                         .h1("Hi, I'm ", .span("Martin.")),

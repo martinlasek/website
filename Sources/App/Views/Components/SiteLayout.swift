@@ -2,7 +2,7 @@ import Foundation
 import HtmlVaporSupport
 
 enum SiteLayout {
-    static let stylesheet = "/styles/site-v4.css"
+    static let stylesheet = "/styles/site-v5.css"
 
     /// Callers supply only destinations that are ready to launch.
     static func page(

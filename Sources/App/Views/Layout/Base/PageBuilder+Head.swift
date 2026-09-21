@@ -9,6 +9,9 @@ extension PageBuilder {
         var tags: [ChildOf<Tag.Head>] = [
             .meta(attributes: [.charset("utf-8")]),
             .meta(name: "viewport", content: "width=device-width, initial-scale=1"),
+            .link(attributes: [.rel(.init(rawValue: "icon")), .href("/images/site/favicon-v1.svg"), .init("type", "image/svg+xml")]),
+            .link(attributes: [.rel(.init(rawValue: "icon")), .href("/images/site/favicon-32-v1.png"), .init("sizes", "32x32"), .init("type", "image/png")]),
+            .link(attributes: [.rel(.init(rawValue: "apple-touch-icon")), .href("/images/site/apple-touch-icon-v1.png")]),
             .init(.element("title", [], [.text(meta.headline)])),
             .meta(name: "description", content: description),
             .link(attributes: [.href(meta.fullCanonUrl), .rel(.init(rawValue: "canonical"))]),
