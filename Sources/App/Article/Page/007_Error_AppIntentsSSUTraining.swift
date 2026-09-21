@@ -14,6 +14,7 @@ extension Article {
         headline: "Error: Command AppIntentsSSUTraining failed with a nonzero exit code",
         subheadline: "How to fix the error 'Command AppIntentsSSUTraining failed with a nonzero exit code'",
         slug: "error-app-intents-ssu-training",
+        canonicalPath: "/articles/error-app-intents-ssu-training",
         published_at: .date(26, .sep, 2024),
 
         contentList: [

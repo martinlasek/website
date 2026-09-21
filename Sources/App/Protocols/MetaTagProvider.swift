@@ -1,35 +1,25 @@
-//
-//  MetaTagProvider.swift
-//  website
-//
-//  Created by Martin Lasek on 10/12/23.
-//  Copyright © 2023 Martin Lasek. All rights reserved.
-//
-
 protocol MetaTagProvider {
-    /// For example: articles/how-to-add-a-placeholder-to-texteditor
+    /// Explicit root-relative path, e.g. /articles/existing-post or /blog/new-post.
     var canonicalPath: String { get }
-
-    // For example: How To: Add a placeholder to TextEditor in SwiftUI.
     var headline: String { get }
-
-    // For example: SwiftUI currently only supports a placeholder for TextField but not for the TextEditor - Let's fix that!
     var subheadline: String { get }
-
-    // For example: articles/002_xcode_check_outgoing_connection.png
     var imagePath: String? { get }
+    var imageAlt: String? { get }
+    var openGraphType: String { get }
 }
 
 extension MetaTagProvider {
-    var hostUrl: String {
-        return "https://www.martinlasek.com"
-    }
+    var imagePath: String? { nil }
+    var imageAlt: String? { nil }
+    var openGraphType: String { "website" }
 
     var fullCanonUrl: String {
-        return "\(hostUrl)/articles/\(canonicalPath)"
+        // Paths are authored in source, never copied from request headers or queries.
+        precondition(SiteURL.isValidPath(canonicalPath), "Invalid canonical path")
+        return SiteURL.origin + canonicalPath
     }
 
-    var fullImageUrl: String {
-        return "\(hostUrl)/\(imagePath ?? "default-share-image")"
+    var fullImageUrl: String? {
+        imagePath.flatMap { SiteURL.absoluteURL(for: $0) }
     }
 }

@@ -12,6 +12,7 @@ extension Article {
         headline: "How to fix: A server with the specified hostname could not be found",
         subheadline: "When creating a new macOS app you won't be able to make a network request right away.",
         slug: "how-to-fix-server-with-unspecified-hostname-not-found",
+        canonicalPath: "/articles/how-to-fix-server-with-unspecified-hostname-not-found",
         published_at: .date(10, .oct, 2023),
         
         contentList: [

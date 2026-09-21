@@ -6,13 +6,14 @@
 //  Copyright © 2023 Martin Lasek. All rights reserved.
 //
 
+import Foundation
 import HtmlVaporSupport
 
 extension Article {
 
     static func excerpt(for article: Article) -> Node {
         return
-            .a(attributes: [.href("/articles/\(article.slug)"), .class("article bg-body-tertiary mb-3 d-block")],
+            .a(attributes: [.href(article.canonicalPath), .class("article bg-body-tertiary mb-3 d-block")],
                .h1(.text(article.headline)),
                .p(attributes: [.class("text-secondary mb-1 small")], "Published on \(article.published_at.readableFormat)"),
                .p(attributes: [.class("mb-0")], .text(article.subheadline))
@@ -20,7 +21,15 @@ extension Article {
     }
 
     static func layout(for article: Article) -> Node {
-        let tweetLink = "https://twitter.com/intent/tweet?via=martinlasek&text=» \(article.headline.urlEncoded()) «&url=https://www.martinlasek.com/articles/\(article.slug)"
+        var shareURL = URLComponents(string: "https://twitter.com/intent/tweet")!
+        shareURL.queryItems = [
+            URLQueryItem(name: "via", value: "martinlasek"),
+            URLQueryItem(name: "text", value: "» \(article.headline) «"),
+            URLQueryItem(name: "url", value: article.fullCanonUrl)
+        ]
+        // Query consumers commonly decode '+' as a space.
+        shareURL.percentEncodedQuery = shareURL.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        let tweetLink = shareURL.string!
 
         return .div(attributes: [.class("article bg-body-tertiary")],
             .h1(attributes: [.class("mb-2")], .text(article.headline)),
@@ -67,7 +76,7 @@ extension Article {
             .p(attributes: [.class("text-ml-primary text-center")], .text("I hope you found it useful! If you have any suggestions or feedback, let me know. I’d love to hear from you!")),
 
             .div(attributes: [.class("pt-2 pb-3 text-center")],
-                 .a(attributes: [.href(tweetLink), .target(.blank), .class("share")],
+                 .a(attributes: [.href(Html.escapeTextNode(text: tweetLink)), .target(.blank), .class("share")],
                     .i(attributes: [.class("bi bi-twitter me-2")]),
                     .text("Share on Twitter")
                  )

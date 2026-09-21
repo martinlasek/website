@@ -9,6 +9,8 @@ Adapted from `wishkit-api/.claude/skills/blog-cover` on 2026-09-09. Reuse the re
 
 ## Create
 
+- Martin requires a topic-specific hero image for every published post, including legacy tutorials. Reuse its artwork on cards and social previews; a text-only published card is not the intended design.
+
 - Inspect the current design and nearby post covers first. The personal site's redesign is still being discussed; do not treat WishKit's visual style as approved here.
 - Prefer an existing useful screenshot, a topic-specific illustration, or clear typography. Covers should communicate the post's subject and remain legible as thumbnails.
 - Use a 1200 by 630 canvas for a shared cover/social asset unless the established design specifies another size. Keep titles concise and comfortably inside the canvas; measure text rather than relying on a character limit.

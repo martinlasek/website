@@ -12,11 +12,11 @@ struct AppInfoPage {
     var content: Node {
         .html(attributes: [.lang(.en)],
             .head(
-                .meta(attributes: [.charset("utf-8")]),
-                .meta(name: "viewport", content: "width=device-width, initial-scale=1"),
-                .title("\(appName) — \(title)"),
-                .meta(name: "description", content: "\(title) for \(appName), by Martin Lasek."),
-                .link(attributes: [.rel(.init(rawValue: "canonical")), .href("https://www.martinlasek.com/apps/\(appSlug)/\(slug)")]),
+                PageBuilder.metadata(PageMetadata(
+                    canonicalPath: "/apps/\(appSlug)/\(slug)",
+                    headline: "\(appName) — \(title)",
+                    subheadline: "\(title) for \(appName), by Martin Lasek."
+                )),
                 .style(safe: """
                 :root { color-scheme: light dark; }
                 body { margin: 0; background: #111827; color: #e5e7eb; font: 1.05rem/1.75 system-ui, sans-serif; }

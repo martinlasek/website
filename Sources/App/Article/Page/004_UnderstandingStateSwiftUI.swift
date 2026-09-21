@@ -11,6 +11,7 @@ extension Article {
         headline: "Understanding @State in SwiftUI",
         subheadline: "When starting out with SwiftUI the @State property wrapper might very well be the most important one to learn about.",
         slug: "understanding-state-in-swiftui",
+        canonicalPath: "/articles/understanding-state-in-swiftui",
         published_at: .date(13, .oct, 2023),
         contentList: [
             .opener("In this tutorial we will dive into the fundamentals of State — what it is, why it’s good and how to use it."),

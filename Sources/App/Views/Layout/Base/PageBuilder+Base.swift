@@ -22,7 +22,7 @@ extension PageBuilder {
         let year = Calendar.current.component(.year, from: Date())
         
         return Node.html(attributes: [.lang(.en), .data("bs-theme", "dark")],
-             head(canonUrlPath: navLink.href),
+             head(PageMetadata.page(for: navLink)),
             .body(
                 navigation(navLink: navLink),
                 .div(attributes: [.class("\(navLink.id) container pt-4 pb-3")],

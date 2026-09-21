@@ -1,12 +1,14 @@
 import Vapor
 
 struct Sitemap {
-    static let siteURL = "https://www.martinlasek.com"
+    static let siteURL = SiteURL.origin
 
-    static var urls: [String] {
+    static var urls: [String] { urls(for: Article.all) }
+
+    static func urls(for articles: [Article]) -> [String] {
         // The current homepage is an archive duplicate canonicalized to /articles.
         ["/articles", "/about", "/projects", "/sponsorship"].map { siteURL + $0 }
-        + Article.all.map(\.fullCanonUrl)
+        + articles.map(\.fullCanonUrl)
         + MomokoPages.all.map { "\(siteURL)/apps/\($0.appSlug)/\($0.slug)" }
     }
 

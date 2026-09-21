@@ -14,27 +14,39 @@ struct Article: MetaTagProvider {
     let slug: String
     let published_at: PublishedDate // "10 Oct 2023"
 
-    // Used for the meta tag
-    let imagePath: String?
+    let canonicalPath: String
+    let modifiedAt: PublishedDate?
+    let author: String
+    let category: String?
+    let cover: ArticleCover?
+
+    var imagePath: String? { cover?.path }
+    var imageAlt: String? { cover?.alt }
+    var openGraphType: String { "article" }
     
     let contentList: [Article.Content]
-
-    // Used for the meta tag
-    var canonicalPath: String { return slug }
 
     init(
         headline: String,
         subheadline: String,
         slug: String,
+        canonicalPath: String? = nil,
         published_at: PublishedDate,
-        imagePath: String? = nil,
+        modifiedAt: PublishedDate? = nil,
+        author: String = "Martin Lasek",
+        category: String? = nil,
+        cover: ArticleCover? = nil,
         contentList: [Article.Content]
     ) {
         self.headline = headline
         self.subheadline = subheadline
         self.slug = slug
         self.published_at = published_at
-        self.imagePath = imagePath
+        self.canonicalPath = canonicalPath ?? "/blog/\(slug)"
+        self.modifiedAt = modifiedAt
+        self.author = author
+        self.category = category
+        self.cover = cover
         self.contentList = contentList
     }
 
