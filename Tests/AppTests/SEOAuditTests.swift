@@ -25,8 +25,9 @@ final class SEOAuditTests: XCTestCase {
                 let document = try XMLDocument(xmlString: response.body.string, options: .documentTidyHTML)
                 documents[path] = document
                 markup[path] = response.body.string
-                let title = try self.values(document, "//head/title")
-                let description = try self.values(document, "//meta[@name='description']/@content")
+                let head = try HTMLHeadDocument.parse(response.body.string)
+                let title = try self.values(head, "/head/title")
+                let description = try self.values(head, "//meta[@name='description']/@content")
                 XCTAssertEqual(title.count, 1, path)
                 XCTAssertEqual(description.count, 1, path)
                 XCTAssertFalse(title.first?.isEmpty ?? true, path)
@@ -34,14 +35,14 @@ final class SEOAuditTests: XCTestCase {
                 XCTAssertTrue(titles.insert(title.first ?? "").inserted, "Duplicate title: \(path)")
                 XCTAssertTrue(descriptions.insert(description.first ?? "").inserted, "Duplicate description: \(path)")
                 XCTAssertEqual(try self.values(document, "//h1").count, 1, path)
-                XCTAssertEqual(try self.values(document, "//link[@rel='canonical']/@href"), [SiteURL.origin + path], path)
-                XCTAssertEqual(try self.values(document, "//meta[@property='og:url']/@content"), [SiteURL.origin + path], path)
-                XCTAssertEqual(try self.values(document, "//meta[@property='og:title']/@content"), title, path)
-                XCTAssertEqual(try self.values(document, "//meta[@name='twitter:description']/@content"), description, path)
+                XCTAssertEqual(try self.values(head, "//link[@rel='canonical']/@href"), [SiteURL.origin + path], path)
+                XCTAssertEqual(try self.values(head, "//meta[@property='og:url']/@content"), [SiteURL.origin + path], path)
+                XCTAssertEqual(try self.values(head, "//meta[@property='og:title']/@content"), title, path)
+                XCTAssertEqual(try self.values(head, "//meta[@name='twitter:description']/@content"), description, path)
             }
             try app.test(.GET, path + "?utm_source=audit") { response in
-                let document = try XMLDocument(xmlString: response.body.string, options: .documentTidyHTML)
-                XCTAssertEqual(try self.values(document, "//link[@rel='canonical']/@href"), [SiteURL.origin + path])
+                let head = try HTMLHeadDocument.parse(response.body.string)
+                XCTAssertEqual(try self.values(head, "//link[@rel='canonical']/@href"), [SiteURL.origin + path])
             }
         }
 

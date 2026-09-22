@@ -71,7 +71,7 @@ final class MetadataTests: XCTestCase {
         let meta = PageMetadata(canonicalPath: "/test", headline: text, subheadline: text,
                                 imagePath: "/articles/007_the_problem.png", imageAlt: text)
         let html = Html.render(PageBuilder.head(meta))
-        let document = try XMLDocument(xmlString: html, options: .documentTidyHTML)
+        let document = try HTMLHeadDocument.parse(html)
         XCTAssertEqual(try values(document, "//title"), [text])
         for name in ["description", "twitter:title", "twitter:description", "twitter:image:alt"] {
             XCTAssertEqual(try values(document, "//meta[@name='\(name)']/@content"), [text])
@@ -124,9 +124,7 @@ final class MetadataTests: XCTestCase {
     }
 
     private func headDocument(_ html: String) throws -> XMLDocument {
-        let start = try XCTUnwrap(html.range(of: "<head>"))
-        let end = try XCTUnwrap(html.range(of: "</head>"))
-        return try XMLDocument(xmlString: String(html[start.lowerBound..<end.upperBound]), options: .documentTidyHTML)
+        try HTMLHeadDocument.parse(html)
     }
 
     private func values(_ document: XMLDocument, _ xpath: String) throws -> [String] {

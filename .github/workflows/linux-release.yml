@@ -1,0 +1,41 @@
+name: Linux release checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: linux-release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux-release:
+    name: Swift 6.2.4 / Ubuntu 22.04
+    runs-on: ubuntu-22.04
+    container: swift:6.2.4-jammy
+    timeout-minutes: 35
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Check toolchain pin
+        run: |
+          test "$(cat .swift-version)" = "6.2.4"
+          swift --version
+      - name: Install native build dependencies
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends libssl-dev libsqlite3-dev libxml2-dev pkg-config
+      - name: Build production executable with locked dependencies
+        run: swift build --disable-automatic-resolution -c release --static-swift-stdlib
+      - name: Run the same regression gate as Heroku
+        run: bash bin/post_compile
+      - name: Ensure dependency lockfile stayed unchanged
+        run: git diff --exit-code -- Package.resolved
