@@ -15,6 +15,7 @@ extension Article {
         published_at: .date(16, .oct, 2023),
         category: "Swift",
         cover: ArticleCover(path: "/images/blog/list-and-identifiable-in-swiftui.png", alt: "", width: 1200, height: 630),
+        hero: ArticleCover(path: "/images/blog/list-and-identifiable-in-swiftui-hero-v1.webp", alt: "", width: 1600, height: 700),
         contentList: [
             .opener("In this tutorial, we will learn how to create a List in SwiftUI that dynamically grows. We will also learn about Identifiable and how to add a Navigation with a Button."),
 

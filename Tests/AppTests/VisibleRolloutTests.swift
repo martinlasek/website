@@ -77,7 +77,7 @@ final class VisibleRolloutTests: XCTestCase {
         for article in Article.all {
             try app.test(.GET, article.canonicalPath) { response in
                 XCTAssertEqual(response.status, .ok)
-                XCTAssertTrue(response.body.string.contains("src=\"\(article.cover!.path)\""))
+                XCTAssertTrue(response.body.string.contains("src=\"\((article.hero ?? article.cover)!.path)\""))
                 XCTAssertTrue(response.body.string.contains(article.published_at.readableFormat))
             }
             try app.test(.GET, article.cover!.path) { response in

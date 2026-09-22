@@ -9,7 +9,7 @@ Adapted from `wishkit-api/.claude/skills/blog-cover` on 2026-09-09. Reuse the re
 
 ## Create
 
-- Martin requires a topic-specific hero image for every published post, including legacy tutorials. Reuse its artwork on cards and social previews; a text-only published card is not the intended design.
+- Martin requires topic-specific artwork for every published post, including legacy tutorials. Use titled covers for cards and social previews, and a separate text-free variant for the full-width detail hero so its HTML heading is the only title. A text-only published card is not the intended design.
 
 - Inspect the current design and nearby post covers first. The personal site's redesign is still being discussed; do not treat WishKit's visual style as approved here.
 - Prefer an existing useful screenshot, a topic-specific illustration, or clear typography. Covers should communicate the post's subject and remain legible as thumbnails.
@@ -33,3 +33,7 @@ Use the established asset directory; `Public/images/blog/<slug>.{svg,png}` is a 
 [generate_cover.py](references/wishkit/generate_cover.py) is the original WishKit SVG generator, copied unchanged as a layout example. It writes WishKit-branded files, assumes its output directory exists, and interpolates raw text. Before using it here, adapt the motif, mark, paths, XML escaping, input handling, and text sizing. Do not run it as a ready-made generator for this site.
 
 Use the sibling `seo-content` skill for publication metadata and URL migration, and `blog-graphic` for explanatory visuals inside a post.
+
+## Detail hero variants
+
+The current detail backgrounds are 1600 × 700 WebP assets with editable SVG sources, named `<slug>-hero-v1.{svg,webp}`. Keep visual subjects on the right and leave calm space on the left for the HTML heading. Set `Article.hero` separately from `Article.cover`; social metadata must continue using the titled PNG cover. Check both desktop and mobile crops behind the actual heading before finishing.

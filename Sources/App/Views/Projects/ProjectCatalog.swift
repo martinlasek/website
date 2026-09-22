@@ -11,7 +11,8 @@ enum ProjectCatalog {
                 SiteLink(title: "Privacy policy", destination: "/apps/momoko/privacy-policy"),
                 SiteLink(title: "Terms", destination: "/apps/momoko/terms")
             ],
-            iconPath: "/images/projects/momoko-v1.png"
+            iconPath: "/images/projects/momoko-v1.png",
+            heroImagePath: "/images/projects/momoko-hero-v1.webp"
         ),
         Project(
             slug: "wishkit", name: "WishKit", summary: "Collect feature requests and feedback inside your app.",
@@ -19,7 +20,8 @@ enum ProjectCatalog {
             overview: "WishKit gives people a place to share ideas for your product. Collect feature requests and use votes to understand what your users want next.",
             highlights: ["Collect product feedback and feature requests.", "Let users vote on ideas."],
             links: [SiteLink(title: "Visit WishKit ↗", destination: "https://www.wishkit.io/")],
-            iconPath: "/images/projects/wishkit-v1.png"
+            iconPath: "/images/projects/wishkit-v1.png",
+            heroImagePath: "/images/projects/wishkit-hero-v1.webp"
         ),
         Project(
             slug: "postburst", name: "PostBurst", summary: "Schedule and publish posts on X, Threads, and Bluesky.",
@@ -27,7 +29,8 @@ enum ProjectCatalog {
             overview: "PostBurst brings social publishing into one web dashboard, so you can prepare posts and schedule them across your connected accounts.",
             highlights: ["Schedule posts ahead of time.", "Publish on X, Threads, and Bluesky."],
             links: [SiteLink(title: "Visit PostBurst ↗", destination: "https://www.postburst.com/")],
-            iconPath: "/images/projects/postburst-v1.png"
+            iconPath: "/images/projects/postburst-v1.png",
+            heroImagePath: "/images/projects/postburst-hero-v1.webp"
         ),
         Project(
             slug: "readmarkdown", name: "ReadMarkdown", summary: "A focused Markdown reader with folder browsing and live file updates.",
@@ -35,7 +38,8 @@ enum ProjectCatalog {
             overview: "ReadMarkdown is a read-only Markdown viewer for Mac. Open a document from Finder or browse a folder of Markdown files in its sidebar.",
             highlights: ["Read formatted text, tables, images, and selectable code blocks.", "See the preview update when a file changes on disk.", "Return to your last opened folder and file."],
             links: [SiteLink(title: "Visit ReadMarkdown ↗", destination: "https://www.readmarkdown.com/")],
-            iconPath: "/images/projects/readmarkdown-v1.png"
+            iconPath: "/images/projects/readmarkdown-v1.png",
+            heroImagePath: "/images/projects/readmarkdown-hero-v1.webp"
         ),
         Project(
             slug: "wondercaptions", name: "WonderCaptions", summary: "Create and edit bilingual subtitles for your videos on Mac.",
@@ -50,7 +54,8 @@ enum ProjectCatalog {
                 SiteLink(title: "Visit WonderCaptions ↗", destination: "https://www.wondercaptions.com/"),
                 SiteLink(title: "View on the App Store ↗", destination: "https://apps.apple.com/app/id6761455318")
             ],
-            iconPath: "/images/projects/wondercaptions-v1.png"
+            iconPath: "/images/projects/wondercaptions-v1.png",
+            heroImagePath: "/images/projects/wondercaptions-hero-v1.webp"
         )
     ]
 

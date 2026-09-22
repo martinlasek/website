@@ -24,13 +24,19 @@ extension Article {
             } else {
                 throw ArticleRegistryError.missingCover(article.slug)
             }
+            if let hero = article.hero {
+                guard SiteURL.isValidPath(hero.path), hero.width > 0, hero.height > 0,
+                      ["webp", "png", "jpg", "jpeg"].contains((hero.path as NSString).pathExtension.lowercased()) else {
+                    throw ArticleRegistryError.invalidCover(article.slug)
+                }
+            }
         }
     }
 
     static func register(_ articles: [Article], on app: Vapor.Application) throws {
         try validate(articles)
         for article in articles {
-            if let cover = article.cover {
+            for cover in [article.cover, article.hero].compactMap({ $0 }) {
                 let file = app.directory.publicDirectory + String(cover.path.dropFirst())
                 guard FileManager.default.fileExists(atPath: file) else {
                     throw ArticleRegistryError.invalidCover(article.slug)

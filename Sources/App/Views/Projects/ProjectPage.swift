@@ -40,7 +40,8 @@ enum ProjectPage {
         if let path = project.heroImagePath {
             return .div(attributes: [.class("site-project-hero")],
                 .img(src: path, alt: project.heroImageAlt, attributes: [
-                    .class("site-project-hero-image"), .init("fetchpriority", "high")
+                    .class("site-project-hero-image"), .init("width", "1600"), .init("height", "700"),
+                    .init("fetchpriority", "high")
                 ]))
         }
         return .div(attributes: [.class("site-project-hero site-project-hero-\(project.slug)"), .init("aria-hidden", "true")],

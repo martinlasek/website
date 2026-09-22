@@ -71,7 +71,7 @@ extension Article {
                 }
             }))
 
-        let artwork: Node = .fragment(article.cover.map { cover in [
+        let artwork: Node = .fragment((article.hero ?? article.cover).map { cover in [
             .img(src: cover.path, alt: Html.escapeTextNode(text: cover.alt), attributes: [
                 .init("width", String(cover.width)), .init("height", String(cover.height)), .init("fetchpriority", "high")
             ])

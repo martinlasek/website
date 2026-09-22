@@ -20,6 +20,13 @@ final class ArticleDesignTests: XCTestCase {
                 let html = response.body.string
                 XCTAssertEqual(response.status, .ok)
                 XCTAssertTrue(html.contains("site-reading site-article"))
+                let hero = try XCTUnwrap(article.hero)
+                XCTAssertTrue(html.contains("src=\"\(hero.path)\""))
+                XCTAssertNotEqual(hero.path, article.cover?.path)
+                try app.test(.GET, hero.path) { imageResponse in
+                    XCTAssertEqual(imageResponse.status, .ok)
+                    XCTAssertGreaterThan(imageResponse.body.readableBytes, 0)
+                }
                 XCTAssertTrue(html.contains("href=\"/blog\""))
                 XCTAssertFalse(html.contains("github.com"))
                 XCTAssertFalse(html.contains("bootstrap"))

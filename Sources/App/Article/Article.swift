@@ -19,6 +19,7 @@ struct Article: MetaTagProvider {
     let author: String
     let category: String?
     let cover: ArticleCover?
+    let hero: ArticleCover?
 
     var imagePath: String? { cover?.path }
     var imageAlt: String? { cover?.alt }
@@ -36,6 +37,7 @@ struct Article: MetaTagProvider {
         author: String = "Martin Lasek",
         category: String? = nil,
         cover: ArticleCover? = nil,
+        hero: ArticleCover? = nil,
         contentList: [Article.Content]
     ) {
         self.headline = headline
@@ -47,6 +49,7 @@ struct Article: MetaTagProvider {
         self.author = author
         self.category = category
         self.cover = cover
+        self.hero = hero
         self.contentList = contentList
     }
 
