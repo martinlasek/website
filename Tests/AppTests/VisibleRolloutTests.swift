@@ -48,9 +48,9 @@ final class VisibleRolloutTests: XCTestCase {
             let html = response.body.string
             XCTAssertTrue(html.contains("site-hero"))
             XCTAssertTrue(html.contains("class=\"site site-home\""))
-            XCTAssertEqual(html.components(separatedBy: "aria-label=\"Martin on GitHub\"").count - 1, 3)
+            XCTAssertFalse(html.contains("github.com"))
             XCTAssertEqual(html.components(separatedBy: "aria-label=\"Martin on X\"").count - 1, 3)
-            XCTAssertEqual(html.components(separatedBy: "<svg ").count - 1, 6)
+            XCTAssertTrue(html.contains("class=\"site-social-link\""))
             XCTAssertTrue(html.contains("Hi, I'm"))
             XCTAssertTrue(html.contains("href=\"/projects\""))
             XCTAssertTrue(html.contains("href=\"/blog\""))
@@ -61,7 +61,7 @@ final class VisibleRolloutTests: XCTestCase {
         try app.test(.GET, "/blog") { response in
             let html = response.body.string
             XCTAssertFalse(html.contains("class=\"site site-home\""))
-            XCTAssertTrue(html.contains("aria-label=\"Martin on GitHub\""))
+            XCTAssertFalse(html.contains("github.com"))
             XCTAssertEqual(html.components(separatedBy: "class=\"site-post-card\"").count - 1, 7)
             for article in Article.all {
                 XCTAssertTrue(html.contains("href=\"\(article.canonicalPath)\""))

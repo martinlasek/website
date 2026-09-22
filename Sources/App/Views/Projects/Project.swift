@@ -8,6 +8,8 @@ struct Project {
     let links: [SiteLink]
 
     var iconPath: String? = nil
+    var heroImagePath: String? = nil
+    var heroImageAlt: String = ""
 
     var canonicalPath: String { "/projects/" + slug }
 

@@ -19,7 +19,7 @@ struct SponsorshipPage {
                         .p("I write about Swift, iOS development, and the things I learn while building apps. If your product could be useful to readers, I'd love to hear about it."),
                         .p("Connect with me on X to discuss your product and potential sponsorship."),
                         .div(attributes: [.class("site-actions")],
-                            SiteComponents.button(SiteLink(title: "Find me on X ↗", destination: "https://twitter.com/martinlasek")))
+                            SocialLinks.content)
                     ),
                     .aside(attributes: [.class("site-info-panel")],
                         .h2("Start a conversation"),

@@ -21,7 +21,7 @@ final class ArticleDesignTests: XCTestCase {
                 XCTAssertEqual(response.status, .ok)
                 XCTAssertTrue(html.contains("site-reading site-article"))
                 XCTAssertTrue(html.contains("href=\"/blog\""))
-                XCTAssertTrue(html.contains("aria-label=\"Martin on GitHub\""))
+                XCTAssertFalse(html.contains("github.com"))
                 XCTAssertFalse(html.contains("bootstrap"))
                 let document = try XMLDocument(xmlString: html, options: .documentTidyHTML)
                 let sponsorLinks = try document.nodes(forXPath: "//a[@class='site-sponsor-link']")
