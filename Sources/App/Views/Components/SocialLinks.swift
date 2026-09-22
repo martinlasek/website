@@ -11,7 +11,7 @@ enum SocialLinks {
     }
 
     private static func link(label: String, destination: String, path: String) -> Node {
-        .a(attributes: [.href(destination), .class("site-social-link"), .init("aria-label", label)],
+        .a(attributes: [.href(destination), .class("site-social-link"), .init("aria-label", label)] + LinkAttributes.externalNavigation(for: destination),
             // Fixed icon geometry; no user-controlled values enter this markup.
             .raw("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"currentColor\" fill-rule=\"evenodd\" aria-hidden=\"true\" focusable=\"false\"><path d=\"\(path)\"/></svg>"))
     }

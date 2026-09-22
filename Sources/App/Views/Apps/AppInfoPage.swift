@@ -44,7 +44,7 @@ struct AppInfoPage {
                         .section(.h2(.text(section.heading)), .p(.text(section.text)))
                     }),
                     .ul(.fragment(referenceLinks.map { link in
-                        .li(.a(attributes: [.href(link.url)], .text(link.label)))
+                        .li(.a(attributes: [.href(link.url)] + LinkAttributes.externalNavigation(for: link.url), .text(link.label)))
                     })),
                     .footer(
                         .p("Questions? ", .a(attributes: [.href("mailto:heylasek@gmail.com")], "heylasek@gmail.com")),

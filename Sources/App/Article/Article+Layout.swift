@@ -71,20 +71,25 @@ extension Article {
                 }
             }))
 
-        return .article(attributes: [.class("site-reading site-article")],
-            .a(attributes: [.href("/blog"), .class("site-back")], "← All posts"),
-            .h1(.text(article.headline)),
-            .p(attributes: [.class("site-article-summary")], .text(article.subheadline)),
-            .div(attributes: [.class("site-byline")],
-                .a(attributes: [.href("/about")], .text(article.author)),
-                .time(attributes: [.init("datetime", article.published_at.iso8601)], .text(article.published_at.readableFormat)),
-                .span(.text("\(article.readingMinutes) min read")),
-                modifiedDate
+        let artwork: Node = .fragment(article.cover.map { cover in [
+            .img(src: cover.path, alt: Html.escapeTextNode(text: cover.alt), attributes: [
+                .init("width", String(cover.width)), .init("height", String(cover.height)), .init("fetchpriority", "high")
+            ])
+        ] } ?? [])
+        return .fragment([
+            DetailHero.content(
+                title: article.headline, summary: article.subheadline,
+                backLink: SiteLink(title: "← All posts", destination: "/blog"),
+                artwork: artwork,
+                details: .div(attributes: [.class("site-byline")],
+                    .a(attributes: [.href("/about")], .text(article.author)),
+                    .time(attributes: [.init("datetime", article.published_at.iso8601)], .text(article.published_at.readableFormat)),
+                    .span(.text("\(article.readingMinutes) min read")),
+                    modifiedDate
+                )
             ),
-            .fragment(article.cover.map { cover in [
-                .figure(attributes: [.class("site-article-hero")],
-                    .init(.img(src: cover.path, alt: Html.escapeTextNode(text: cover.alt), attributes: [.init("width", String(cover.width)), .init("height", String(cover.height)), .init("fetchpriority", "high")])) )
-            ] } ?? []),
+            .div(attributes: [.class("site-wrap")],
+                .article(attributes: [.class("site-reading site-article")],
 
             body,
                     
@@ -93,11 +98,11 @@ extension Article {
             .p(attributes: [.class("site-article-ending")], .text("I hope you found it useful! If you have any suggestions or feedback, let me know. I’d love to hear from you!")),
 
             .div(attributes: [.class("site-actions")],
-                 .a(attributes: [.href(Html.escapeTextNode(text: tweetLink)), .target(.blank), .class("site-button")],
+                 .a(attributes: [.href(Html.escapeTextNode(text: tweetLink)), .target(.blank), .init("rel", "noopener"), .class("site-button")],
                     .text("Share on Twitter")
                  )
             )
-        )
+        ))])
     }
 
     private static var articleSponsor: Node {

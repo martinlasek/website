@@ -33,7 +33,7 @@ struct AppCard {
         let body: Node
         if let destination {
             body = .a(attributes: [.class("site-app-link"), .href(Html.escapeTextNode(text: destination.destination)),
-                                   .init("aria-label", Html.escapeTextNode(text: name))], contents)
+                                   .init("aria-label", Html.escapeTextNode(text: name))] + LinkAttributes.externalNavigation(for: destination.destination), contents)
         } else {
             body = .div(attributes: [.class("site-app-link")], contents)
         }

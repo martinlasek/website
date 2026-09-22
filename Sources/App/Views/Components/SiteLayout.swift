@@ -2,7 +2,7 @@ import Foundation
 import HtmlVaporSupport
 
 enum SiteLayout {
-    static let stylesheet = "/styles/site-v8.css"
+    static let stylesheet = "/styles/site-v10.css"
 
     /// Callers supply only destinations that are ready to launch.
     static func page(
@@ -42,6 +42,7 @@ enum SiteLayout {
     private static func links(_ links: [SiteLink], currentPath: String) -> Node {
         .fragment(links.map { link in
             var attributes: [Attribute<Tag.A>] = [.href(Html.escapeTextNode(text: link.destination))]
+            attributes += LinkAttributes.externalNavigation(for: link.destination)
             if link.destination == currentPath { attributes.append(.init("aria-current", "page")) }
             return .a(attributes: attributes, .text(link.title))
         })

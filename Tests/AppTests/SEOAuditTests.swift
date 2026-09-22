@@ -24,6 +24,16 @@ final class SEOAuditTests: XCTestCase {
                 XCTAssertFalse(response.body.string.contains("noindex"), path)
                 let document = try XMLDocument(xmlString: response.body.string, options: .documentTidyHTML)
                 documents[path] = document
+                for anchor in try document.nodes(forXPath: "//a[@href]") {
+                    guard let element = anchor as? XMLElement,
+                          let href = element.attribute(forName: "href")?.stringValue,
+                          let url = URL(string: href),
+                          let host = url.host,
+                          ["http", "https"].contains(url.scheme ?? ""),
+                          !["martinlasek.com", "www.martinlasek.com"].contains(host) else { continue }
+                    XCTAssertEqual(element.attribute(forName: "target")?.stringValue, "_blank", "External link: \(path) → \(href)")
+                    XCTAssertTrue((element.attribute(forName: "rel")?.stringValue ?? "").split(separator: " ").contains("noopener"), href)
+                }
                 markup[path] = response.body.string
                 let head = try HTMLHeadDocument.parse(response.body.string)
                 let title = try self.values(head, "/head/title")

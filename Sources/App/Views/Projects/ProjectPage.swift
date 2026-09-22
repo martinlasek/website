@@ -6,33 +6,33 @@ enum ProjectPage {
             metadata: PageMetadata(canonicalPath: project.canonicalPath,
                                    headline: "\(project.name) | Martin Lasek", subheadline: project.summary),
             shouldTrackAnalytics: shouldTrackAnalytics,
-            content: .div(attributes: [.class("site-wrap site-archive site-project-detail")],
-                .p(.a(attributes: [.href("/projects")], "← All projects")),
-                hero(project),
-                .div(attributes: [.class("site-project-title")],
-                    .h1(.text(project.name)),
-                    project.links.first.map { link in
-                        .a(attributes: [.href(link.destination)], .text(link.title))
-                    } ?? .fragment([])
+            hasHeroBackdrop: true,
+            content: .fragment([
+                DetailHero.content(
+                    title: project.name, summary: project.summary,
+                    backLink: SiteLink(title: "← All projects", destination: "/projects"),
+                    artwork: hero(project),
+                    details: .div(attributes: [.class("site-actions")],
+                        project.links.first.map { SiteComponents.button($0) } ?? .fragment([]))
                 ),
-                .p(attributes: [.class("site-project-summary")], .text(project.summary)),
-                .div(attributes: [.class("site-project-body")],
-                    .div(attributes: [.class("site-prose")],
-                        .h2("About the project"),
-                        .p(.text(project.overview)),
-                        .h2("Highlights"),
-                        .ul(.fragment(project.highlights.map { .li(.text($0)) })),
-                        .div(attributes: [.class("site-actions")],
-                            .fragment(project.links.dropFirst().map { SiteComponents.button($0) }))
-                    ),
-                    .aside(attributes: [.class("site-info-panel")],
-                        .h2("More projects"),
-                        .ul(.fragment(ProjectCatalog.all.filter { $0.slug != project.slug }.map {
-                            .li(.a(attributes: [.href($0.canonicalPath)], .text($0.name)))
-                        }))
+                .div(attributes: [.class("site-wrap site-archive site-project-detail")],
+                    .div(attributes: [.class("site-project-body")],
+                        .div(attributes: [.class("site-prose")],
+                            .h2("About the project"),
+                            .p(.text(project.overview)),
+                            .h2("Highlights"),
+                            .ul(.fragment(project.highlights.map { .li(.text($0)) })),
+                            .div(attributes: [.class("site-actions")],
+                                .fragment(project.links.dropFirst().map { SiteComponents.button($0) }))
+                        ),
+                        .aside(attributes: [.class("site-info-panel")],
+                            .h2("More projects"),
+                            .ul(.fragment(ProjectCatalog.all.filter { $0.slug != project.slug }.map {
+                                .li(.a(attributes: [.href($0.canonicalPath)], .text($0.name)))
+                            }))
+                        )
                     )
-                )
-            )
+            )])
         )
     }
 

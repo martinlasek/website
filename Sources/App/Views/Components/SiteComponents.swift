@@ -5,7 +5,7 @@ enum SiteComponents {
         .a(attributes: [
             .href(Html.escapeTextNode(text: link.destination)),
             .class(hasDarkBackground ? "site-button site-button-ghost" : "site-button")
-        ], .text(link.title))
+        ] + LinkAttributes.externalNavigation(for: link.destination), .text(link.title))
     }
 
     static func heading(eyebrow: String, title: String, summary: String) -> Node {

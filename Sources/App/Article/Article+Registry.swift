@@ -43,9 +43,9 @@ extension Article {
                     metadata: article, navigation: PublicSite.navigation,
                     footerLinks: PublicSite.navigation + [SiteLink(title: "Sponsor", destination: "/sponsor")],
                     currentPath: "/blog", shouldTrackAnalytics: request.application.environment == .production,
-                    hasSwiftCode: article.hasSwiftCode,
+                    hasHeroBackdrop: true, hasSwiftCode: article.hasSwiftCode,
                     headContent: .init(.raw("<script type=\"application/ld+json\">\(json)</script>")),
-                    content: .div(attributes: [.class("site-wrap")], Article.layout(for: article))
+                    content: Article.layout(for: article)
                 )
             }
         }

@@ -11,7 +11,7 @@ import HtmlVaporSupport
 extension Node {
     static func sponsor(_ sponsor: Sponsor) -> Node {
         .div(attributes: [.class("mt-4 mb-4")],
-             .a(attributes: [.href(sponsor.websiteLink), .class("sponsor d-block p-3"), .target(.blank)],
+             .a(attributes: [.href(sponsor.websiteLink), .class("sponsor d-block p-3"), .target(.blank), .init("rel", "sponsored noopener")],
                 .span(attributes: [.class("d-flex mb-2")],
                       .img(attributes: [.src(sponsor.logoUrl), .class("me-auto")]),
                       .span(attributes: [.class("align-self-start text-ml-primary small")], .i("SPONSOR"))

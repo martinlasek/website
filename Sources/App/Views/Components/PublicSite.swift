@@ -7,7 +7,7 @@ enum PublicSite {
         SiteLink(title: "About", destination: "/about")
     ]
 
-    static func page(metadata: PageMetadata, shouldTrackAnalytics: Bool, content: Node) -> Node {
+    static func page(metadata: PageMetadata, shouldTrackAnalytics: Bool, hasHeroBackdrop: Bool = false, content: Node) -> Node {
         var metadata = metadata
         if metadata.imagePath == nil {
             metadata.imagePath = "/images/site/social-default-v1.png"
@@ -15,7 +15,7 @@ enum PublicSite {
         }
         return SiteLayout.page(metadata: metadata, navigation: navigation,
                         footerLinks: navigation + [SiteLink(title: "Sponsor", destination: "/sponsor")],
-                        currentPath: metadata.canonicalPath, shouldTrackAnalytics: shouldTrackAnalytics, hasHeroBackdrop: metadata.canonicalPath == "/", content: content)
+                        currentPath: metadata.canonicalPath, shouldTrackAnalytics: shouldTrackAnalytics, hasHeroBackdrop: hasHeroBackdrop || metadata.canonicalPath == "/", content: content)
     }
 
     static var posts: [Article] {
