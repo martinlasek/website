@@ -7,6 +7,7 @@ public func configure(_ app: Application) async throws {
     // MARK: - Middleware
 
     app.middleware.use(SiteErrorMiddleware())
+    app.middleware.use(HTTPSRedirectMiddleware())
     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
     // MARK: - Leaf
