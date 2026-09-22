@@ -15,8 +15,8 @@ extension Article {
         canonicalPath: "/articles/how-to-add-a-placeholder-to-texteditor",
         published_at: .date(12, .oct, 2023),
         category: "Swift",
-        cover: ArticleCover(path: "/images/blog/how-to-add-a-placeholder-to-texteditor.png", alt: "", width: 1200, height: 630),
-        hero: ArticleCover(path: "/images/blog/how-to-add-a-placeholder-to-texteditor-hero-v1.webp", alt: "", width: 1600, height: 700),
+        cover: ArticleCover(path: "/images/blog/how-to-add-a-placeholder-to-texteditor-2.png", alt: "", width: 1200, height: 630),
+        hero: ArticleCover(path: "/images/blog/how-to-add-a-placeholder-to-texteditor-hero-v2.webp", alt: "", width: 1600, height: 700),
         contentList: [
             .opener("If you tried to add a placeholder to a TextEditor you might have noticed that.. it doesn't work. It turns out TextEditor doesn't support a placeholder. Here's a quick and straightforward way how you can implement a placeholder yourself."),
 

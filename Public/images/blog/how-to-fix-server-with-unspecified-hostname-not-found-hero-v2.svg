@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700">
+<defs>
+  <radialGradient id="glow" cx="0.72" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#f3acbf" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#f3acbf" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.4" fill="#ffffff" opacity=".07"/>
+  </pattern>
+  <linearGradient id="fade" x1="0" x2="1">
+    <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+    <stop offset=".8" stop-color="#fff" stop-opacity="1"/>
+  </linearGradient>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0"/></filter>
+  <mask id="dotmask"><rect width="1600" height="700" fill="url(#fade)"/></mask>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="200%">
+    <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#050a12" flood-opacity=".55"/>
+  </filter>
+</defs>
+<rect width="1600" height="700" fill="#1c2738"/>
+<rect width="1600" height="700" fill="url(#glow)"/>
+<rect width="1600" height="700" filter="url(#grain)" opacity=".05"/>
+<rect width="1600" height="700" fill="url(#dots)" mask="url(#dotmask)"/>
+<g filter="url(#shadow)"><rect x="950" y="165" width="470" height="350" rx="16" fill="#242f40" stroke="#3a4a62" stroke-width="2"/></g><path d="M950 211H1420" stroke="#3a4a62" stroke-width="2"/><circle cx="976" cy="188" r="7" fill="#ff5f57"/><circle cx="998" cy="188" r="7" fill="#febc2e"/><circle cx="1020" cy="188" r="7" fill="#28c840"/><text x="1185.0" y="194" font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="500" fill="#aab6c8" text-anchor="middle" >Signing &amp; Capabilities</text><text x="982" y="261" font-family="SF Pro Display, SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f4f9" text-anchor="start" >App Sandbox</text><text x="982" y="305" font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="700" fill="#8795aa" text-anchor="start" letter-spacing="1.5">NETWORK</text><rect x="982" y="333" width="22" height="22" rx="5" fill="none" stroke="#7d8ca3" stroke-width="2"/><text x="1018" y="350" font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="400" fill="#aab6c8" text-anchor="start" >Incoming Connections (Server)</text><rect x="968" y="375" width="434" height="50" rx="10" fill="#f3acbf" fill-opacity=".14" stroke="#f3acbf" stroke-width="2"/><rect x="982" y="389" width="22" height="22" rx="5" fill="#f3acbf"/><path d="M987 400l5 5 8 -10" stroke="#2a1520" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="1018" y="406" font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="500" fill="#f1f4f9" text-anchor="start" >Outgoing Connections (Client)</text><rect x="982" y="445" width="22" height="22" rx="5" fill="none" stroke="#7d8ca3" stroke-width="2"/><text x="1018" y="462" font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="400" fill="#aab6c8" text-anchor="start" >Camera</text><path d="M1402 401 C1470 401, 1450 290, 1456 264" fill="none" stroke="#f3acbf" stroke-width="3.5" stroke-linecap="round"/><g transform="translate(1500 250)" stroke="#f3acbf" stroke-width="3" fill="none"><circle r="42" fill="#1c2738"/><ellipse rx="18" ry="42"/><path d="M-42 0H42M-37 -20H37M-37 20H37"/></g>
+</svg>

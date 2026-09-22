@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700">
+<defs>
+  <radialGradient id="glow" cx="0.72" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#7bdad2" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#7bdad2" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.4" fill="#ffffff" opacity=".07"/>
+  </pattern>
+  <linearGradient id="fade" x1="0" x2="1">
+    <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+    <stop offset=".8" stop-color="#fff" stop-opacity="1"/>
+  </linearGradient>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0"/></filter>
+  <mask id="dotmask"><rect width="1600" height="700" fill="url(#fade)"/></mask>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="200%">
+    <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#050a12" flood-opacity=".55"/>
+  </filter>
+</defs>
+<rect width="1600" height="700" fill="#1c2738"/>
+<rect width="1600" height="700" fill="url(#glow)"/>
+<rect width="1600" height="700" filter="url(#grain)" opacity=".05"/>
+<rect width="1600" height="700" fill="url(#dots)" mask="url(#dotmask)"/>
+<g filter="url(#shadow)"><rect x="955" y="120" width="450" height="330" rx="26" fill="#f4f6fa"/></g><rect x="1045.0" y="259.0" width="270" height="64" fill="#e5484d"/><text x="1180.0" y="305.0" font-family="SF Pro Display, SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="50" font-weight="500" fill="#111722" text-anchor="middle" >Ethan Hunt</text><rect x="1037.0" y="251.0" width="286" height="80" fill="none" stroke="#7bdad2" stroke-width="2.5" stroke-dasharray="8 7"/><g stroke="#1c6f69" stroke-width="3" stroke-linecap="round" fill="none"><path d="M1045.0 215.0H1315.0"/><path d="M1045.0 203.0v24M1315.0 203.0v24"/><path d="M1059.0 206.0l-14 9 14 9M1301.0 206.0l14 9 -14 9"/></g><g stroke="#1c6f69" stroke-width="3" stroke-linecap="round" fill="none"><path d="M1355.0 259.0V323.0"/><path d="M1343.0 259.0h24M1343.0 323.0h24"/><path d="M1346.0 273.0l9 -14 9 14M1346.0 309.0l9 14 9 -14"/></g><g filter="url(#shadow)"><rect x="1085" y="490" width="420" height="97" rx="16" fill="#16202f" stroke="#3a4a62" stroke-width="2"/></g><rect x="1085" y="508" width="4" height="61" rx="2" fill="#7bdad2"/><text x="1107" y="528.8" font-family="Menlo, SF Mono, monospace" font-size="21" xml:space="preserve"><tspan fill="#67b7a4">print</tspan><tspan fill="#e6ebf2">(proxy.size)</tspan></text><text x="1107" y="561.3" font-family="Menlo, SF Mono, monospace" font-size="21" xml:space="preserve"><tspan fill="#d9c97c">(86.33, 20.33)</tspan></text>
+</svg>

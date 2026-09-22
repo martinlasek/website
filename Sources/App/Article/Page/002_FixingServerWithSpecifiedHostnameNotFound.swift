@@ -15,8 +15,8 @@ extension Article {
         canonicalPath: "/articles/how-to-fix-server-with-unspecified-hostname-not-found",
         published_at: .date(10, .oct, 2023),
         category: "Swift",
-        cover: ArticleCover(path: "/images/blog/how-to-fix-server-with-unspecified-hostname-not-found.png", alt: "", width: 1200, height: 630),
-        hero: ArticleCover(path: "/images/blog/how-to-fix-server-with-unspecified-hostname-not-found-hero-v1.webp", alt: "", width: 1600, height: 700),
+        cover: ArticleCover(path: "/images/blog/how-to-fix-server-with-unspecified-hostname-not-found-2.png", alt: "", width: 1200, height: 630),
+        hero: ArticleCover(path: "/images/blog/how-to-fix-server-with-unspecified-hostname-not-found-hero-v2.webp", alt: "", width: 1600, height: 700),
         
         contentList: [
             .opener("When you create a new macOS project and try to make a network request you will notice it won't work right away. Let's fix that!"),

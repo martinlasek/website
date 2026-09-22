@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700">
+<defs>
+  <radialGradient id="glow" cx="0.72" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#9abfff" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#9abfff" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.4" fill="#ffffff" opacity=".07"/>
+  </pattern>
+  <linearGradient id="fade" x1="0" x2="1">
+    <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+    <stop offset=".8" stop-color="#fff" stop-opacity="1"/>
+  </linearGradient>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0"/></filter>
+  <mask id="dotmask"><rect width="1600" height="700" fill="url(#fade)"/></mask>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="200%">
+    <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#050a12" flood-opacity=".55"/>
+  </filter>
+</defs>
+<rect width="1600" height="700" fill="#1c2738"/>
+<rect width="1600" height="700" fill="url(#glow)"/>
+<rect width="1600" height="700" filter="url(#grain)" opacity=".05"/>
+<rect width="1600" height="700" fill="url(#dots)" mask="url(#dotmask)"/>
+<ellipse cx="1175" cy="580" rx="230" ry="36" fill="#050a12" opacity=".45"/><path d="M957.7 250V470" stroke="#9abfff" stroke-width="2" stroke-dasharray="3 8" opacity=".6"/><path d="M1392.3 250V470" stroke="#9abfff" stroke-width="2" stroke-dasharray="3 8" opacity=".6"/><path d="M1175 361.3V581.3" stroke="#9abfff" stroke-width="2" stroke-dasharray="3 8" opacity=".6"/><g transform="matrix(0.82 0.42 -0.82 0.42 1175 470)" opacity="1"><rect x="-150.0" y="-115.0" width="300" height="230" rx="18" fill="#f4f6fa" stroke="#c9d3e1" stroke-width="2.5"/><rect x="-124.0" y="-91.0" width="3" height="30" fill="#2f6fe4"/></g><g transform="matrix(0.82 0.42 -0.82 0.42 1175 250)" opacity="0.96"><rect x="-150.0" y="-115.0" width="300" height="230" rx="18" fill="#ffffff" fill-opacity=".14" stroke="#9abfff" stroke-width="2.5"/><text x="-114.0" y="-67.0" font-family="SF Pro Display, SF Pro Text, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="500" fill="#c3cad6" text-anchor="start" >Optional</text></g><path d="M1396 250h22" stroke="#3a4a62" stroke-width="2"/><rect x="1418" y="232" width="75" height="36" rx="18" fill="#9abfff" stroke="#9abfff" stroke-width="2"/><text x="1455.4" y="256" font-family="Menlo, SF Mono, monospace" font-size="17" font-weight="700" fill="#111a2c" text-anchor="middle" >Text</text><path d="M1396 470h22" stroke="#3a4a62" stroke-width="2"/><rect x="1418" y="452" width="136" height="36" rx="18" fill="#16202f" stroke="#3a4a62" stroke-width="2"/><text x="1486.0" y="476" font-family="Menlo, SF Mono, monospace" font-size="17" font-weight="400" fill="#dbe4f1" text-anchor="middle" >TextEditor</text><rect x="990" y="84" width="96" height="34" rx="17" fill="none" stroke="#9abfff" stroke-width="2"/><text x="1038" y="107" font-family="Menlo, SF Mono, monospace" font-size="16" font-weight="700" fill="#9abfff" text-anchor="middle" >ZStack</text>
+</svg>
