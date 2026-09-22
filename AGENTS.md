@@ -20,7 +20,8 @@ Before implementing Swift changes, use the available `swift-guideline` skill and
 
 ## Release validation
 
-- macOS test results alone do not establish Linux compatibility. The GitHub workflow `Linux release checks` runs the Heroku release build/test gate with Swift 6.2.4 on Ubuntu 22.04.
-- Keep `.swift-version` and the CI image/toolchain check in sync. Commit `Package.resolved` for reproducible dependency versions; change it intentionally with dependency updates.
+- Do not add GitHub Actions workflows. Martin does not want GitHub Actions for this project.
+- macOS test results alone do not establish Linux compatibility. Heroku runs the Linux regression gate in `bin/post_compile` during its build.
+- Keep `.swift-version` aligned with the intended Heroku toolchain. Commit `Package.resolved` for reproducible dependency versions; change it intentionally with dependency updates.
 - Use `HTMLHeadDocument.parse` for metadata assertions; do not rely on FoundationXML HTML recovery preserving head/title hierarchy across platforms.
-- Preserve the regression gate in `bin/post_compile`. Report separately what passed locally and what passed on Linux; never describe unrun CI as successful.
+- Preserve the regression gate in `bin/post_compile`. Report separately what passed locally and what passed on Linux; never describe unrun checks as successful.
